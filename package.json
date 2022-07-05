@@ -1,0 +1,29 @@
+{
+  "name": "dwn-oficial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "GR",
+  "scripts": {
+    "dev": "node test.js",
+    "start": "node index.js",
+    "deploy": "git add --all && git commit -m \"new deploy\" && git push origin main"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.13.0",
+    "@discordjs/rest": "^0.4.1",
+    "aoi.fb": "^5.7.0",
+    "chalk": "4.1.2",
+    "discord-modals": "^1.3.5",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "fs": "^0.0.1-security",
+    "ms": "^2.1.3",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
+    "quiz-api": "1.1.0",
+    "ws": "^8.4.2",
+    "firebase": "^9.6.5",
+    "axios": "0.24.0",
+    "discord-together": "1.1.62"
+  }
+}
