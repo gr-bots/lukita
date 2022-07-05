@@ -1,8 +1,11 @@
-module.exports = {
-    name: "interactionCreate",
-    client: true,
-    cluster: false,
-    run: async (client, interaction) => {
+const Event = require('../../structures/Event')
+module.exports = class extends Event {
+  constructor(client) {
+   super(client, {
+     name: 'interactionCreate'
+   })
+}
+    run = async (interaction) => {
 
         if (interaction.isCommand()) {
 
