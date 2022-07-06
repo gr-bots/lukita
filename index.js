@@ -1,5 +1,5 @@
 import LukitaClient from './src/utils/Client.js';
-const client = new LukitaCLient();
+const client = new LukitaClient();
 
-import Modals from 'discord-modals'
-Modals(client)
+// import Modals from 'discord-modals'
+// Modals(client)
