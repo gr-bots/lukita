@@ -1,4 +1,4 @@
-const emojis = require("./utils/Config.js").emojis
+import { emojis } from "./utils/Config.js";
 
 import { Client, Options, Collection } from 'discord.js';
 import { Tools, Status, Games, Pallete } from './Functions.js'
