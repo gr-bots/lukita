@@ -19,4 +19,7 @@ module.exports = (client) => {
   .on('nodeConnect', async(node) => {
 console.log(`[NODE] ${node.options.id} Conectado.`)
   })
+  .on('nodeError', async(node, error) => {
+console.log(`[NODE] Ocorreu um erro no node ${node.options.id} => ${error.message}`)
+  })
 }
