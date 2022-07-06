@@ -33,6 +33,6 @@ export default class LukitaClient extends Client {
     this.tools = new Tools(),
     this.status = new Status(),
     this.games = new Games(),
-    this.pallete = new Pallete(),
+    this.pallete = new Pallete()
   }
 };

@@ -2,4 +2,3 @@ node_modules/
 testing/
 .dev.env
 test.js
-src/structures/Manager.js
