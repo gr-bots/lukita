@@ -12,11 +12,7 @@ export default async (client) => {
             const p = await import(`../commands/${dir}/${file}`)
             const pull = await p.default
 
-            if (pull.name) {
-                client.commands.set(pull.name, pull)
-            } else {
-                continue;
-            }
+            if (pull.name) client.commands.set(pull.name, pull)
         }
     })
 

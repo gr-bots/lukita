@@ -6,7 +6,7 @@ export default class extends Event {
      name: 'interactionCreate'
    })
 }
-    run = async (interaction) => {
+    async run (interaction) {
 
         if (interaction.isCommand()) {
 

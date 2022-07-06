@@ -45,5 +45,6 @@ export default class LukitaClient extends Client {
     await commands(this)
     await events(this)
     await modals(this)
+    console.log(this.commands)
   }
 };
