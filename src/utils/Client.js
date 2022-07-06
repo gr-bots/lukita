@@ -1,4 +1,4 @@
-import { emojis } from "./utils/Config.js";
+import { emojis } from "./Config.js";
 
 import { Client, Options, Collection } from 'discord.js';
 import { Tools, Status, Games, Pallete } from './Functions.js'
