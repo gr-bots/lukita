@@ -7,12 +7,7 @@ export default class extends Event {
    })
 }
     run = async () => {
-      require('./src/handlers/Commands.js')(client)
-      require('./src/handlers/Events.js')(client)
-      require('./src/handlers/Modals.js')(client)
-      require('./src/utils/Deploy.js')(client)
-      require('./src/utils/Database.js')(client)
-      require('./src/utils/Functions.js')(client);
+      console.log('test')
       
       function setStatus() {
 

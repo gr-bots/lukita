@@ -5,6 +5,8 @@ import { Tools, Status, Games, Pallete } from './Functions.js'
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
 import modals from '../handlers/Modals.js'
+import deploy from './Deploy.js'
+import database from './Database.js'
 export default class LukitaClient extends Client {
   constructor() {
     super({
@@ -45,6 +47,8 @@ export default class LukitaClient extends Client {
     await commands(this)
     await events(this)
     await modals(this)
+    await deploy(this)
+    await database(this)
     console.log(this.commands)
   }
 };
