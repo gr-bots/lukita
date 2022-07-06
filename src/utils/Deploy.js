@@ -10,7 +10,7 @@ export default (client) => {
 
   fs.readdirSync('./src/commands').forEach((pasta) => {
     fs.readdirSync(`./src/commands/${pasta}`).filter(file => file.endsWith('.js')).forEach(async (command) => {
-      const cmd = import(`../commands/${pasta}/${command}`),
+      const cmd = await import(`../commands/${pasta}/${command}`),
       const comando = await cmd.default
       commands.push(comando.data.toJSON());
     })
