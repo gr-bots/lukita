@@ -6,7 +6,7 @@ export default async (client) => {
   console.log(`${success('[ Handler - Events ]')} [${getTime()}] Carregando eventos...`)
 
   readdirSync(`./src/events/`).forEach(async (file) => {
-      const { default as pull } = await import(`../events/${file}`);
+      const { default: pull } = await import(`../events/${file}`);
       pull = new pull();
     
       client.on(pull.name, pull.run.bind(null, client));
