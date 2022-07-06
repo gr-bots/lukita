@@ -1,8 +1,13 @@
-module.exports = {
-    name: "modalSubmit",
-    client: true,
-    cluster: false,
-    run: async (client, interaction) => {
+const Event = require('../../structures/Event')
+
+module.exports = class extends Event {
+  constructor(client) {
+   super(client, {
+     name: 'modalSubmit'
+   })
+}
+    run = async (interaction) => {
+
 
         let command = client.modals.get(interaction.customId )
         if(!command) return;
