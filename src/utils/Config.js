@@ -1,5 +1,4 @@
-export default {
-    db: {
+const db = {
         apiKey: process.env.apiKey,
         authDomain: process.env.authDomain,
         databaseURL: process.env.databaseURL,
@@ -9,7 +8,7 @@ export default {
         appId: process.env.appId,
         measurementId: process.env.measurementId
     },
-    emojis: {
+const emojis = {
         loading: "<a:lk_loading:979536758817570866>",
         nothing: "<:lk_nothing:979537390114844702>",
         yesCheck: "<:lk_yesCheck:979539564844679218>",
@@ -27,4 +26,4 @@ export default {
         dev: "<:lk_dev:987544139400896532>",
         djs: "<:lk_djs:987560966797533204>"
     }
-}
+export { db, emojis }
