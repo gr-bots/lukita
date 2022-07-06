@@ -7,7 +7,8 @@ const db = {
         messagingSenderId: process.env.messagingSenderId,
         appId: process.env.appId,
         measurementId: process.env.measurementId
-    },
+    }
+
 const emojis = {
         loading: "<a:lk_loading:979536758817570866>",
         nothing: "<:lk_nothing:979537390114844702>",
