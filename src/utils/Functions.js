@@ -1,5 +1,6 @@
  class Tools {
-    constructor() {
+  
+    constructor(client) {
             
           this.msToTime = (function (number) {
             let moment = require("moment"); 
@@ -28,7 +29,7 @@
 
 
 class Status {
-        constructor() {
+        constructor(client) {
 
             this.users = client.guilds.cache.map((g) => g.memberCount).reduce((b, a) => b + a).toLocaleString(),
             this.guilds = client.guilds.cache.size,
