@@ -1,7 +1,7 @@
 import { readdirSync } from 'fs'
 import { success, getTime } from '../utils/Logger.js'
 
-export default (client) => {
+export default async (client) => {
 
     console.log(`${success('[ Handler - Commands ]')} [${getTime()}] Carregando comandos...`)
 
@@ -9,8 +9,8 @@ export default (client) => {
         const commands = readdirSync(`./src/commands/${dir}`).filter((file) => file.endsWith(`.js`))
 
         for (let file of commands) {
-            const p = import(`../commands/${dir}/${file}`)
-            const pull = p.default
+            const p = await import(`../commands/${dir}/${file}`)
+            const pull = await p.default
 
             if (pull.name) {
                 client.commands.set(pull.name, pull)

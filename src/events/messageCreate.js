@@ -1,4 +1,4 @@
-import Event from '../../structures/Event'
+import Event from '../structures/Event.js'
 
 export default class extends Event {
   constructor(client) {
@@ -15,3 +15,6 @@ export default class extends Event {
     
       message.reply({ content: `> ${client.emotes.hie}・Olá ${message.author.username}, ainda estou em desenvolvimento. Em breve terei minha lista comandos. (Não tenho comando de help ainda.)` })
     }
+   }
+
+}

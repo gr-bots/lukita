@@ -1,4 +1,4 @@
-import chalk from chalk
+import chalk from "chalk";
 
 const info = (message) => {
   return `${chalk.blueBright(message)}`;

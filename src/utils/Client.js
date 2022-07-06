@@ -2,7 +2,8 @@ import { emojis } from "./Config.js";
 
 import { Client, Options, Collection } from 'discord.js';
 import { Tools, Status, Games, Pallete } from './Functions.js'
-
+import events from '../handlers/Events.js'
+import commands from '../handlers/Commands.js'
 export default class LukitaClient extends Client {
   constructor() {
     super({
@@ -29,10 +30,18 @@ export default class LukitaClient extends Client {
     this.commands = new Collection(),
     this.modals = new Collection(),
     this.developers = ['424931675009712128', '465859183250767882', '417067105897414667'],
-    this.emotes = emojis,
-    this.tools = new Tools(this),
-    this.status = new Status(this),
-    this.games = new Games(this),
-    this.pallete = new Pallete(this)
+    this.emotes = emojis
+    this.tools = new Tools(this)
+    this.games = new Games()
+    this.pallete = new Pallete()
+    this.on('ready', () => {
+      this.status = new Status(this)
+    })
+  }
+
+  async init() {
+    await super.login(process.env.TOKEN)
+    await commands(this)
+    await events(this)
   }
 };
