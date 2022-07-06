@@ -8,6 +8,7 @@
     "start": "node index.js",
     "deploy": "git add --all && git commit -m \"new deploy\" && git push origin main"
   },
+  "type": "module",
   "dependencies": {
     "@discordjs/builders": "^0.13.0",
     "@discordjs/rest": "^0.4.1",
@@ -25,5 +26,8 @@
     "firebase": "^9.6.5",
     "axios": "0.24.0",
     "discord-together": "1.1.62"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0"
   }
 }
