@@ -10,7 +10,7 @@ module.exports = (client) => {
     const events = readdirSync(`./src/events/${dir}`).filter((file) => file.endsWith(`.js`))
 
     for (let file of events) {
-      const pull = require(`../events/${dir}${file}`);
+      const pull = require(`../events/${dir}/${file}`);
 
       if (pull.client) {
         client.on(pull.name, pull.run.bind(null, client));

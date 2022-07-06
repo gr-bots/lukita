@@ -29,3 +29,4 @@ module.exports = class extends Event {
       setOtherStatus()
       setInterval(() => { setStatus(), setOtherStatus() }, 3000)
     }
+}
