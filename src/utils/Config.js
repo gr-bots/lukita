@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     db: {
         apiKey: process.env.apiKey,
         authDomain: process.env.authDomain,

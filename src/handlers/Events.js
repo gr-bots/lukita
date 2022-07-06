@@ -1,16 +1,17 @@
-const { readdirSync } = require('fs')
-const { success, info, warning, error, getTime } = require('../utils/Logger.js')
+import { readdirSync } from 'fs'
+import { success, info, warning, error, getTime } from '../utils/Logger.js'
 
-module.exports = (client) => {
+export default (client) => {
 
   console.log(`${success('[ Handler - Events ]')} [${getTime()}] Carregando eventos...`)
 
-  readdirSync(`./src/events/`).forEach((dir) => {
+  readdirSync(`./src/events/`).forEach(async (dir) => {
 
     const events = readdirSync(`./src/events/${dir}`).filter((file) => file.endsWith(`.js`))
 
     for (let file of events) {
-      const pull = require(`../events/${dir}/${file}`);
+      const p = await import(`../events/${dir}/${file}`);
+      const pull = await p.default
 
       if (pull.client) {
         client.on(pull.name, pull.run.bind(null, client));

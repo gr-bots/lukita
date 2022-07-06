@@ -1,6 +1,6 @@
-const Event = require('../../structures/Event')
+import Event from '../../structures/Event'
 
-module.exports = class extends Event {
+export default class extends Event {
   constructor(client) {
    super(client, {
      name: 'modalSubmit'

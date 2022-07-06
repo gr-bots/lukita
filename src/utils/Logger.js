@@ -1,4 +1,4 @@
-const chalk = require('chalk');
+import chalk from chalk
 
 const info = (message) => {
   return `${chalk.blueBright(message)}`;
@@ -29,4 +29,4 @@ const getTime = (date = new Date()) => {
   );
 };
 
-module.exports = { info, error, success, warning, bold, getTime };
+export { info, error, success, warning, bold, getTime };

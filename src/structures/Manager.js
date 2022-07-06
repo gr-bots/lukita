@@ -1,6 +1,6 @@
-const { Vulkava } = require('vulkava');
+import { Vulkava } from 'vulkava';
 
-module.exports = (client) => {
+export default (client) => {
   return new Vulkava({
     nodes: [
       {
@@ -15,7 +15,7 @@ module.exports = (client) => {
     ],
     sendWS: (guildId, payload) => { 
       client.guilds.cache.get(guildId)?.shard.send(payload);
-  })
+    })
   .on('nodeConnect', async(node) => {
 console.log(`[NODE] ${node.options.id} Conectado.`)
   })

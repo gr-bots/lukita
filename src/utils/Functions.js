@@ -1,4 +1,4 @@
-export class Tools {
+ class Tools {
     constructor() {
             
           this.msToTime = (function (number) {
@@ -27,7 +27,7 @@ export class Tools {
   }
 
 
-export class Status {
+class Status {
         constructor() {
 
             this.users = client.guilds.cache.map((g) => g.memberCount).reduce((b, a) => b + a).toLocaleString(),
@@ -38,7 +38,9 @@ export class Status {
         }
     }
 
-export class Games {
+
+
+class Games {
         constructor() {
 
             this.quiz = (function (category, question) {
@@ -49,7 +51,7 @@ export class Games {
         }
     }
 
-export class Pallete {
+class Pallete {
         constructor() {
 
             this.noBG = '#303136',
@@ -60,3 +62,10 @@ export class Pallete {
 
         }
     }
+
+export {
+  Pallete,
+  Games,
+  Status,
+  Tools
+}

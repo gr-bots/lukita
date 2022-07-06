@@ -1,15 +1,17 @@
-require('dotenv').config()
+import { config } from 'dotenv';
+config()
 
-const { REST } = require('@discordjs/rest');
-const { Routes } = require('discord-api-types/v9');
-const fs = require('fs');
+import { REST } from '@discordjs/rest'
+import { Routes } from 'discord-api-types/v9'
+import fs from 'fs'
 const commands = [];
 
-module.exports = (client) => {
+export default (client) => {
 
   fs.readdirSync('./src/commands').forEach((pasta) => {
-    fs.readdirSync(`./src/commands/${pasta}`).filter(file => file.endsWith('.js')).forEach((command) => {
-      const comando = require(`../commands/${pasta}/${command}`)
+    fs.readdirSync(`./src/commands/${pasta}`).filter(file => file.endsWith('.js')).forEach(async (command) => {
+      const cmd = import(`../commands/${pasta}/${command}`),
+      const comando = await cmd.default
       commands.push(comando.data.toJSON());
     })
   })
@@ -22,7 +24,7 @@ module.exports = (client) => {
           console.log('[Slash Commands] Atualização dos comando iniciada.');
   
           await rest.put(Routes.applicationCommands(client.user.id), { body: commands }).then(cmd => {
-            cmd.map(command => {
+            cmd.map(() => {
               
             })
           })

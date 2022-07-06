@@ -1,4 +1,5 @@
 import LukitaClient from './src/utils/Client.js';
 const client = new LukitaCLient();
 
-require('discord-modals')(client)
+import Modals from 'discord-modals'
+Modals(client)

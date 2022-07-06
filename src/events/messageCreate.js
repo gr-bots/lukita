@@ -1,12 +1,13 @@
-const Event = require('../../structures/Event')
-module.exports = class extends Event {
+import Event from '../../structures/Event'
+
+export default class extends Event {
   constructor(client) {
    super(client, {
      name: 'messageCreate'
    })
 }
 
-    run = async (message) => {
+   async run (message) {
       if(message.author.bot) return;
       if(!message.guild) return;
     

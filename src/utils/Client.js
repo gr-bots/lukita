@@ -24,7 +24,7 @@ export default class LukitaClient extends Client {
         ThreadMemberManager: 0,
         UserManager: 0,
       }),
-      intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_BANS", "GUILD_EMOJIS_AND_STICKERS", "GUILD_INTEGRATIONS", "GUILD_WEBHOOKS", "GUILD_INVITES", "GUILD_VOICE_STATES", "GUILD_SCHEDULED_EVENTS", "GUILD_MESSAGE_REACTIONS", "GUILD_MESSAGES"]
+      intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_BANS", "GUILD_EMOJIS_AND_STICKERS", "GUILD_INTEGRATIONS", "GUILD_WEBHOOKS", "GUILD_INVITES", "GUILD_VOICE_STATES", "GUILD_MESSAGE_REACTIONS", "GUILD_MESSAGES"]
       });
     this.commands = new Collection(),
     this.modals = new Collection(),

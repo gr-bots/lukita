@@ -1,7 +1,7 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+import { SlashCommandBuilder, inlineCode } from '@discordjs/builders';
+import { MessageEmbed } from 'discord.js';
 
-module.exports = {
+export default {
     name: "ping",
     category: 'Bot',
     view: true,

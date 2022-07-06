@@ -1,8 +1,8 @@
-const { inspect } = require('util')
-const { codeBlock, inlineCode } = require('@discordjs/builders');
-const { MessageEmbed, MessageAttachment, MessageActionRow, MessageButton } = require('discord.js')
+import { inspect } from 'util'
+import { codeBlock, inlineCode } from '@discordjs/builders'
+import { MessageEmbed, MessageAttachment, MessageActionRow, MessageButton } from 'discord.js'
 
-module.exports = {
+export default {
     name: 'eval_modal',
     run: async (client, interaction) => {
       

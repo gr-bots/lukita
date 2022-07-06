@@ -7,4 +7,4 @@ class Command {
     this.options = options.options
    }
 }
-module.exports = Command
+export default Command

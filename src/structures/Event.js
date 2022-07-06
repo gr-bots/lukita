@@ -4,4 +4,4 @@ class Event {
     this.name = options.name
   }
 }
-module.exports = Event
+export default Event

@@ -1,15 +1,16 @@
-const { readdirSync } = require('fs')
-const { success, info, warning, error, getTime } = require('../utils/Logger.js')
+import { readdirSync } from 'fs'
+import { success, info, warning, error, getTime } from '../utils/Logger.js'
 
-module.exports = (client) => {
+export default (client) => {
 
     console.log(`${success('[ Handler - Modals ]')} [${getTime()}] Carregando modals...`)
 
-    readdirSync(`./src/modals/`).forEach((dir) => {
+    readdirSync(`./src/modals/`).forEach(async(dir) => {
         const commands = readdirSync(`./src/modals/${dir}`).filter((file) => file.endsWith(`.js`))
 
         for (let file of commands) {
-            let pull = require(`../modals/${dir}/${file}`)
+            let p = await import(`../modals/${dir}/${file}`)
+            const pull = await p.default
 
             if (pull.name) {
                 client.modals.set(pull.name, pull)
