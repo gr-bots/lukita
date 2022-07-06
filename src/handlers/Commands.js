@@ -1,5 +1,5 @@
 import { readdirSync } from 'fs'
-import { success, info, warning, error, getTime } from '../utils/Logger.js'
+import { success, getTime } from '../utils/Logger.js'
 
 export default (client) => {
 

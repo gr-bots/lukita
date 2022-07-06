@@ -1,7 +1,7 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { Modal, TextInputComponent, showModal } from 'discord-modals';
 
-module.exports = {
+export default {
     name: "eval",
     category: 'Developers',
     view: false,
