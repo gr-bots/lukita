@@ -4,6 +4,7 @@ import { Client, Options, Collection } from 'discord.js';
 import { Tools, Status, Games, Pallete } from './Functions.js'
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
+import modals from '../handlers/Modals.js'
 export default class LukitaClient extends Client {
   constructor() {
     super({
@@ -43,5 +44,6 @@ export default class LukitaClient extends Client {
     await super.login(process.env.TOKEN)
     await commands(this)
     await events(this)
+    await modals(this)
   }
 };
