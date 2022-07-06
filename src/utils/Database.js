@@ -1,5 +1,6 @@
 import { db as Database } from './Config.js';
-import { Create } from 'aoi.fb';
+import pkg from 'aoi.fb'
+const { Create } = pkg
 const db = Create(Database)
 
 export default (client) => {
