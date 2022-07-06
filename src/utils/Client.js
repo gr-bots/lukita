@@ -2,7 +2,7 @@ const emojis = require("./utils/Config.js").emojis
 
 import { Client, Options, Collection } from 'discord.js';
 
-export default class Lukita extends Client {
+export default class LukitaClient extends Client {
   constructor() {
     super({
       makeCache: Options.cacheWithLimits({
