@@ -1,6 +1,7 @@
 const emojis = require("./utils/Config.js").emojis
 
 import { Client, Options, Collection } from 'discord.js';
+import { Tools, Status, Games, Pallete } from './Functions.js'
 
 export default class LukitaClient extends Client {
   constructor() {
@@ -28,6 +29,10 @@ export default class LukitaClient extends Client {
     this.commands = new Collection(),
     this.modals = new Collection(),
     this.developers = ['424931675009712128', '465859183250767882', '417067105897414667'],
-    this.emotes = emojis
+    this.emotes = emojis,
+    this.tools = new Tools(),
+    this.status = new Status(),
+    this.games = new Games(),
+    this.pallete = new Pallete(),
   }
 };

@@ -1,35 +1,33 @@
-module.exports = (client) => {
-
-    class Tools {
-        constructor() {
+export class Tools {
+    constructor() {
             
-            this.msToTime = (function (number) {
-                let moment = require("moment"); 
-                require("moment-duration-format");
-                let result = moment
-                .duration(number)
-                .format('d[d], h[h], m[m], s[s]');
-                return result
-            }),
+          this.msToTime = (function (number) {
+            let moment = require("moment"); 
+            require("moment-duration-format");
+            let result = moment
+            .duration(number)
+            .format('d[d], h[h], m[m], s[s]');
+            return result
+          }),
             
-            this.timeToMs = (function (number) {
-                let result = require('ms')(number)
-                return result
-            }),
+          this.timeToMs = (function (number) {
+              let result = require('ms')(number)
+              return result
+          }),
 
-            this.uptimeMS = ~~((Date.now() / 1000) - (client.uptime / 1000))
+          this.uptimeMS = ~~((Date.now() / 1000) - (client.uptime / 1000))
             
-            this.uptime = (function () {
-                let moment = require("moment")
-                require("moment-duration-format");
-                    let resultado = moment.duration(client.uptime).format('d[d], h[h], m[m], s[s]')
-                return resultado 
-            })
-        }
-    }
-    client.tools = new Tools()
+          this.uptime = (function () {
+              let moment = require("moment")
+              require("moment-duration-format");
+                  let resultado = moment.duration(client.uptime).format('d[d], h[h], m[m], s[s]')
+              return resultado 
+          })
+      }
+  }
 
-    class Status {
+
+export class Status {
         constructor() {
 
             this.users = client.guilds.cache.map((g) => g.memberCount).reduce((b, a) => b + a).toLocaleString(),
@@ -39,9 +37,8 @@ module.exports = (client) => {
 
         }
     }
-    client.status = new Status()
 
-    class Games {
+export class Games {
         constructor() {
 
             this.quiz = (function (category, question) {
@@ -51,9 +48,8 @@ module.exports = (client) => {
             
         }
     }
-    client.games = new Games()
 
-    class Pallete {
+export class Pallete {
         constructor() {
 
             this.noBG = '#303136',
@@ -64,5 +60,3 @@ module.exports = (client) => {
 
         }
     }
-    client.pallete = new Pallete()
-}
