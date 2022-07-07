@@ -8,7 +8,6 @@ export default class extends Event {
 }
 
    async run (message) {
-      if(message.author.bot) return;
       if(!message.guild) return;
     
       if(message.content == `<@${client.user.id}>`) {
