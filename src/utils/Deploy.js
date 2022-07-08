@@ -35,3 +35,4 @@ export default (client) => {
           console.error(error);
       }
   })();
+}
