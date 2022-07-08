@@ -42,13 +42,14 @@ export default class LukitaClient extends Client {
     })
   }
 
-  async init() {
-    await super.login(process.env.TOKEN)
-    await commands(this)
+  async init() { 
     await events(this)
+    await commands(this)
     await modals(this)
-    await deploy(this)
     await database(this)
-    console.log(this.commands)
+    
+    await super.login(process.env.TOKEN)
+
+    await deploy(this)
   }
 };

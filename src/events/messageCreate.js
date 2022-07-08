@@ -10,9 +10,9 @@ export default class extends Event {
    async run (message) {
       if(!message.guild) return;
     
-      if(message.content == `<@${client.user.id}>`) {
+      if(message.content == `<@${this.client.user.id}>`) {
     
-      message.reply({ content: `> ${client.emotes.hie}・Olá ${message.author.username}, ainda estou em desenvolvimento. Em breve terei minha lista comandos. (Não tenho comando de help ainda.)` })
+      message.reply({ content: `> ${this.client.emotes.hie}・Olá ${message.author.username}, ainda estou em desenvolvimento. Em breve terei minha lista comandos. (Não tenho comando de help ainda.)` })
     }
    }
 
