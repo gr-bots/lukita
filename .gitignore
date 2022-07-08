@@ -3,3 +3,4 @@ testing/
 .dev.env
 test.js
 package-lock.json
+src/structures/Manager.js
