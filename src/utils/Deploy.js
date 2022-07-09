@@ -5,7 +5,7 @@ import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v10'
 import { readdirSync } from 'fs'
 
-export default (client, guild) => {
+export default (client) => {
 
 const commandsArray = [];
 readdirSync('./src/commands').forEach((pasta) => {
@@ -22,7 +22,6 @@ readdirSync('./src/commands').forEach((pasta) => {
         console.log('[Slash Commands] Atualização dos comandos iniciada.');
 
           await rest.put(Routes.applicationCommands(client.user.id), { body: commandsArray })
-          await rest.put(Routes.applicationGuildCommands(client.user.id, guild.id), { body: commandsArray })
 
         console.log('[Slash Commands] Atualização dos comandos concluída.');
 
