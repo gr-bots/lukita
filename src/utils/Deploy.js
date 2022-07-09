@@ -3,33 +3,26 @@ config()
 
 import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v9'
-import fs from 'fs'
-const commands = [];
+import { readdirSync } from 'fs'
 
 export default (client) => {
-
-  fs.readdirSync('./src/commands').forEach((pasta) => {
-    fs.readdirSync(`./src/commands/${pasta}`).filter(file => file.endsWith('.js')).forEach(async (command) => {
-      const cmd = await import(`../commands/${pasta}/${command}`);
-      const comando = await cmd.default
-      commands.push(comando.data.toJSON());
-    })
-  })
 
   const rest = new REST({ version: '9' }).setToken(client.token);
 
   (async () => {
       try {
 
-          console.log('[Slash Commands] Atualização dos comando iniciada.');
+          console.log('[Slash Commands] Atualização dos comandos iniciada.');
 
-          await rest.put(Routes.applicationCommands(client.user.id), { body: commands }).then(cmd => {
-            cmd.map(() => {
-
+          const commands = [];
+          readdirSync('./src/commands').forEach((pasta) => {
+            readdirSync(`./src/commands/${pasta}`).filter(file => file.endsWith('.js')).forEach(async (command) => {
+              commands.push(command)
             })
           })
+          this.client.application.commands.set(commands)
 
-         console.log('[Slash Commands] Atualização dos comando concluída.');
+         console.log('[Slash Commands] Atualização dos comandos concluída.');
 
       } catch (error) {
           console.error(error);

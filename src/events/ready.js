@@ -22,14 +22,5 @@ export default class extends Event {
       setStatus()
       setOtherStatus()
       setInterval(() => { setStatus(), setOtherStatus() }, 3000)
-
-      const commands = [];
-      readdirSync('./src/commands').forEach((pasta) => {
-        readdirSync(`./src/commands/${pasta}`).filter(file => file.endsWith('.js')).forEach(async (command) => {
-          commands.push(command)
-        })
-      })
-this.client.application.commands.set(commands)
-
     }
 }
