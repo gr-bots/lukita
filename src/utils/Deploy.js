@@ -13,20 +13,18 @@ readdirSync('./src/commands').forEach((pasta) => {
     commandsArray.push(command)
   })
 })
-client.application.commands.set(commandsArray)
 
   const rest = new REST({ version: '10' }).setToken(client.token);
 
   (async () => {
       try {
 
-          console.log('[Slash Commands] Atualização dos comandos iniciada.');
+        console.log('[Slash Commands] Atualização dos comandos iniciada.');
 
-          await rest.put(Routes.applicationCommands(client.user.id), { body: commands }).then(cmd => {
-            cmd.map(() => {})
-          })
+          await rest.put(Routes.applicationCommands(client.user.id), { body: commandArray })
+          await rest.put(Routes.applicationCommands(client.user.id, ), { body: commandArray })
 
-         console.log('[Slash Commands] Atualização dos comandos concluída.');
+        console.log('[Slash Commands] Atualização dos comandos concluída.');
 
       } catch (error) {
           console.error(error);
