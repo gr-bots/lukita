@@ -14,7 +14,7 @@ readdirSync('./src/commands').forEach((pasta) => {
   })
 })
 
-  const rest = new REST({ version: '10' }).setToken(client.token);
+  const rest = new REST({ version: '9' }).setToken(client.token);
 
   (async () => {
       try {
