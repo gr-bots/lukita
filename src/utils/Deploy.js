@@ -20,13 +20,13 @@ this.client.application.commands.set(commands)
   (async () => {
       try {
 
-          console.log('[Slash Commands] Atualização dos comando iniciada.');
+          console.log('[Slash Commands] Atualização dos comandos iniciada.');
 
           await rest.put(Routes.applicationCommands(client.user.id), { body: commands }).then(cmd => {
             cmd.map(() => {})
           })
 
-         console.log('[Slash Commands] Atualização dos comando concluída.');
+         console.log('[Slash Commands] Atualização dos comandos concluída.');
 
       } catch (error) {
           console.error(error);
