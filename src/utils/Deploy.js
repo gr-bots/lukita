@@ -21,8 +21,8 @@ readdirSync('./src/commands').forEach((pasta) => {
 
         console.log('[Slash Commands] Atualização dos comandos iniciada.');
 
-          await rest.put(Routes.applicationCommands(client.user.id), { body: commandArray })
-          await rest.put(Routes.applicationCommands(client.user.id, ), { body: commandArray })
+          await rest.put(Routes.applicationCommands(client.user.id), { body: commandsArray })
+          await rest.put(Routes.applicationCommands(client.user.id, guild.id), { body: commandsArray })
 
         console.log('[Slash Commands] Atualização dos comandos concluída.');
 
