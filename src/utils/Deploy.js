@@ -10,7 +10,7 @@ export default (client) => {
 const commandsArray = [];
 readdirSync('./src/commands').forEach((pasta) => {
   readdirSync(`./src/commands/${pasta}`).filter(file => file.endsWith('.js')).forEach(async (command) => {
-    commands.push(command)
+    commandsArray.push(command)
   })
 })
 client.application.commands.set(commandsArray)
