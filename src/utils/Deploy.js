@@ -5,7 +5,7 @@ import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v10'
 import { readdirSync } from 'fs'
 
-export default (client) => {
+export default (client, guild) => {
 
 const commandsArray = [];
 readdirSync('./src/commands').forEach((pasta) => {
