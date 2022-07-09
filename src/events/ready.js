@@ -22,9 +22,10 @@ export default class extends Event {
       setOtherStatus()
       setInterval(() => { setStatus(), setOtherStatus() }, 3000)
 
+      const commands = [];
       const cmdList = await import(`../commands/${pasta}/${command}`);
       const cmd = await cmdList.default
-      this.client.application.commands.set(cmd.data.toJSON())
-      
+      this.client.application.commands.set(commands.push(cmd.data.toJSON()))
+
     }
 }
