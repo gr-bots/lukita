@@ -1,4 +1,5 @@
 import Event from '../structures/Event.js'
+import { readdirSync } from 'fs'
 
 export default class extends Event {
   constructor(client) {
@@ -23,9 +24,12 @@ export default class extends Event {
       setInterval(() => { setStatus(), setOtherStatus() }, 3000)
 
       const commands = [];
-      const cmdList = await import(`../commands/${pasta}/${command}`);
-      const cmd = await cmdList.default
-      this.client.application.commands.set(commands.push(cmd.data.toJSON()))
+      readdirSync('./src/commands').forEach((pasta) => {
+        readdirSync(`./src/commands/${pasta}`).filter(file => file.endsWith('.js')).forEach(async (command) => {
+          commands.push(command)
+        })
+      })
+this.client.application.commands.set(commands)
 
     }
 }
