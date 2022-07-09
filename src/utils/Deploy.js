@@ -13,7 +13,7 @@ readdirSync('./src/commands').forEach((pasta) => {
     commands.push(command)
   })
 })
-this.client.application.commands.set(commands)
+client.application.commands.set(commands)
 
   const rest = new REST({ version: '10' }).setToken(client.token);
 
