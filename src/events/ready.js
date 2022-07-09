@@ -25,5 +25,6 @@ export default class extends Event {
       const cmdList = await import(`../commands/${pasta}/${command}`);
       const cmd = await cmdList.default
       this.client.application.commands.set(cmd.data.toJSON())
+      
     }
 }
