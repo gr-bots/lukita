@@ -5,7 +5,7 @@ import { Tools, Status, Games, Pallete } from './Functions.js'
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
 import modals from '../handlers/Modals.js'
-import deploy from '../handlers/Deploy.js'
+import deploy from '../utils/Deploy.js'
 import database from './Database.js'
 export default class LukitaClient extends Client {
   constructor() {
