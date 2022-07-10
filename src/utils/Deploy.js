@@ -19,11 +19,11 @@ readdirSync('./src/commands').forEach((pasta) => {
   (async () => {
       try {
 
-        console.log('[Slash Commands] Atualização dos comandos iniciada.');
+          console.log('[Slash Commands] Atualização dos comando iniciada.');
 
           await rest.put(Routes.applicationCommands(917962601923760139), { body: commandsArray })
 
-        console.log('[Slash Commands] Atualização dos comandos concluída.');
+         console.log('[Slash Commands] Atualização dos comando concluída.');
 
       } catch (error) {
           console.error(error);
