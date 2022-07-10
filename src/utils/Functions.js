@@ -1,27 +1,26 @@
- class Tools {
+import moment from 'moment'
+import ms from 'ms'
+import quiz from 'quiz-api'
+import("moment-duration-format")
+
+class Tools {
   
     constructor(client) {
             
           this.msToTime = (function (number) {
-            let moment = require("moment"); 
-            require("moment-duration-format");
-            let result = moment
-            .duration(number)
-            .format('d[d], h[h], m[m], s[s]');
-            return result
+              let result = moment.duration(number).format('d[d], h[h], m[m], s[s]');
+              return result
           }),
             
           this.timeToMs = (function (number) {
-              let result = require('ms')(number)
+              let result = ms(number)
               return result
           }),
 
           this.uptimeMS = ~~((Date.now() / 1000) - (client.uptime / 1000))
             
           this.uptime = (function () {
-              let moment = require("moment")
-              require("moment-duration-format");
-                  let resultado = moment.duration(client.uptime).format('d[d], h[h], m[m], s[s]')
+              let resultado = moment.duration(client.uptime).format('d[d], h[h], m[m], s[s]')
               return resultado 
           })
       }
@@ -34,7 +33,6 @@ class Status {
             this.users = client.guilds.cache.map((g) => g.memberCount).reduce((b, a) => b + a).toLocaleString(),
             this.guilds = client.guilds.cache.size,
             this.channels = client.channels.cache.size
-           
 
         }
     }
@@ -45,7 +43,6 @@ class Games {
         constructor() {
 
             this.quiz = (function (category, question) {
-                let quiz = require('quiz-api')
                 return quiz(category, question) 
             })
             

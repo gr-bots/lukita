@@ -9,7 +9,7 @@ export default class extends Event {
     run = async (interaction) => {
 
 
-        let command = client.modals.get(interaction.customId )
+        let command = this.client.modals.get(interaction.customId )
         if(!command) return;
 
         try {

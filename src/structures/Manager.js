@@ -1,6 +1,7 @@
 import { Vulkava } from 'vulkava';
 
 export default (client) => {
+  console.log(`[ Node Manager ] ${node.options.id} Conectado..`)
   return new Vulkava({
     nodes: [
       {
@@ -17,9 +18,9 @@ export default (client) => {
       client.guilds.cache.get(guildId)?.shard.send(payload);
     })
   .on('nodeConnect', async(node) => {
-console.log(`[NODE] ${node.options.id} Conectado.`)
+console.log(`[ Node Manager ] ${node.options.id} Conectado!`)
   })
   .on('nodeError', async(node, error) => {
-console.log(`[NODE] Ocorreu um erro no node ${node.options.id} => ${error.message}`)
+console.log(`[ Node Manager ] Ocorreu um erro no node ${node.options.id} => ${error.message}`)
   })
 }

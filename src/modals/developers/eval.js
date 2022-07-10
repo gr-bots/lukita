@@ -6,6 +6,8 @@ export default {
     name: 'eval_modal',
     run: async (client, interaction) => {
       
+      // Local Functions
+      // --- Test color for embed
         const testColor = function testColor(color) {
           let embedTestColor = new MessageEmbed()
           .setDescription('Test de cor para embed')
@@ -13,7 +15,7 @@ export default {
           
           interaction.channel.send({embeds: [embedTestColor], fetchReply: true})
         };
-
+      // --- Task Manager
         function manager(managerTasks) {
             client.db.update('devs', 'tasks', managerTasks)
             return 'sucess'
@@ -29,6 +31,7 @@ export default {
             }
         }
         const tasks = new Tasks()
+      // Eval code
         let code = interaction.getTextInputValue('code');
         
 

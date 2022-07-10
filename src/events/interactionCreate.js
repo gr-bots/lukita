@@ -10,7 +10,7 @@ export default class extends Event {
 
         if (interaction.isCommand()) {
 
-            let command = client.commands.get(interaction.commandName)
+            let command = this.client.commands.get(interaction.commandName)
             if (!command) return;
 
             try {
