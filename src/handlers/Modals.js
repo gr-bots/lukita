@@ -2,7 +2,6 @@ import { readdirSync } from 'fs'
 import { success, getTime } from '../utils/Logger.js'
 
 export default async (client) => {
-
     console.log(`${success('[ Handler - Modals ]')} [${getTime()}] Carregando modals...`)
 
     readdirSync(`./src/modals/`).forEach(async(dir) => {
@@ -19,6 +18,5 @@ export default async (client) => {
             }
         }
     })
-
     console.log(`${success('[ Handler - Modals ]')} [${getTime()}] Modals carregado!`)
 }

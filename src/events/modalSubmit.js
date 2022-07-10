@@ -8,7 +8,6 @@ export default class extends Event {
 }
     run = async (interaction) => {
 
-
         let command = this.client.modals.get(interaction.customId )
         if(!command) return;
 

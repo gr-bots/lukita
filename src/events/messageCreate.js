@@ -7,13 +7,14 @@ export default class extends Event {
    })
 }
 
-   async run (message) {
-      if(!message.guild) return;
-    
-      if(message.content == `<@${this.client.user.id}>`) {
-    
+  async run (message) {
+  
+    if(message.author.bot) return;
+    if(!message.guild) return;
+      
+    if(message.content == `<@${this.client.user.id}>`) {
       message.reply({ content: `> ${this.client.emotes.hie}・Olá ${message.author.username}, ainda estou em desenvolvimento. Em breve terei minha lista comandos. (Não tenho comando de help ainda.)` })
     }
-   }
-
+  
+  }
 }

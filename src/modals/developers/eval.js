@@ -34,7 +34,6 @@ export default {
       // Eval code
         let code = interaction.getTextInputValue('code');
         
-
         if (!code) return interaction.reply({ content: `> ${client.emotes.alert}・<@${interaction.member.id}>, Você precisa inserir um código para ser executado.` })
 
         let deitenau = Date.now() / 1000
