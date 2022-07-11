@@ -23,7 +23,7 @@ export default {
           inline: true
         }, {
           name: `━・Adicionais「${client.emotes.info}」`,
-          value: `> › Sou desenvolvido em ${client.emotes.djs} Discord.js\n> › Fui criado <t:${parseInt(client.user.createdTimestamp / 1000)}:R>\n> › [Meu servidor de suporte comunidade](https://discord.gg/pJyY3zsMmB)\n > ›  Entre em meu Mundo através do link acima e saiba mais...`,
+          value: `> › Sou desenvolvido em ${client.emotes.djs} Discord.js\n> › Fui criado <t:${parseInt(client.user.createdTimestamp / 1000)}:R>\n> › [Meu servidor de suporte e comunidade](https://discord.gg/pJyY3zsMmB)\n > ›  Entre em meu Mundo através do link acima e saiba mais...`,
           inline: false
         })
         .setFooter({
