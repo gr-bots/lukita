@@ -14,7 +14,7 @@ export default {
 			.addComponents(
 				new MessageButton()
           .setLabel('Me adicione em seu servidor')
-					.setStyle('LINK')
+					.setStyle('LINK'),
           .setURL('https://discord.com/oauth2/authorize?client_id=917962601923760139&scope=bot+identify+guilds+email+applications.commands&permissions=2080374975')
 			);
 
