@@ -28,4 +28,4 @@ const emojis = {
   djs: "<:lk_djs:987560966797533204>"
 }
 
-export { db, emojis }
+export { aoifb, emojis }
