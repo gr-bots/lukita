@@ -1,5 +1,5 @@
 import { SlashCommandBuilder, inlineCode } from '@discordjs/builders';
-import { MessageEmbed } from 'discord.js';
+import { MessageEmbed, MessageActionRow, MessageButton } from 'discord.js';
 
 export default {
     name: "botinfo",
@@ -9,6 +9,15 @@ export default {
     data: new SlashCommandBuilder().setName("botinfo").setDescription("「💙 Bot」・Saiba mais sobre mim e minhas informações detalhadas"),
     run: async (client, interaction) => {
       let botAvatar = client.user.displayAvatarURL({ format: 'png', size: 4096 })
+
+      let rowBotinfo = new MessageActionRow()
+			.addComponents(
+				new MessageButton()
+          .setLabel('Me adicione em seu servidor')
+					.setStyle('LINK'),
+          .setURL('https://discord.com/oauth2/authorize?client_id=917962601923760139&scope=bot+identify+guilds+email+applications.commands&permissions=2080374975')
+			);
+
       let embedBotinfo = new MessageEmbed()
         .setThumbnail(botAvatar)
         .setTitle(`${client.emotes.nothing}${client.emotes.nothing} ・Minhas informações principais・ ${client.emotes.nothing}${client.emotes.nothing}`)
@@ -35,6 +44,7 @@ export default {
       
         interaction.reply({
           embeds: [embedBotinfo],
+          components: [rowBotinfo],
         })
   }
 }
