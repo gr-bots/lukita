@@ -17,18 +17,18 @@ export default {
         };
       // --- Task Manager
         function add(managerTasks) {
-            client.db.update('devs', 'tasks', managerTasks)
+            client.fb.update('devs', 'tasks', managerTasks)
             return 'sucess'
         };
         function manager(managerTasks) {
-            client.db.set('devs', 'tasks', managerTasks)
+            client.fb.set('devs', 'tasks', managerTasks)
             return 'sucess'
         };
         class Tasks {
             constructor() {
                 return {
                 
-                    get: client.db.all('devs/tasks').then(a => a.map(b => b.data.value)),
+                    get: client.fb.all('devs/tasks').then(a => a.map(b => b.data.value)),
                     add: add,
                     manager: manager
 

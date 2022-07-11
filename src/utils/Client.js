@@ -6,6 +6,7 @@ import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
 import modals from '../handlers/Modals.js'
 import deploy from '../utils/Deploy.js'
+import prismaClient from '../utils/PrismaClient.js'
 
 export default class LukitaClient extends Client {
   constructor() {
@@ -47,8 +48,11 @@ export default class LukitaClient extends Client {
     await commands(this)
     await modals(this)
     await database(this)
+    await prismaClient(this)
     
     await super.login(process.env.TOKEN)
     await deploy(this)
+
+    console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`)
   }
 };

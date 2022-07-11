@@ -1,4 +1,4 @@
-const db = {
+const aoifb = {
   apiKey: process.env.apiKey,
   authDomain: process.env.authDomain,
   databaseURL: process.env.databaseURL,
