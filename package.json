@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "node test.js",
     "start": "node index.js",
-    "deploy": "git add --all && git commit -m \"new deploy\" && git push origin main",
-    "db:push": "prisma db push",
-    "start:prisma:studio": "prisma studio"
+    "deploy": "git add --all && git commit -m \"new deploy\" && git push origin main"
   },
   "type": "module",
   "dependencies": {
@@ -16,7 +14,6 @@
     "aoi.fb": "^5.7.0",
     "axios": "0.24.0",
     "chalk": "4.1.2",
-    "@prisma/client": "^3.12.0",
     "discord-api-types": "^0.36.1",
     "discord-modals": "^1.3.5",
     "discord.js": "^13.8.1",
@@ -31,7 +28,6 @@
     "ws": "^8.4.2"
   },
   "devDependencies": {
-    "eslint": "^8.15.0",
-    "prisma": "^3.12.0"
+    "eslint": "^8.15.0"
   }
 }
