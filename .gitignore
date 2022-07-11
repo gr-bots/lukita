@@ -3,4 +3,5 @@ testing/
 .dev.env
 test.js
 package-lock.json
-src/structures/Manager.js
+src/commands/mod/warn.js
+src/commands/bot/help.js

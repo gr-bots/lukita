@@ -1,4 +1,5 @@
 import { Client, Options, Collection } from 'discord.js';
+import { success, getTime, bold } from '../utils/Logger.js'
 import { Tools, Status, Games, Pallete } from './Functions.js'
 import { emojis } from "./Config.js";
 import database from './Database.js'
@@ -50,5 +51,7 @@ export default class LukitaClient extends Client {
     
     await super.login(process.env.TOKEN)
     await deploy(this)
+
+    console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`)
   }
 };
