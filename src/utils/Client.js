@@ -1,5 +1,5 @@
 import { Client, Options, Collection } from 'discord.js';
-import { success, getTime } from '../utils/Logger.js'
+import { success, getTime, bold } from '../utils/Logger.js'
 import { Tools, Status, Games, Pallete } from './Functions.js'
 import { emojis } from "./Config.js";
 import database from './Database.js'
