@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { bold, getTime, info, success } from '../utils/logger.js'
+import { bold, getTime, info, success } from '../utils/Logger.js'
 const prisma = new PrismaClient()
 
 async function main() {
