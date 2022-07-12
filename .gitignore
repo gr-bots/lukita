@@ -3,5 +3,9 @@ testing/
 .dev.env
 test.js
 package-lock.json
+
+src/events/raw.js
+src/structures/NodeManager.js
+src/commands/music/play.js
 src/commands/mod/warn.js
 src/commands/bot/help.js
