@@ -5,8 +5,6 @@ test.js
 package-lock.json
 src/commands/mod/warn.js
 src/commands/bot/help.js
-
-
 src/events/raw.js
 src/structures/NodeManager.js
 src/commands/music/play.js
