@@ -7,7 +7,7 @@ const glob = promisify(g);
 export default async (client) => {
   console.log('[ / Slash Commands ] Atualização dos comandos iniciada...');
 
-  const slashCommands = await glob(`${global.process.cwd()}/src/Commands/*/*.js`);
+  const slashCommands = await glob(`${global.process.cwd()}/src/commands/*/*.js`);
 
   const arrayOfSlashCommands = [];
 
