@@ -73,7 +73,7 @@ export default class LukitaClient extends Client {
       arrayOfSlashCommands.push(file);
     });
   
-    await client.application.commands.set(arrayOfSlashCommands);
+    await this.application.commands.set(arrayOfSlashCommands);
   
     console.log('[ / Slash Commands ] Atualização dos comandos concluída.');
   }
