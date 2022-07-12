@@ -1,19 +1,25 @@
 import { config } from 'dotenv';
 config()
-import fs from 'fs'
+import { promisify } from 'util';
+import g from 'glob';
+const glob = promisify(g);
 
-export default async(client) => {
-    try {
-      console.log('[ / Slash Commands ] Atualização dos comandos iniciada...');
-      
-      fs.readdirSync('./src/commands').forEach(async (pasta) => {
-        const files = await fs.readdirSync(`./src/commands/${pasta}`).filter(file => file.endsWith('.js'))
-        files.forEach(async (commands) => {
-          const { default: listCommands } = await import(`../../src/commands/${pasta}/${commands}`)
-          console.log(typeof(listCommands)) // await client.application.commands.set(listCommands.map(cmd => cmd.data))
-        })
-      })
-      console.log('[ / Slash Commands ] Atualização dos comandos concluída.');
+export default async (client) => {
+  console.log('[ / Slash Commands ] Atualização dos comandos iniciada...');
 
-    } catch (error) {}
+  const slashCommands = await glob(`${global.process.cwd()}/src/Commands/*/*.js`);
+
+  const arrayOfSlashCommands = [];
+
+  slashCommands.map(async (value) => {
+    const file = await import(value);
+
+    if(!file?.name || !file.description ||!file.options) return;
+
+    arrayOfSlashCommands.push(file);
+  });
+
+  await client.application.commands.set(arrayOfSlashCommands);
+
+  console.log('[ / Slash Commands ] Atualização dos comandos concluída.');
 }
