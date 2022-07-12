@@ -57,6 +57,10 @@ class Pallete {
             this.secondary = '#200d11',
             this.blurple = '#5865F2',
             this.alert = '#e8b835'
+            this.economy = {
+              soft: "#e8b07d",
+              green: "#599271"
+            }
 
         }
     }

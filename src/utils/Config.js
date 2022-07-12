@@ -25,7 +25,12 @@ const emojis = {
   hello: "<:lk_hello:987505963017863178>",
   analytics: "<:lk_analytics:987508078918373386>",
   dev: "<:lk_dev:987544139400896532>",
-  djs: "<:lk_djs:987560966797533204>"
+  djs: "<:lk_djs:987560966797533204>",
+  eco: {
+    waffles: "<:lk_waffles:996411857244000326>",
+    cafeteria: "<:lk_cafeteria:996413963665412207>",
+    sorte: "<:lk_sorte:996412900568739860>"
+  }
 }
 
 export { aoifb, emojis }
