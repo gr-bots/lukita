@@ -1,6 +1,3 @@
-import { SlashCommandBuilder, inlineCode } from '@discordjs/builders';
-import { MessageEmbed } from 'discord.js';
-
 export default {
     name: "waffles",
     category: 'Eco',

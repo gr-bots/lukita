@@ -13,15 +13,8 @@ export default async(client) => {
           const { default: listCommands } = await import(`../../src/commands/${pasta}/${commands}`)
         })
       })
+      await client.application.commands.set(listCommands.map(cmd => cmd))
       console.log('[ / Slash Commands ] Atualização dos comandos concluída.');
-      
-      while(!listaCommands) {
-        if(listaCommands){
-          await client.application.commands.set(listCommands.map(cmd => cmd))
-      }
-      
-    }
-
 
     } catch (error) {}
 }
