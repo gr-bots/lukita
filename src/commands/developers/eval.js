@@ -5,7 +5,7 @@ export default {
     category: 'Developers',
     view: false,
     devsOnly: true,
-    description: "「🧙 Devs」・Evaluate de códigos em JavaScript para meus desenvolvedores" ,
+    data: { name: "eval", description: "「💙 Dev」・Execute um código JavaScript." },
     run: async(client, interaction) => {
 
         let modalEval = new Modal()
