@@ -4,8 +4,8 @@ import { MessageEmbed, MessageActionRow, MessageButton } from 'discord.js';
 export default {
     name: "botinfo",
     category: 'Bot',
-    view: true,
-    devsOnly: false,
+    view: false,
+    devsOnly: true,
     data: new SlashCommandBuilder().setName("botinfo").setDescription("「💙 Bot」・Saiba mais sobre mim e minhas informações detalhadas"),
     run: async (client, interaction) => {
       let botAvatar = client.user.displayAvatarURL({ format: 'png', size: 4096 })

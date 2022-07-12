@@ -7,7 +7,7 @@ export default class extends Event {
    })
 }
   
-  async run (packet) {
-    this.client.vulkava?.handleVoiceUpdate(packet)?.catch(() => {});
+  async run (data) {
+    this.client.manager?.updateVoiceState(data);
   }
 }

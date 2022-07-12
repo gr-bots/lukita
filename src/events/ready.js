@@ -8,6 +8,7 @@ export default class extends Event {
    })
 }
   async run () {
+    this.client.manager?.init(client.user.id);
     const setStatus = () => {
 
       this.client.user.setPresence({activities: [{name: `💙› Users \{${this.client.status.users}\}・Guilds \{${this.client.status.guilds}\} `, type: "WATCHING"}], status: "idle"})

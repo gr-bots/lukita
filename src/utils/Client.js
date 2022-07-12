@@ -38,6 +38,7 @@ export default class LukitaClient extends Client {
     this.tools = new Tools(this)
     this.games = new Games()
     this.pallete = new Pallete()
+    
     this.on('ready', () => {
       this.status = new Status(this)
     })
@@ -48,7 +49,6 @@ export default class LukitaClient extends Client {
     await commands(this)
     await modals(this)
     await database(this)
-    
     await super.login(process.env.TOKEN)
     await deploy(this)
 

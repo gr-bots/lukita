@@ -4,8 +4,8 @@ import { MessageEmbed } from 'discord.js';
 export default {
     name: "ping",
     category: 'Bot',
-    view: true,
-    devsOnly: false,
+    view: false,
+    devsOnly: true,
     data: new SlashCommandBuilder().setName("ping").setDescription("「💙 Bot」・Veja minha latência atual"),
     run: async (client, interaction) => {
 
