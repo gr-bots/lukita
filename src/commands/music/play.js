@@ -1,5 +1,5 @@
 import { SlashCommandBuilder, inlineCode } from '@discordjs/builders';
-import { MessageEmbed, MessageActionRow, MessageButton } from 'discord.js';
+import { MessageActionRow, MessageButton } from 'discord.js';
 
 export default {
     name: "play",
