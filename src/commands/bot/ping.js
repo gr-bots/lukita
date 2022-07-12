@@ -3,6 +3,7 @@ import { MessageEmbed } from 'discord.js';
 export default {
     name: "ping",
     description: "「💙 Bot」・Veja minha latência atual",
+    options: [],
     category: 'Bot',
     view: true,
     devsOnly: false,

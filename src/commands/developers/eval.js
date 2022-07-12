@@ -3,6 +3,7 @@ import { Modal, TextInputComponent, showModal } from 'discord-modals';
 export default {
     name: "eval",
     description: "「💙 Dev」・Execute um código JavaScript",
+    options: [],
     category: 'Developers',
     view: false,
     devsOnly: true,
