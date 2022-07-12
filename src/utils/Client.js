@@ -59,6 +59,19 @@ export default class LukitaClient extends Client {
 
     console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`)
   }
+  async loadCommands() {
+    await glob(`${global.process.cwd()}/src/commands/**/*js`, async (err, filePaths) => {
+      if (err) return console.log(err);
+      filePaths.forEach(async (file) => {
+        const pull = await import(file);
+        const { name, aliases } = pull.default;
+        if (name) this.commands.set(name, pull.default);
+        if (aliases && Array.isArray(aliases)) {
+          aliases.forEach((alias) => this.aliases.set(alias, name));
+        }
+      });
+    });
+  }
   async loadSlashCommands() {
     console.log('[ / Slash Commands ] Atualização dos comandos iniciada...');
   
