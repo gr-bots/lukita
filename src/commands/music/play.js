@@ -6,7 +6,7 @@ export default {
     category: 'music',
     view: true,
     devsOnly: false,
-    data: new SlashCommandBuilder().setName("play").setDescription("「🎵 Music 」・Toque uma música em um canal de voz").addStringOption(option => 		option.setName('track') 			.setDescription('Coloque o nome ou playlist da musica') 			.setRequired(true));,
+    data: new SlashCommandBuilder().setName("play").setDescription("「🎵 Music 」・Toque uma música em um canal de voz").addStringOption(option => 		option.setName('track') 			.setDescription('Coloque o nome ou playlist da musica') 			.setRequired(true)),
     run: async (client, interaction) => {
       const row = new MessageActionRow(
         new MessageButton()
