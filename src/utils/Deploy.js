@@ -12,7 +12,7 @@ export default async(client) => {
           const { default: listCommands } = await import(`../../src/commands/${pasta}/${commands}`)
           await client.application.commands.set(listCommands.map(cmd => cmd))
         })
-      })
+      })()
       console.log('[ / Slash Commands ] Atualização dos comandos concluída.');
 
     } catch (error) {}
