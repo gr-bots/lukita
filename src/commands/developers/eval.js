@@ -2,10 +2,10 @@ import { Modal, TextInputComponent, showModal } from 'discord-modals';
 
 export default {
     name: "eval",
+    description: "「💙 Dev」・Execute um código JavaScript",
     category: 'Developers',
     view: false,
     devsOnly: true,
-    data: { name: "eval", description: "「💙 Dev」・Execute um código JavaScript." },
     run: async(client, interaction) => {
 
         let modalEval = new Modal()

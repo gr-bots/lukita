@@ -1,9 +1,9 @@
 export default {
     name: "waffles",
+    description: "「🧇 Eco」・Veja quantos waffles você possui",
     category: 'Eco',
     view: false,
     devsOnly: true,
-    data: { name: "waffles", description: "「🧇 Eco」・Veja quantos waffles você possui." },
     run: async (client, interaction) => {
 
       interaction.reply({ 

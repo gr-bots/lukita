@@ -2,10 +2,10 @@ import { MessageEmbed } from 'discord.js';
 
 export default {
     name: "ping",
+    description: "「💙 Bot」・Veja minha latência atual",
     category: 'Bot',
     view: true,
     devsOnly: false,
-    data: { name: "ping", description: "「💙 Bot」・Veja minha latência atual" },
     run: async (client, interaction) => {
 
         const authorAvatarURL = interaction.member.displayAvatarURL({ dynamic: true })
