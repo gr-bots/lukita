@@ -3,16 +3,16 @@ import { MessageEmbed, MessageActionRow, MessageButton } from 'discord.js';
 
 export default {
     name: "play",
-    category: 'music',
-    view: true,
-    devsOnly: false,
-    data: new SlashCommandBuilder().setName("play").setDescription("「🎵 Music 」・Toque uma música em um canal de voz").addStringOption(option => 	option.setName('track').setDescription('Coloque o nome ou playlist da musica') 			.setRequired(true)),
+    category: 'Music',
+    view: false,
+    devsOnly: true,
+    data: new SlashCommandBuilder().setName("play").setDescription("「🎵 Music 」・Toque uma música em um canal de voz").addStringOption(option => 	option.setName('track').setDescription('Coloque o nome ou playlist da musica').setRequired(true)),
     run: async (client, interaction) => {
       const row = new MessageActionRow(
         new MessageButton()
         .setLabel('Suporte')
         .setStyle("LINK")
-        .setURL("https://discord.gg/XcRKRxCQ")
+        .setURL("https://discord.gg/pJyY3zsMmB")
       )
       if (!interaction.member.voice.channel) return interaction.reply({ content: `😔 **|** Desculpe por incomodar mas eu não posso tocar via Bluetooth, entre em um **canal de voz** porfavor!`, ephemeral: true }); 
       const track = interaction.options.getString('track');

@@ -14,9 +14,11 @@ export default (client) => {
         resumeTimeout: 150000
       }
     ],
-    sendWS: (guildId, payload) => { 
+    sendWS: (guildId, payload) => {
       client.guilds.cache.get(guildId)?.shard.send(payload);
-    })
+    }
+  })
+
   .on('nodeConnect', async(node) => {
 console.log(`[ Node Manager ] ${node.options.id} Conectado!`)
   })
