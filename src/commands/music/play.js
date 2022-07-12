@@ -6,7 +6,7 @@ export default {
     category: 'music',
     view: true,
     devsOnly: false,
-    data: new SlashCommandBuilder().setName("play").setDescription("「🎵 Music 」・Toque uma música em um canal de voz").addStringOption(option => 		option.setName('track') 			.setDescription('Coloque o nome ou playlist da musica') 			.setRequired(true)),
+    data: new SlashCommandBuilder().setName("play").setDescription("「🎵 Music 」・Toque uma música em um canal de voz").addStringOption(option => 	option.setName('track').setDescription('Coloque o nome ou playlist da musica') 			.setRequired(true)),
     run: async (client, interaction) => {
       const row = new MessageActionRow(
         new MessageButton()
@@ -22,7 +22,8 @@ export default {
       } else if (res.loadType === "NO_MATCHES") {
         return interaction.reply('😥 **|** Nem s oque aconteceu aqui, só não achei nada relacionado');
       }
-      const player = client.vulkava.createPlayer({ guildId: interaction.guild.id, voiceChannelId: interaction.member.voice.channelId, textChannelId: interaction.channel.id, selfDeaf: true }); 
+      const player = client.vulkava.createPlayer({ guildId: interaction.guild.id, voiceChannelId: interaction.member.voice.channelId, textChannelId: interaction.channel.id, selfDeaf: true 
+}); 
       player.connect();
       if (res.loadType === 'PLAYLIST_LOADED') {
         for (const track of res.tracks) { 
@@ -37,6 +38,5 @@ export default {
       } 
       if (!player.playing)
         player.play(); 
-    });
     }
-}
+    }
