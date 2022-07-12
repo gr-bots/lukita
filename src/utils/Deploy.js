@@ -11,7 +11,7 @@ export default async (client) => {
 
   const arrayOfSlashCommands = [];
   slashCommands.map(async (value) => {
-    console.log(value)
+    console.log("Value:" + value)
     const file = await import(value);
 
     if(!file?.name || !file.description ||!file.options) return;
