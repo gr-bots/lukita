@@ -50,7 +50,7 @@ export default class LukitaClient extends Client {
   }
 
   async init() {
-    this.loadSlashCommands()
+    await loadSlashCommands(this)
     await events(this)
     await commands(this)
     await modals(this)
