@@ -1,12 +1,12 @@
-import { SlashCommandBuilder, inlineCode } from '@discordjs/builders';
+import { inlineCode } from '@discordjs/builders';
 import { MessageEmbed } from 'discord.js';
 
 export default {
     name: "ping",
     category: 'Bot',
+    description: "「💙 Bot」・Veja minha latência atual",
     view: true,
     devsOnly: false,
-    data: new SlashCommandBuilder().setName("ping").setDescription("「💙 Bot」・Veja minha latência atual"),
     run: async (client, interaction) => {
 
         const authorAvatarURL = interaction.member.displayAvatarURL({ dynamic: true })

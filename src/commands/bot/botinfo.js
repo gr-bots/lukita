@@ -1,16 +1,16 @@
-import { SlashCommandBuilder, inlineCode } from '@discordjs/builders';
+import { inlineCode } from '@discordjs/builders';
 import { MessageEmbed, MessageActionRow, MessageButton } from 'discord.js';
 
 export default {
     name: "botinfo",
     category: 'Bot',
+    description: "「💙 Bot」・Saiba mais sobre mim e minhas informações detalhadas",
     view: true,
     devsOnly: false,
-    data: new SlashCommandBuilder().setName("botinfo").setDescription("「💙 Bot」・Saiba mais sobre mim e minhas informações detalhadas"),
     run: async (client, interaction) => {
-      let botAvatar = client.user.displayAvatarURL({ format: 'png', size: 4096 })
+     const botAvatar = client.user.displayAvatarURL({ format: 'png', size: 4096 })
 
-      let rowBotinfo = new MessageActionRow()
+     const  rowBotinfo = new MessageActionRow()
 			.addComponents(
 				new MessageButton()
           .setLabel('Me adicione em seu servidor')

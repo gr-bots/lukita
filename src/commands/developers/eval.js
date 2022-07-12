@@ -1,4 +1,3 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
 import { Modal, TextInputComponent, showModal } from 'discord-modals';
 
 export default {
@@ -6,7 +5,7 @@ export default {
     category: 'Developers',
     view: false,
     devsOnly: true,
-    data: new SlashCommandBuilder().setName("eval").setDescription("「🧙 Devs」・Evaluate de códigos em JavaScript para meus desenvolvedores"),
+    description: "「🧙 Devs」・Evaluate de códigos em JavaScript para meus desenvolvedores" ,
     run: async(client, interaction) => {
 
         let modalEval = new Modal()

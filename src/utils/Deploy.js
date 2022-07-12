@@ -16,7 +16,7 @@ export default async(client) => {
       console.log('[ / Slash Commands ] Atualização dos comandos concluída.');
       while(!listaCommands) {
         if(listaCommands){
-          await client.application.commands.set(listCommands.map(cmd => cmd.data))
+          await client.application.commands.set(listCommands.map(cmd => cmd))
       }
       
     }
