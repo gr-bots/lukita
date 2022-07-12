@@ -10,8 +10,8 @@ export default async (client) => {
   const slashCommands = await glob(`${global.process.cwd()}/src/commands/*/*.js`);
 
   const arrayOfSlashCommands = [];
-
   slashCommands.map(async (value) => {
+    console.log(value)
     const file = await import(value);
 
     if(!file?.name || !file.description ||!file.options) return;
