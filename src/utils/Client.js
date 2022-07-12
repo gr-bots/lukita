@@ -1,12 +1,17 @@
+
 import { Client, Options, Collection } from 'discord.js';
 import { success, getTime, bold } from '../utils/Logger.js'
 import { Tools, Status, Games, Pallete } from './Functions.js'
 import { emojis } from "./Config.js";
+import { config } from 'dotenv';
+config()
+import { promisify } from 'util';
+import g from 'glob';
+const glob = promisify(g);
 import database from './Database.js'
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
 import modals from '../handlers/Modals.js'
-import deploy from '../utils/Deploy.js'
 
 export default class LukitaClient extends Client {
   constructor() {
@@ -45,14 +50,33 @@ export default class LukitaClient extends Client {
   }
 
   async init() {
+    this.loadCommands()
     await events(this)
     await commands(this)
     await modals(this)
     await database(this)
-    
     await super.login(process.env.TOKEN)
-    await deploy(this)
 
     console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`)
+  }
+  async loadSlashCommands() {
+    console.log('[ / Slash Commands ] Atualização dos comandos iniciada...');
+  
+    const slashCommands = await glob(`${global.process.cwd()}/src/commands/*/*.js`)
+  
+    const arrayOfSlashCommands = [];
+    slashCommands.map(async (value) => {
+      const file = await import(value);
+  
+      if(!file?.name || !file.description ||!file.options) return;
+  
+      arrayOfSlashCommands.push(file);
+    });
+  
+    console.log(arrayOfSlashCommands)
+  
+    await client.application.commands.set(arrayOfSlashCommands);
+  
+    console.log('[ / Slash Commands ] Atualização dos comandos concluída.');
   }
 };
