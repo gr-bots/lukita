@@ -7,7 +7,6 @@ import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
 import modals from '../handlers/Modals.js'
 import deploy from '../utils/Deploy.js'
-import vulkava from '../utils/Vulkava.js'
 
 export default class LukitaClient extends Client {
   constructor() {
@@ -34,7 +33,7 @@ export default class LukitaClient extends Client {
       });
     this.commands = new Collection(),
     this.modals = new Collection(),
-    this.developers = ['424931675009712128', '431768491759239211', '465859183250767882'],
+    this.developers = ['424931675009712128', '698880198510248006', '465859183250767882', '431768491759239211' ],
     this.emotes = emojis
     this.tools = new Tools(this)
     this.games = new Games()
@@ -44,12 +43,11 @@ export default class LukitaClient extends Client {
     })
   }
 
-  async init() {//calma ai
+  async init() {
     await events(this)
     await commands(this)
     await modals(this)
     await database(this)
-    await vulkava(this)
     
     await super.login(process.env.TOKEN)
     await deploy(this)
