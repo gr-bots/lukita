@@ -67,6 +67,7 @@ export default class LukitaClient extends Client {
     const arrayOfSlashCommands = [];
     slashCommands.map(async (value) => {
       const file = await import(value);
+      console.log(file, value)
 
       if (!file?.name || !file.description || !file.options) return;
 
