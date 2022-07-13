@@ -1,10 +1,10 @@
 {
   "name": "lukita-bot",
-  "main": "index.js",
+  "main": "index.ts",
   "author": "gr_dev",
   "scripts": {
     "dev": "node test.js",
-    "start": "node index.js",
+    "start": "node index.ts",
     "deploy": "git add --all && git commit -m \"new deploy\" && git push origin main"
   },
   "type": "module",
@@ -17,7 +17,7 @@
     "discord-api-types": "^0.36.1",
     "discord-modals": "^1.3.5",
     "discord.js": "^13.8.1",
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.0.1",
     "firebase": "^9.6.5",
     "fs": "^0.0.1-security",
     "lavasfy": "^2.3.0",

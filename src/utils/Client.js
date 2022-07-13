@@ -24,7 +24,7 @@ export default class LukitaClient extends Client {
         GuildManager: Infinity,
         GuildMemberManager: Infinity,
         GuildStickerManager: 0,
-        GuildScheduledEventManager: 0, 
+        GuildScheduledEventManager: 0,
         MessageManager: 0,
         PresenceManager: 0,
         ReactionManager: 0,
@@ -35,16 +35,16 @@ export default class LukitaClient extends Client {
         UserManager: 0,
       }),
       intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_BANS", "GUILD_EMOJIS_AND_STICKERS", "GUILD_INTEGRATIONS", "GUILD_WEBHOOKS", "GUILD_INVITES", "GUILD_VOICE_STATES", "GUILD_MESSAGE_REACTIONS", "GUILD_MESSAGES"]
-      });
-    this.commands = new Collection(),
-    this.modals = new Collection(),
-    this.developers = [ '424931675009712128', '465859183250767882', '431768491759239211', '712103766173941811' ],
+    });
+    this.commands = new Collection();
+    this.modals = new Collection();
+    this.developers = ['424931675009712128', '465859183250767882', '431768491759239211', '712103766173941811'];
     this.emotes = emojis
     this.tools = new Tools(this)
     this.games = new Games()
     this.pallete = new Pallete()
-    
-    this.on('ready', () => {
+
+    this.once('ready', () => {
       this.status = new Status(this)
     })
   }
@@ -61,21 +61,21 @@ export default class LukitaClient extends Client {
   }
   async loadSlashCommands() {
     console.log('[ / Slash Commands ] Atualização dos comandos iniciada...');
-  
+
     const slashCommands = await glob(`${global.process.cwd()}/src/commands/*/*.js`)
-  
+
     const arrayOfSlashCommands = [];
     slashCommands.map(async (value) => {
       const file = await import(value);
       console.log(file)
-  
-      if(!file?.name || !file.description ||!file.options) return;
-  
+
+      if (!file?.name || !file.description || !file.options) return;
+
       arrayOfSlashCommands.push(file);
     });
-  
+
     await this.application.commands.set(arrayOfSlashCommands);
-  
+
     console.log('[ / Slash Commands ] Atualização dos comandos concluída.');
   }
 };
