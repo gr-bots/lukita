@@ -1,10 +1,10 @@
 {
   "name": "lukita-bot",
-  "main": "index.ts",
+  "main": "index.js",
   "author": "gr_dev",
   "scripts": {
     "dev": "node test.js",
-    "start": "node index.ts",
+    "start": "node index.js",
     "deploy": "git add --all && git commit -m \"new deploy\" && git push origin main"
   },
   "type": "module",

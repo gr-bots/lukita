@@ -1,4 +1,5 @@
- require("otenv 'dotenv'.config()
+import { config } from 'dotenv';
+config()
 import LukitaClient from './src/utils/Client.js';
 const client = new LukitaClient();
 client.init()
