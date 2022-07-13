@@ -38,7 +38,7 @@ export default class LukitaClient extends Client {
       });
     this.commands = new Collection(),
     this.modals = new Collection(),
-    this.developers = ['424931675009712128', '698880198510248006', '465859183250767882', '431768491759239211' ],
+    this.developers = [ '424931675009712128', '465859183250767882', '431768491759239211', '712103766173941811' ],
     this.emotes = emojis
     this.tools = new Tools(this)
     this.games = new Games()
