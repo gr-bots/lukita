@@ -50,12 +50,12 @@ export default class LukitaClient extends Client {
   }
 
   async init() {
-    this.loadSlashCommands()
     await events(this)
     await commands(this)
     await modals(this)
     await database(this)
     await super.login(process.env.TOKEN)
+    this.loadSlashCommands()
 
     console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`)
   }
@@ -67,7 +67,6 @@ export default class LukitaClient extends Client {
     const arrayOfSlashCommands = [];
     slashCommands.map(async (value) => {
       const file = await import(value);
-      console.log(file)
 
       if (!file?.name || !file.description || !file.options) return;
 
