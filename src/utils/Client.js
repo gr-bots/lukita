@@ -5,9 +5,6 @@ import { Tools, Status, Games, Pallete } from './Functions.js'
 import { emojis } from "./Config.js";
 import { config } from 'dotenv';
 config()
-import { promisify } from 'util';
-import glob from 'glob';
-const globalPromise = promisify(glob);
 import database from './Database.js'
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
