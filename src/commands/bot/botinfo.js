@@ -1,7 +1,7 @@
 import { inlineCode } from '@discordjs/builders';
 import { MessageEmbed, MessageActionRow, MessageButton } from 'discord.js';
 
-export default {
+export default [{
     name: "botinfo",
     description: "「💙 Bot」・Saiba mais sobre mim e minhas informações detalhadas",
     options: [],
@@ -48,4 +48,4 @@ export default {
           components: [rowBotinfo],
         })
   }
-}
+}]
