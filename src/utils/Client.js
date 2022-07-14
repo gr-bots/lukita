@@ -47,11 +47,11 @@ export default class LukitaClient extends Client {
   }
 
   async init() {
-    await events(this)
     await commands(this)
     await modals(this)
     await database(this)
     await super.login(process.env.TOKEN)
+    await this.events()
 
     console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`)
   }
