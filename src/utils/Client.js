@@ -55,27 +55,7 @@ export default class LukitaClient extends Client {
     await modals(this)
     await database(this)
     await super.login(process.env.TOKEN)
-    await this.loadSlashCommands()
 
     console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`)
-  }
-  async loadSlashCommands() {
-    console.log('[ / Slash Commands ] Atualização dos comandos iniciada...');
-
-    const slashCommands = await globalPromise(`${process.cwd()}/src/commands/*/*.js`)
-
-    const arrayOfSlashCommands = [];
-    slashCommands.map(async (value) => {
-      const file = import(value);
-      console.log(file.default)
-
-      if (!file.default?.name || !file.default.description || !file.default.options) return;
-
-      arrayOfSlashCommands.push(file.default.name, file.default);
-    });
-    console.log(arrayOfSlashCommands)
-    await this.application.commands.set(arrayOfSlashCommands)
-
-    console.log('[ / Slash Commands ] Atualização dos comandos concluída.');
   }
 };
