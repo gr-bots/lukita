@@ -4,7 +4,7 @@ const { Routes } = pkg;
 
 export default async (client) => {
 let arrayOfCommands = Array()
-let map = Array.from(this.client.commands)
+let map = Array.from(client.commands)
 for (let command of Object(map)) {
   command = command[1].data
   arrayOfCommands.push(command)
