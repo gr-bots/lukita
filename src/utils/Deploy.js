@@ -1,6 +1,5 @@
 import { REST } from '@discordjs/rest';
-import pkg from 'discord.js';
-const { Routes } = pkg;
+import { Routes } from 'discord-api-types/v9';
 
 export default async (client) => {
 let arrayOfCommands = Array()
