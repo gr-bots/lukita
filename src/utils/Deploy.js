@@ -8,6 +8,7 @@ for (let command of Object(map)) {
   command = command[1].data
   arrayOfCommands.push(command)
 }
+const nullObj = [];
 const rest = new REST({ version: '9' }).setToken(process.env.TOKEN)
 try {
   console.log('[ / Slash Commands ] Atualização de comandos iniciada...');
@@ -23,7 +24,7 @@ try {
 try {
   await rest.put(
     Routes.applicationGuildCommands(client.user.id, '724823792794337301'),
-    { body: {} },
+    { body:  nullObj },
   );
 } catch (error) {
   console.error(error);
