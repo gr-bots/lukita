@@ -68,15 +68,14 @@ export default class LukitaClient extends Client {
     const arrayOfSlashCommands = [];
     slashCommands.map(async (value) => {
       const file = await import(value);
-      console.log(file, value)
+      console.log(file.default)
 
       if (!file.default?.name || !file.default.description || !file.default.options) return;
 
       arrayOfSlashCommands.push(file);
     });
 
-    const b = await this.application.commands.set(arrayOfSlashCommands);
-    console.log(b)
+    await this.application.commands.set(arrayOfSlashCommands)
 
     console.log('[ / Slash Commands ] Atualização dos comandos concluída.');
   }
