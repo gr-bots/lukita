@@ -6,8 +6,8 @@ import { emojis } from "./Config.js";
 import { config } from 'dotenv';
 config()
 import { promisify } from 'util';
-import g from 'glob';
-const glob = promisify(g);
+import glob from 'glob';
+const globalPromise = promisify(glob);
 import database from './Database.js'
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
@@ -62,7 +62,7 @@ export default class LukitaClient extends Client {
   async loadSlashCommands() {
     console.log('[ / Slash Commands ] Atualização dos comandos iniciada...');
 
-    const slashCommands = await glob(`${global.process.cwd()}/src/commands/*/*.js`)
+    const slashCommands = await globalPromise(`${process.cwd()}/src/commands/*/*.js`)
 
     const arrayOfSlashCommands = [];
     slashCommands.map(async (value) => {
@@ -71,7 +71,7 @@ export default class LukitaClient extends Client {
 
       if (!file.default?.name || !file.default.description || !file.default.options) return;
 
-      let b = arrayOfSlashCommands.push(file.default);
+      let b = arrayOfSlashCommands.push(file.defaultname);
       console.log(b)
     });
     console.log(arrayOfSlashCommands)
