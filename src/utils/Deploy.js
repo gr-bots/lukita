@@ -5,11 +5,12 @@ export default async (client) => {
   let arrayOfCommands = Array()
   let map = Array.from(client.commands)
   for (let command of Object(map)) {
+    console.log(command)
     command = command[1].data
-    command.options = command[1].data.options
-    arrayOfCommands.push(command)
+    if (command) arrayOfCommands.push(command)
   }
 
+  console.log(arrayOfCommands)
   const rest = new REST({ version: '9' }).setToken(process.env.TOKEN)
 
   try {

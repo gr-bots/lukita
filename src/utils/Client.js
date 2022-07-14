@@ -3,8 +3,8 @@ import { Client, Options, Collection } from 'discord.js';
 import { success, getTime, bold } from '../utils/Logger.js'
 import { Tools, Status, Games, Pallete } from './Functions.js'
 import { emojis } from "./Config.js";
-import { config } from 'dotenv';
-config()
+// import { config } from 'dotenv';
+// config()
 import database from './Database.js'
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'

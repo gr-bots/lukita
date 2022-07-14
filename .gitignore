@@ -1,5 +1,7 @@
 node_modules/
 testing/
+.dev.env
+.env
 test.js
 package-lock.json
 src/commands/mod/warn.js
