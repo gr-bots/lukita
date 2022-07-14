@@ -23,7 +23,7 @@ try {
 try {
   await rest.put(
     Routes.applicationGuildCommands(client.user.id, '724823792794337301'),
-    { body: arrayOfCommands },
+    { body: [] },
   );
 } catch (error) {
   console.error(error);
