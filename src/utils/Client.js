@@ -70,7 +70,7 @@ export default class LukitaClient extends Client {
       const file = await import(value);
       console.log(file, value)
 
-      if (!file?.name || !file.description || !file.options) return;
+      if (!file.default?.name || !file.default.description || !file.default.options) return;
 
       arrayOfSlashCommands.push(file);
     });

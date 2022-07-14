@@ -3,7 +3,7 @@ import { MessageEmbed, MessageActionRow, MessageButton } from 'discord.js';
 
 export default {
     name: "botinfo",
-    description: "Saiba mais sobre mim e minhas informações detalhadas",
+    description: "「💙 Bot」・Saiba mais sobre mim e minhas informações detalhadas",
     options: [],
     category: 'Bot',
     view: true,
