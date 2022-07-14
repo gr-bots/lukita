@@ -6,7 +6,7 @@ export default async (client) => {
 let arrayOfCommands = Array()
 let map = Array.from(client.commands)
 for (let command of Object(map)) {
-  command = command[1].default
+  command = command[1].data
   arrayOfCommands.push(command)
 }
 const rest = new REST({ version: '9' }).setToken(process.env.TOKEN)
