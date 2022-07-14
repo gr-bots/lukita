@@ -14,8 +14,8 @@ export default async (client) => {
   try {
     console.log('[ / Slash Commands ] Criação e atualização de comandos iniciada...');
 
-    console.log(`[ / ListCommands] Comandos encontrados: \n| ${client.commands.map(a => a.name).toString().replaceAll(',', ', ')} |`);
-    console.log(`[ / ListCommands] Quantidade de comandos encontrados: ${arrayOfCommands.length}`);
+    console.log(`[ / ListCommands ] Comandos encontrados: \n| ${client.commands.map(a => a.name).toString().replaceAll(',', ', ')} |`);
+    console.log(`[ / ListCommands ] Quantidade de comandos encontrados: ${arrayOfCommands.length}`);
 
     await rest.put(
       Routes.applicationCommands(client.user.id),
