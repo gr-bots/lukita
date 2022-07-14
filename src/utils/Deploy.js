@@ -10,12 +10,21 @@ for (let command of Object(map)) {
 }
 const rest = new REST({ version: '9' }).setToken(process.env.TOKEN)
 try {
-  console.log('Started refreshing application (/) commands.');
+  console.log('[ / Slash Commands ] Atualização de comandos iniciada...');
   await rest.put(
     Routes.applicationCommands(client.user.id),
     { body: arrayOfCommands },
   );
-  console.log('Successfully reloaded application (/) commands.');
+  console.log('[ / Slash Commands ] Atualização de comandos concluída!');
+} catch (error) {
+  console.error(error);
+}
+
+try {
+  await rest.put(
+    Routes.applicationGuildCommands(client.user.id, '724823792794337301'),
+    { body: arrayOfCommands },
+  );
 } catch (error) {
   console.error(error);
 }
