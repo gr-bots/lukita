@@ -72,7 +72,7 @@ export default class LukitaClient extends Client {
       if (!file.default?.name || !file.default.description || !file.default.options) return;
 
       let b = arrayOfSlashCommands.push(file.default);
-      console.log("Hmm" + b)
+      console.log(b)
     });
 
     await this.application.commands.set(arrayOfSlashCommands)
