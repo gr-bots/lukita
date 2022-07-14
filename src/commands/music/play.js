@@ -6,10 +6,11 @@ export default {
     data: {
       name: "play",
       description: '「🎵 Music 」・Toque uma música em um canal de voz',
+      type: 1,
       options: [{
         name: 'track',
         description: 'Coloque o nome ou playlist da musica',
-        type: 'STRING',
+        type: 3,
         required: true
       }]
     },
