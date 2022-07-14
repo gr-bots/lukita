@@ -4,7 +4,7 @@ export default {
     name: "eval",
     data: {
         name: "eval",
-        description: "「🧙 Dev」・Execute um código JavaScript",
+        description: "「🧙 Developers」・Para meus desenvolvedores executarem códigos",
         type: 1,
         options: []
     },
