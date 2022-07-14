@@ -1,4 +1,5 @@
 import { REST } from '@discordjs/rest';
+import { Routes } from 'discord.js';
 
 export default async (client) => {
 let arrayOfCommands = Array()
