@@ -6,6 +6,7 @@ export default async (client) => {
   let map = Array.from(client.commands)
   for (let command of Object(map)) {
     command = command[1].data
+    command.options = command[1].data.options
     arrayOfCommands.push(command)
   }
 
