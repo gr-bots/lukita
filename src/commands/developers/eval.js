@@ -4,7 +4,7 @@ export default {
     name: "eval",
     data: {
         name: "eval",
-        description: "「💙 Dev」・Execute um código JavaScript",
+        description: "「🧙 Dev」・Execute um código JavaScript",
         options: []
     },
     category: 'Developers',
