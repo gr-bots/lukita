@@ -5,6 +5,7 @@ export default {
     name: "botinfo",
     data: {
       name: "botinfo",
+      type: 1,
       description: "「💙 Bot」・Saiba mais sobre mim e minhas informações detalhadas",
       options: []
     },

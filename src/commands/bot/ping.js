@@ -5,6 +5,7 @@ export default {
     data: {
         name: "ping",
         description: "「💙 Bot」・Veja minha latência atual",
+        type: 1,
         options: []
     },
     category: 'Bot',
