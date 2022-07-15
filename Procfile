@@ -1,1 +1,1 @@
-worker: node index.js && prisma db push & prisma generate
+worker: prisma generate && prisma db push && node index.js
