@@ -1,4 +1,3 @@
-import { inlineCode } from '@discordjs/builders';
 import { Modal, TextInputComponent, showModal } from 'discord-modals';
 
 export default {
