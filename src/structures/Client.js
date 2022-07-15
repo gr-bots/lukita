@@ -1,7 +1,7 @@
 
-import { emojis } from "../utils/config.js";
 import { Client, Options, Collection } from 'discord.js';
 import firebase from './Firebase.js'
+import { emojis } from "../utils/config.js";
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
 import modals from '../handlers/Modals.js'
