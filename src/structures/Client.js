@@ -1,14 +1,14 @@
 
 import { Client, Options, Collection } from 'discord.js';
 import firebase from './Firebase.js'
-import { emojis } from "../utils/config.js";
+import { emojis } from "../utils/Config.js";
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
 import modals from '../handlers/Modals.js'
 import deploy from './Deploy.js'
 import prisma from './Prisma.js' 
-import { success, getTime, bold } from '../utils/logger.js'
-import { Tools, Status, Games, Pallete } from '../utils/functions.js'
+import { success, getTime, bold } from '../utils/Logger.js'
+import { Tools, Status, Games, Pallete } from '../utils/Functions.js'
 
 export default class LukitaClient extends Client {
   constructor() {
