@@ -1,6 +1,6 @@
 
 import { Client, Options, Collection } from 'discord.js';
-import { success, getTime, bold } from '../utils/logger.js'
+// import { success, getTime, bold } from '../utils/logger.js'
 import { Tools, Status, Games, Pallete } from '../utils/functions.js'
 import { emojis } from "../utils/config.js";
 import firebase from './Firebase.js'
@@ -55,6 +55,6 @@ export default class LukitaClient extends Client {
     await super.login(process.env.TOKEN)
     await deploy(this)
 
-    console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`)
+    console.log(`[ Bot ] ${new Date()} > ${this.user.tag} está online!`)
   }
 };
