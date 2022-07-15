@@ -1,5 +1,4 @@
 import { inlineCode } from '@discordjs/builders';
-import { MessageEmbed, MessageActionRow, MessageButton } from 'discord.js';
 import { Modal, TextInputComponent, showModal } from 'discord-modals';
 
 export default {
