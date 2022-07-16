@@ -1,4 +1,4 @@
-import { Modal, TextInputComponent, showModal } from 'discord.js';
+import { Modal, TextInputComponent } from 'discord.js';
 
 export default {
     name: "eval",
@@ -26,7 +26,7 @@ export default {
             .setRequired(true)
         )
 
-        showModal(modalEval, {
+        interaction.showModal(modalEval, {
             client,
             interaction
         })
