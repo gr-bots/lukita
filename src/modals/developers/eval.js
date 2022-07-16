@@ -17,11 +17,11 @@ export default {
         };
       // --- Task Manager
         function add(managerTasks) {
-            client.fb.update('devs', 'tasks', managerTasks)
+            client.db.update('devs', 'tasks', managerTasks)
             return 'sucess'
         };
         function manager(managerTasks) {
-            client.fb.set('devs', 'tasks', managerTasks)
+            client.db.set('devs', 'tasks', managerTasks)
             return 'sucess'
         };
         class Tasks {
