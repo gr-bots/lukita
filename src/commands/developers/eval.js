@@ -1,4 +1,4 @@
-import { Modal, TextInputComponent, showModal } from 'discord-modals';
+import { Modal, TextInputComponent, showModal } from 'discord.js';
 
 export default {
     name: "eval",
