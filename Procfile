@@ -1,1 +1,1 @@
-worker: prisma generate && prisma db push && node index.js
+worker: npm start
