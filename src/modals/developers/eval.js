@@ -28,7 +28,7 @@ export default {
             constructor() {
                 return {
                 
-                    get: client.fb.all('devs/tasks').then(a => a.map(b => b.data.value)),
+                    get: client.db.all('devs/tasks').then(a => a.map(b => b.data.value)),
                     add: add,
                     manager: manager
 
