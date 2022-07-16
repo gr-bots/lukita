@@ -4,5 +4,5 @@ const { Create } = pkg
 const aoifb = Create(Firebase)
 
 export default (client) => {
-    client.fb = aoifb
+    client.db = aoifb
 }

@@ -6,7 +6,6 @@ import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
 import modals from '../handlers/Modals.js'
 import deploy from './Deploy.js'
-import prisma from './Prisma.js' 
 import { success, getTime, bold } from '../utils/Logger.js'
 import { Tools, Status, Games, Pallete } from '../utils/Functions.js'
 
@@ -50,7 +49,6 @@ export default class LukitaClient extends Client {
     await events(this)
     await commands(this)
     await modals(this)
-    await prisma(this)
     await firebase(this)
     await super.login(process.env.TOKEN)
     await deploy(this)
