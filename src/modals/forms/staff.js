@@ -7,3 +7,4 @@ export default {
 let resposta1 = interaction.getTextInputValue('resposta1');
 interaction.reply({content: `${resposta1}`})
 }
+}
