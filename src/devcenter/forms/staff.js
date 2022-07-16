@@ -1,28 +1,28 @@
 import { Modal, TextInputComponent } from 'discord.js';
 
 export default {
-    name: "eval",
+    name: "staff",
     data: {
-        name: "eval",
-        description: "「🧙 Developers」・Para meus desenvolvedores executarem códigos",
+        name: "staff",
+        description: "「📝 Forms」・Formulário para a staff da Dev. Center",
         type: 1,
         options: []
     },
-    category: 'Developers',
+    category: 'Forms',
     view: false,
     devsOnly: true,
     run: async(client, interaction) => {
 
         let modalEval = new Modal()
 
-        .setTitle('Eval')
+        .setTitle('Formulário Staff')
         .setCustomId('staff_modal')
         .addComponents(
             new TextInputComponent()
-            .setCustomId('code')
-            .setLabel('Digite o código abaixo')
+            .setCustomId('resposta1')
+            .setLabel('Pergunta1')
             .setStyle('LONG')
-            .setPlaceholder('😅 Códiguin...')
+            .setPlaceholder('Digite sua resposta')
             .setRequired(true)
         )
 
