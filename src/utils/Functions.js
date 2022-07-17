@@ -21,7 +21,7 @@ class Tools {
             
           this.uptime = (function () {
               let resultado = moment.duration(client.uptime).format('d[d], h[h], m[m], s[s]')
-              return resultado 
+              return resultado
           })
       }
   }

@@ -4,7 +4,7 @@ import firebase from './Firebase.js'
 import { emojis } from "../utils/Config.js";
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
-import DCLcommands from '../handlers/DCLcommands.js'
+import dcl from '../handlers/Dcl.js'
 import modals from '../handlers/Modals.js'
 import deploy from './Deploy.js'
 import { success, getTime, bold } from '../utils/Logger.js'
@@ -50,7 +50,7 @@ export default class LukitaClient extends Client {
   async init() {
     await events(this)
     await commands(this)
-    await DCLcommands(this)
+    await dcl(this)
     await modals(this)
     await firebase(this)
     await super.login(process.env.TOKEN)
