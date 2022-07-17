@@ -26,7 +26,7 @@ export default {
             .setRequired(true)
         )
 
-        interaction.showModal(modalStaff, {
+        showModal(modalStaff, {
             client,
             interaction
         })
