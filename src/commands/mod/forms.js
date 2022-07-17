@@ -1,13 +1,10 @@
 import { Modal, TextInputComponent, showModal } from 'discord-modals';
-const formTitle = client.db.get('guilds', `${interaction.guild.id}/configs/forms/title`)	
-const formDescription = client.db.get('guilds', `${interaction.guild.id}/configs/forms/description`)	
-const question_1 = client.db.get('guilds', `${interaction.guild.id}/configs/forms/description`)	
 
 export default {
     name: "form",
     data: {
         name: "form",
-        description: `「📝 Forms」・${formDescription || 'Comando de formulário personalizavel'}`,
+        description: `「📝 Forms」・Formulário personalizado`,
         type: 1,
         options: []
     },
@@ -15,6 +12,9 @@ export default {
     view: false,
     devsOnly: true,
     run: async(client, interaction) => {
+        
+        const formTitle = client.db.get('guilds', `${interaction.guild.id}/configs/forms/title`)	
+        const question_1 = client.db.get('guilds', `${interaction.guild.id}/configs/forms/description`)	
 
         let modalForm = new Modal()
 
