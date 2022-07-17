@@ -1,4 +1,7 @@
 import { Modal, TextInputComponent, showModal } from 'discord-modals';
+const formTitle = client.db.get('guilds', `${interaction.guild.id}/configs/forms/title`)	
+const formDescription = client.db.get('guilds', `${interaction.guild.id}/configs/forms/description`)	
+const question_1 = client.db.get('guilds', `${interaction.guild.id}/configs/forms/description`)	
 
 export default {
     name: "form",
@@ -14,10 +17,6 @@ export default {
     run: async(client, interaction) => {
 
         let modalForm = new Modal()
-
-        const formTitle = client.db.get('guilds', `${interaction.guild.id}/configs/forms/title`)	
-        const formDescription = client.db.get('guilds', `${interaction.guild.id}/configs/forms/description`)	
-        const question_1 = client.db.get('guilds', `${interaction.guild.id}/configs/forms/description`)	
 
         .setTitle(`${formTitle || 'Formulário Personalizado'}`)
         .setCustomId('form_modal')
