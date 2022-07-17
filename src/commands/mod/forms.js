@@ -1,10 +1,10 @@
 import { Modal, TextInputComponent, showModal } from 'discord-modals';
 
 export default {
-    name: "staff",
+    name: "form",
     data: {
-        name: "staff",
-        description: "「📝 Forms」・Formulário para a staff da Dev. Center",
+        name: "form",
+        description: `「📝 Forms」・${formDescription || 'Comando de formulário personalizavel'}`,
         type: 1,
         options: []
     },
@@ -13,10 +13,10 @@ export default {
     devsOnly: true,
     run: async(client, interaction) => {
 
-        let modalStaff = new Modal()
+        let modalForm = new Modal()
 
-        .setTitle('Formulário Staff')
-        .setCustomId('staff_modal')
+        .setTitle(`${formTitle || 'Formulário Personalizado'}`)
+        .setCustomId('form_modal')
         .addComponents(
             new TextInputComponent()
             .setCustomId('resposta1')
@@ -26,7 +26,7 @@ export default {
             .setRequired(true)
         )
 
-        showModal(modalStaff, {
+        showModal(modalForm, {
             client,
             interaction
         })

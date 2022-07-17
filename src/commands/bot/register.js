@@ -16,7 +16,7 @@ export default {
             .setAuthor({ iconURL: `${client.user.displayAvatarURL({ dynamic: true, size: 4096, format: 'png' })}`, name: `${client.user.tag}` })
             .setDescription('a')
             .setColor(client.pallete.noBG)
-            .setFooter({ text: `${interaction.guild.name}}`, iconURL: `${interaction.guild.iconURL({ dynamic: true })}` })
+            .setFooter({ text: `${interaction.guild.name}`, iconURL: `${interaction.guild.iconURL({ dynamic: true })}` })
         interaction.channel.send({embeds: [register]})
     }
 }
