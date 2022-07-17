@@ -13,7 +13,7 @@ export default {
     devsOnly: true,
     run: async(client, interaction) => {
 
-        let modalStaff= new Modal()
+        let modalStaff = new Modal()
 
         .setTitle('Formulário Staff')
         .setCustomId('staff_modal')
