@@ -13,7 +13,7 @@ export default {
     devsOnly: true,
     run: async(client, interaction) => {
 
-        let modalEval = new Modal()
+        let modalStaff= new Modal()
 
         .setTitle('Formulário Staff')
         .setCustomId('staff_modal')
@@ -26,7 +26,7 @@ export default {
             .setRequired(true)
         )
 
-        interaction.showModal(modalEval, {
+        interaction.showModal(modalStaff, {
             client,
             interaction
         })
