@@ -9,7 +9,7 @@ export default async (client) => {
         const commandsDCL = readdirSync(`./src/devcenter/${dir}`).filter((file) => file.endsWith('.js'))
 
         for (let file of commandsDCL) {
-            const p = await import(`../commands/${dir}/${file}`)
+            const p = await import(`../devcenter/${dir}/${file}`)
             const pull = await p.default
             client.devcenter.set(pull.name, pull)
         }
