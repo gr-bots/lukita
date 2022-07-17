@@ -13,8 +13,8 @@ export default {
     devsOnly: true,
     run: async(client, interaction) => {
         
-        const formTitle = client.db.get('guilds', `${interaction.guild.id}/configs/forms/title`)	
-        const question_1 = client.db.get('guilds', `${interaction.guild.id}/configs/forms/description`)	
+        const formTitle = await client.db.get('guilds', `${interaction.guild.id}/configs/forms/title`)	
+        const question_1 = await client.db.get('guilds', `${interaction.guild.id}/configs/forms/description`)	
 
         let modalForm = new Modal()
 
