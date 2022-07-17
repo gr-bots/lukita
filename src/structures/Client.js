@@ -4,6 +4,7 @@ import firebase from './Firebase.js'
 import { emojis } from "../utils/Config.js";
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
+import DCLcommands from '../handlers/DCLcommands.js'
 import modals from '../handlers/Modals.js'
 import deploy from './Deploy.js'
 import { success, getTime, bold } from '../utils/Logger.js'
@@ -33,6 +34,7 @@ export default class LukitaClient extends Client {
       intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_BANS", "GUILD_EMOJIS_AND_STICKERS", "GUILD_INTEGRATIONS", "GUILD_WEBHOOKS", "GUILD_INVITES", "GUILD_VOICE_STATES", "GUILD_MESSAGE_REACTIONS", "GUILD_MESSAGES"]
     });
     this.commands = new Collection();
+    this.devcenter = new Collection();
     this.modals = new Collection();
     this.developers = ['424931675009712128', '465859183250767882', '431768491759239211', '712103766173941811', '958843594263912458'];
     this.emotes = emojis
@@ -48,6 +50,7 @@ export default class LukitaClient extends Client {
   async init() {
     await events(this)
     await commands(this)
+    await DCLcommands(this)
     await modals(this)
     await firebase(this)
     await super.login(process.env.TOKEN)
