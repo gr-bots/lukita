@@ -3,7 +3,7 @@ import { MessageEmbed, MessageAttachment, MessageActionRow, MessageButton } from
 
 export default {
     name: 'form_modal',
-    run: async (interaction) => {
+    run: async (client, interaction) => {
         /* let resposta1 = interaction.getTextInputValue('resposta1');
         
         if (!resposta1) return interaction.reply({ content: `> ${client.emotes.alert}・<@${interaction.member.id}>, Você precisa inserir uma reposta para ser enviado.` }) */
