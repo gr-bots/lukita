@@ -23,13 +23,6 @@ export default async (client) => {
     );
     console.log('[ / Slash Commands ] Criação e atualização de comandos globais concluída!');
 
-    await rest.put(
-      Routes.applicationGuildCommands(client.user.id, '724823792794337301'),
-      { body: {} },
-    );
-
-    console.log('[ / Slash Commands ] Criação e atualização de comandos Dev. Center concluída!');
-
   } catch (error) {
     console.error(error);
   }
