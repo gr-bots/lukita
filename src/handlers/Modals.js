@@ -4,19 +4,12 @@ import { success, getTime } from '../utils/Logger.js'
 export default async (client) => {
     console.log(`${success('[ Handler - Modals ]')} [${getTime()}] Carregando modals...`)
 
-    readdirSync(`./src/modals/`).forEach(async(dir) => {
-        const commands = readdirSync(`./src/modals/${dir}`).filter((file) => file.endsWith(`.js`))
+    readdirSync(`./src/modals/`).forEach(async(file) => {
+        let { default: pull } = await import(`../modals/${file}`);
+        pull = new pull(client)
 
-        for (let file of commands) {
-            let p = await import(`../modals/${dir}/${file}`)
-            const pull = await p.default
-
-            if (pull.name) {
-                client.modals.set(pull.name, pull)
-            } else {
-                continue;
-            }
-        }
+        client.modals.set(pull.name, pull)
     })
-    console.log(`${success('[ Handler - Modals ]')} [${getTime()}] Modals carregado!`)
+
+    console.log(`${success('[ Handler - Modals ]')} [${getTime()}] Modal carregado!`)
 }
