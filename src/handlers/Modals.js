@@ -6,10 +6,9 @@ export default async (client) => {
 
     readdirSync(`./src/modals/`).forEach(async(file) => {
         let { default: pull } = await import(`../modals/${file}`);
-        pull = new pull(client)
 
         client.modals.set(pull.name, pull)
     })
 
-    console.log(`${success('[ Handler - Modals ]')} [${getTime()}] Modal carregado!`)
+    console.log(`${success('[ Handler - Modals ]')} [${getTime()}] Modals carregado!`)
 }
