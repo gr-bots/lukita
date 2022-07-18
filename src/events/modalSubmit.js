@@ -14,7 +14,7 @@ export default class extends Event {
         try {
             await command.run(this.client, interaction);
         } catch (error) {
-            await interaction.reply({ content: `> ${this.client.emotes.noCheck}・<@${interaction.member.id}>, Ocorreu um erro ao executar o comando! Já avisei os meus desenvolvedores.` });
+            await interaction.reply({ content: `> ${this.client.emotes.noCheck}・<@${interaction.member.id}>, Ocorreu um erro ao executar o comando! Já avisei os meus desenvolvedores.`, ephemeral: true });
             console.log(error)
         }
 
