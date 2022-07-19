@@ -4,4 +4,3 @@ testing/
 test.js
 package-lock.json
 src/commands/mod/warn.js
-src/commands/bot/help.js

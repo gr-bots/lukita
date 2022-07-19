@@ -26,6 +26,11 @@ const emojis = {
   analytics: "<:lk_analytics:987508078918373386>",
   dev: "<:lk_dev:987544139400896532>",
   djs: "<:lk_djs:987560966797533204>",
+  categBot: "<:lk_CategoryBot:998734996380581948>",
+  categConfig: "<:lk_CategoryConfig:998735880716038204>",
+  categForms: "<:lk_CategoryForms:998735986253107230>",
+  categMod: "<:lk_CategoryMod:998735903994429451>",
+  categMusic: "<:lk_CategoryMusic:998735924798181397>",
   eco: {
     waffles: "<:lk_waffles:996411857244000326>",
     cafeteria: "<:lk_cafeteria:996413963665412207>",
