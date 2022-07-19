@@ -1,4 +1,4 @@
-import { inlineCode } from '@discordjs/builders';
+import { codeBLock } from '@discordjs/builders';
 import { MessageEmbed } from 'discord.js';
 
 export default {
