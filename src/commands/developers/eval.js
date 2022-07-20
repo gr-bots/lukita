@@ -66,7 +66,7 @@ export default {
             }
             const tasks = new Tasks()
           // Eval code
-            let code = interaction.getTextInputValue('code');
+            let code = interaction.getTextInputValue('eval-code');
             
             let deitenau = Date.now() / 1000
             let timezin = parseInt(deitenau)
@@ -112,11 +112,11 @@ export default {
                     components: [row]
                 }).then(async (msg) => {
       
-                    const filter = interaction => interaction.customId === 'del' && interaction.user.id === interaction.user.id;
+                    const filter = i.user.id === interaction.user.id;
                     const collector = msg.createMessageComponentCollector({ filter });
       
-                    collector.on('collect', async interaction => {
-                        if (interaction.customId === 'del') {
+                    collector.on('collect', async x => {
+                        if (x.customId === 'del') {
                             await msg.edit({ embeds: [], content: `> ${client.emotes.yesCheck}・<@${i.member.id}>, Seu eval foi deletado.`, components: [] })
                             setTimeout(() => {
                                 msg.delete();
@@ -132,11 +132,11 @@ export default {
                     components: [row]
                 }).then(async (msg) => {
       
-                    const filter = interaction => interaction.customId === 'del' && interaction.user.id === interaction.user.id;
+                    const filter =  i.user.id === interaction.user.id;
                     const collector = msg.createMessageComponentCollector({ filter });
       
-                    collector.on('collect', async i => {
-                        if (interaction.customId === 'del') {
+                    collector.on('collect', async x => {
+                        if (x.customId === 'del') {
                             await msg.edit({ embeds: [], content: `> ${client.emotes.yesCheck}・<@${interaction.member.id}>, Seu eval foi deletado.`, components: [] })
                             setTimeout(() => {
                                 msg.delete();
