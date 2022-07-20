@@ -11,7 +11,7 @@ export default {
     category: 'Developers',
     view: false,
     devsOnly: true,
-    run: async(client, i) => {
+    run: async(client, interaction) => {
         const evalModal = new ModalBuilder()
         .setCustomId('evalModal')
         .setTitle(`Eval - Código`);
