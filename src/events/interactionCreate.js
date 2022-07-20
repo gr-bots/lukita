@@ -9,7 +9,7 @@ export default class extends Event {
 
 async run (interaction) {
 
-    if (interaction.type === InteractionType.ApplicationCommandAutocomplete) {
+    if (interaction.type === 2) {
 
         let command = this.client.commands.get(interaction.commandName)
         if (!command) return;
