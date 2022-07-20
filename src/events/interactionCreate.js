@@ -1,5 +1,5 @@
 import Event from '../structures/Event.js';
-
+import { InteractionType } from 'discord.js';
 export default class extends Event {
   constructor(client) {
    super(client, {
@@ -9,7 +9,7 @@ export default class extends Event {
 
 async run (interaction) {
 
-    if (interaction.isCommand()) {
+    if (interaction.type === InteractionType.ApplicationCommandAutocomplete) {
 
         let command = this.client.commands.get(interaction.commandName)
         if (!command) return;
