@@ -1,4 +1,4 @@
-import { readdirSync } from 'fs'
+import { readdirSync } from 'node:fs';
 import { success, getTime } from '../utils/Logger.js'
 
 export default async (client) => {

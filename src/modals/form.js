@@ -1,5 +1,4 @@
-import { codeBlock, inlineCode } from '@discordjs/builders'
-import { MessageEmbed, MessageAttachment, MessageActionRow, MessageButton } from 'discord.js'
+import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, codeBlock, inlineCode } from 'discord.js'
 
 export default {
     name: 'form_modal',

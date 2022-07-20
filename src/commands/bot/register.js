@@ -1,4 +1,4 @@
-import { MessageEmbed } from 'discord.js';
+import { EmbedBuilder } from 'discord.js';
 
 export default {
     name: "register",
@@ -12,7 +12,7 @@ export default {
     view: false,
     devsOnly: true,
     run: async (client, interaction) => {
-        let register = new MessageEmbed()
+        let register = new EmbedBuilder()
             .setAuthor({ iconURL: `${client.user.displayAvatarURL({ dynamic: true, size: 4096, format: 'png' })}`, name: `${client.user.tag}` })
             .setDescription('a')
             .setColor(client.pallete.noBG)

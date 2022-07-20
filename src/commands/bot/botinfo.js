@@ -1,5 +1,4 @@
-import { inlineCode } from '@discordjs/builders';
-import { MessageEmbed, MessageActionRow, MessageButton } from 'discord.js';
+import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, inlineCode } from 'discord.js';
 
 export default {
     name: "botinfo",
@@ -15,15 +14,15 @@ export default {
     run: async (client, interaction) => {
      const botAvatar = client.user.displayAvatarURL({ format: 'png', size: 4096 })
 
-     const  rowBotinfo = new MessageActionRow()
+     const  rowBotinfo = new ActionRowBuilder()
 			.addComponents(
-				new MessageButton()
+				new ButtonBuilder()
           .setLabel('Me adicione em seu servidor')
-					.setStyle('LINK')
+					.setStyle(ButtonStyle.Link)
           .setURL('https://discord.com/oauth2/authorize?client_id=917962601923760139&scope=bot+identify+guilds+email+applications.commands&permissions=2080374975')
 			);
 
-      let embedBotinfo = new MessageEmbed()
+      let embedBotinfo = new EmbedBuilder()
         .setThumbnail(botAvatar)
         .setTitle(`${client.emotes.nothing}${client.emotes.nothing} ・Minhas informações principais・ ${client.emotes.nothing}${client.emotes.nothing}`)
         .setDescription(`${client.emotes.hello} __Olá__, __sou__ ${client.user.tag}, __seu bot de moderação para o Discord__, completo e simples para seu servidor.\n> Como pode ver, sou feito em ${client.emotes.slash} SlashCommands`)

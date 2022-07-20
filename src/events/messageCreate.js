@@ -1,5 +1,5 @@
 import Event from '../structures/Event.js'
-import { MessageActionRow, MessageButton } from 'discord.js';
+import { ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 
 export default class extends Event {
   constructor(client) {
@@ -15,9 +15,9 @@ export default class extends Event {
       
     if(message.content == `<@${this.client.user.id}>`) {
 
-      const  rowMention = new MessageActionRow()
+      const  rowMention = new ActionRowBuilder()
 			.addComponents(
-				new MessageButton()
+				new ButtonBuilder()
           .setLabel('Me adicione em seu servidor')
 					.setStyle('LINK')
           .setURL('https://discord.com/oauth2/authorize?client_id=917962601923760139&scope=bot+identify+guilds+email+applications.commands&permissions=2080374975')
