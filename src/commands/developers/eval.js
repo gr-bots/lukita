@@ -34,7 +34,7 @@ export default {
         });
 
         collector.on('collect', async i => {
-          if(i.customid === 'evalModal') {            
+          if(interaction.customId === 'evalModal') {            
             // Local Functions
             // --- Test color for embed
             const testColor = function testColor(color) {
@@ -42,7 +42,7 @@ export default {
               .setDescription('Test de cor para embed')
               .setColor(String(color))
               
-              i.channel.send({embeds: [embedTestColor], fetchReply: true})
+              interaction.channel.send({ embeds: [embedTestColor] })
             };
           // --- Task Manager
             function add(managerTasks) {
@@ -66,13 +66,13 @@ export default {
             }
             const tasks = new Tasks()
           // Eval code
-            let code = i.getTextInputValue('code');
+            let code = i.getTextInputValue('eval-code');
             
             let deitenau = Date.now() / 1000
             let timezin = parseInt(deitenau)
       
             let msg1 = `# ㅤㅤㅤㅤㅤㅤE V A L ㅤㅤㅤㅤㅤㅤ#`
-            let tag = i.member.user.tag
+            let tag = interaction.member.user.tag
             let msg2 = `   \n ・Tempo de execução: `
             let timezao = `ㅤ ㅤㅤ<t:${timezin}:R>\n`
             let msg3 = `・Entrada: ${code}`
@@ -112,11 +112,11 @@ export default {
                     components: [row]
                 }).then(async (msg) => {
       
-                    const filter = i => i.customId === 'del' && i.user.id === i.user.id;
+                    const filter = i.user.id === interaction.user.id;
                     const collector = msg.createMessageComponentCollector({ filter });
       
-                    collector.on('collect', async i => {
-                        if (i.customId === 'del') {
+                    collector.on('collect', async x => {
+                        if (x.customId === 'del') {
                             await msg.edit({ embeds: [], content: `> ${client.emotes.yesCheck}・<@${i.member.id}>, Seu eval foi deletado.`, components: [] })
                             setTimeout(() => {
                                 msg.delete();
@@ -132,12 +132,12 @@ export default {
                     components: [row]
                 }).then(async (msg) => {
       
-                    const filter = i => i.customId === 'del' && i.user.id === i.user.id;
+                    const filter =  i.user.id === interaction.user.id;
                     const collector = msg.createMessageComponentCollector({ filter });
       
-                    collector.on('collect', async i => {
-                        if (i.customId === 'del') {
-                            await msg.edit({ embeds: [], content: `> ${client.emotes.yesCheck}・<@${i.member.id}>, Seu eval foi deletado.`, components: [] })
+                    collector.on('collect', async x => {
+                        if (x.customId === 'del') {
+                            await msg.edit({ embeds: [], content: `> ${client.emotes.yesCheck}・<@${interaction.member.id}>, Seu eval foi deletado.`, components: [] })
                             setTimeout(() => {
                                 msg.delete();
                             }, 1000)
