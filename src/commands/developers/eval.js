@@ -66,7 +66,7 @@ export default {
             }
             const tasks = new Tasks()
           // Eval code
-            let code = i.getTextInputValue('code');
+            let code = interaction.getTextInputValue('code');
             
             let deitenau = Date.now() / 1000
             let timezin = parseInt(deitenau)
