@@ -34,7 +34,7 @@ export default {
         });
 
         collector.on('collect', async i => {
-          if(interaction.customId === 'evalModal') {            
+          if(i.customId === 'evalModal') {            
             // Local Functions
             // --- Test color for embed
             const testColor = function testColor(color) {
@@ -42,7 +42,7 @@ export default {
               .setDescription('Test de cor para embed')
               .setColor(String(color))
               
-              interaction.channel.send({ embeds: [embedTestColor] })
+              i.channel.send({ embeds: [embedTestColor] })
             };
           // --- Task Manager
             function add(managerTasks) {
@@ -132,12 +132,12 @@ export default {
                     components: [row]
                 }).then(async (msg) => {
       
-                    const filter =  i.user.id === interaction.user.id;
+                    const filter = i.user.id === interaction.user.id;
                     const collector = msg.createMessageComponentCollector({ filter });
       
                     collector.on('collect', async x => {
                         if (x.customId === 'del') {
-                            await msg.edit({ embeds: [], content: `> ${client.emotes.yesCheck}・<@${interaction.member.id}>, Seu eval foi deletado.`, components: [] })
+                            await msg.edit({ embeds: [], content: `> ${client.emotes.yesCheck}・<@${i.member.id}>, Seu eval foi deletado.`, components: [] })
                             setTimeout(() => {
                                 msg.delete();
                             }, 1000)
