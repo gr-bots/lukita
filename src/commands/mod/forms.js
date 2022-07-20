@@ -1,5 +1,3 @@
-import { Modal, TextInputComponent, showModal } from 'discord-modals';
-
 export default {
     name: "form",
     data: {
@@ -13,7 +11,7 @@ export default {
     devsOnly: true,
     run: async(client, interaction) => {
         
-        const formTitle = await client.db.get('guilds', `${interaction.guild.id}/configs/forms/title`)	
+        /*const formTitle = await client.db.get('guilds', `${interaction.guild.id}/configs/forms/title`)	
         const question_1 = await client.db.get('guilds', `${interaction.guild.id}/configs/forms/description`)	
 
         let modalForm = new Modal()
@@ -32,7 +30,7 @@ export default {
         showModal(modalForm, {
             client,
             interaction
-        })
+        })*/
     
     }
 }
