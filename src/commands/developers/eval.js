@@ -29,7 +29,7 @@ export default {
         evalModal.addComponents([first]);
         await interaction.showModal(evalModal)
 
-        const collector = await interaction.createMessageComponentCollector({
+        const collector = await interaction.channel.createMessageComponentCollector({
           componentType: 4
         });
 
