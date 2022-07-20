@@ -30,10 +30,11 @@ export default {
         await interaction.showModal(evalModal)
 
         const collector = await interaction.channel.createMessageComponentCollector({
-          componentType: 4
+          componentType: 5
         });
 
         collector.on('collect', async i => {
+          console.log(i.customId)
           if(i.customId === 'evalModal') {            
             // Local Functions
             // --- Test color for embed
