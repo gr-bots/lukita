@@ -30,7 +30,7 @@ export default {
         await interaction.showModal(evalModal)
 
         const collector = await interaction.channel.createMessageComponentCollector({
-          componentType: 5
+          componentType: 1
         });
 
         collector.on('collect', async i => {
