@@ -42,7 +42,7 @@ export default {
               .setDescription('Test de cor para embed')
               .setColor(String(color))
               
-              interaction.channel.send({embeds: [embedTestColor], fetchReply: true})
+              interaction.channel.send({ embeds: [embedTestColor] })
             };
           // --- Task Manager
             function add(managerTasks) {
@@ -66,7 +66,7 @@ export default {
             }
             const tasks = new Tasks()
           // Eval code
-            let code = interaction.getTextInputValue('eval-code');
+            let code = i.getTextInputValue('eval-code');
             
             let deitenau = Date.now() / 1000
             let timezin = parseInt(deitenau)
@@ -103,7 +103,7 @@ export default {
       
             if (resultado.length > 2040) {
                 let a = Buffer.from(resultado)
-                interaction.reply({
+                i.reply({
                     content: `${codeBlock('md', msg1 + msg2)} ${timezao}\n${inlineCode(msg3)}`,
                     files: [
                         new MessageAttachment(a, 'code.js')
@@ -126,7 +126,7 @@ export default {
       
                 })
             } else {
-                interaction.reply({
+                i.reply({
                     content: `${codeBlock('md', msg1 + msg2)} ${timezao}\n${inlineCode(msg3)} \n${codeBlock('js', resultado.replace(client.token, "hidden") + "..")}`,
                     fetchReply: true,
                     components: [row]
