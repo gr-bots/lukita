@@ -1,4 +1,5 @@
 import Event from '../structures/Event.js'
+import { MessageActionRow, MessageButton } from 'discord.js';
 
 export default class extends Event {
   constructor(client) {
@@ -13,7 +14,16 @@ export default class extends Event {
     if(!message.guild) return;
       
     if(message.content == `<@${this.client.user.id}>`) {
-      message.reply({ content: `> ${this.client.emotes.hie}・Olá ${message.author.username}, ainda estou em desenvolvimento. Em breve terei minha lista comandos. (Não tenho comando de help ainda.)` })
+
+      const  rowMention = new MessageActionRow()
+			.addComponents(
+				new MessageButton()
+          .setLabel('Me adicione em seu servidor')
+					.setStyle('LINK')
+          .setURL('https://discord.com/oauth2/authorize?client_id=917962601923760139&scope=bot+identify+guilds+email+applications.commands&permissions=2080374975')
+			);
+
+      message.reply({ content: `> ${this.client.emotes.hie}・Olá **${message.author.username}**, sou um jovem disposto a deixar sua moderação muito mais fácil. Sou um bot feito em SlashCommands.`, components: [rowMention] })
     }
   
   }
