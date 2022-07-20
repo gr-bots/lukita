@@ -103,7 +103,7 @@ export default {
       
             if (resultado.length > 2040) {
                 let a = Buffer.from(resultado)
-                i.reply({
+                i.followUp({
                     content: `${codeBlock('md', msg1 + msg2)} ${timezao}\n${inlineCode(msg3)}`,
                     files: [
                         new MessageAttachment(a, 'code.js')
@@ -126,7 +126,7 @@ export default {
       
                 })
             } else {
-                i.reply({
+                i.followUp({
                     content: `${codeBlock('md', msg1 + msg2)} ${timezao}\n${inlineCode(msg3)} \n${codeBlock('js', resultado.replace(client.token, "hidden") + "..")}`,
                     fetchReply: true,
                     components: [row]
@@ -150,3 +150,4 @@ export default {
         })
     }
 }
+'1'
