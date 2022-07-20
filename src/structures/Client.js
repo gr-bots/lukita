@@ -4,7 +4,6 @@ import firebase from './Firebase.js'
 import { emojis } from "../utils/Config.js";
 import events from '../handlers/Events.js'
 import commands from '../handlers/Commands.js'
-import modals from '../handlers/Modals.js'
 import deploy from './Deploy.js'
 import { success, getTime, bold } from '../utils/Logger.js'
 import { Tools, Status, Games, Pallete } from '../utils/Functions.js'
@@ -41,7 +40,6 @@ export default class LukitaClient extends Client {
       ]
     });
     this.commands = new Collection();
-    this.modals = new Collection();
     this.developers = ['424931675009712128', '889991365092581386', '431768491759239211', '712103766173941811', '958843594263912458', '465859183250767882'];
     this.emotes = emojis
     this.tools = new Tools(this)
@@ -56,7 +54,6 @@ export default class LukitaClient extends Client {
   async init() {
     await events(this)
     await commands(this)
-    await modals(this)
     await firebase(this)
     await super.login(process.env.TOKEN)
     await deploy(this)

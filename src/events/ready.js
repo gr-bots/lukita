@@ -1,5 +1,4 @@
 import Event from '../structures/Event.js'
-import { readdirSync } from 'node:fs';
 
 export default class extends Event {
   constructor(client) {
