@@ -1,6 +1,6 @@
 import Event from '../structures/Event.js';
 import { inspect } from 'util';
-import { InteractionType, ActionRowBuilder, ButtonBuilder, ButtonStyle, codeBlock, inlineCode } from 'discord.js';
+import { EmbedBuilder, InteractionType, ActionRowBuilder, ButtonBuilder, ButtonStyle, codeBlock, inlineCode } from 'discord.js';
 export default class extends Event {
     constructor(client) {
         super(client, {
