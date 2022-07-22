@@ -11,7 +11,7 @@ export default async (client) => {
         for (let file of commands) {
             const p = await import(`../supportCommands/${dir}/${file}`)
             const pull = await p.default
-            client.commands.set(pull.name, pull)
+            client.supportCommands.set(pull.name, pull)
         }
     })
     console.log(`${success('[ Handler - Support Commands ]')} [${getTime()}] Comandos carregado!`)

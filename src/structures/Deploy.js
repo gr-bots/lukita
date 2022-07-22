@@ -8,11 +8,18 @@ export default async (client) => {
     command = command[1].data
     if (command) arrayOfCommands.push(command)
   }
+
   let arrayOfCommandsSC = Array()
   let mapSC = Array.from(client.supportCommands)
   for (let commandSC of Object(mapSC)) {
     commandSC = commandSC[1].data
     if (commandSC) arrayOfCommandsSC.push(commandSC)
+  }
+  let arrayOfCommandsTest = Array()
+  let mapTest = Array.from(client.tests)
+  for (let commandTest of Object(mapTest)) {
+    commandTest = commandTest[1].data
+    if (commandTest) arrayOfCommandsTest.push(commandTest)
   }
 
   const rest = new REST({ version: '9' }).setToken(process.env.TOKEN)
@@ -40,6 +47,17 @@ export default async (client) => {
     );
     
     console.log('[ / Slash Commands ] Criação e atualização de comandos do suporte concluída!');
+    console.log('[ / Slash Commands ] Criação e atualização de comandos em teste iniciada...');
+
+    console.log(`[ / ListCommands ] Comandos em teste encontrados: \n| ${client.commands.map(a => a.name).join(', ')} |`);
+    console.log(`[ / ListCommands ] Quantidade de comandos em teste encontrados: ${arrayOfCommands.length}`);
+
+    await rest.put(
+      Routes.applicationGuildCommands(client.user.id, '979532798073376778'),
+      { body: arrayOfCommandsTest },
+    );
+    
+    console.log('[ / Slash Commands ] Criação e atualização de comandos em teste concluída!');
     
   } catch (error) {
     console.error(error);
