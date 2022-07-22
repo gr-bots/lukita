@@ -23,7 +23,7 @@ export default {
         
         let embed = new EmbedBuilder()
             .setAuthor({ iconURL: `${authorAvatarURL}`, name: `${interaction.member.user.tag}` })
-            .setDescription(`> ${client.emotes.signal} Gataway \`${Math.round(client.ws.ping)}ms\`\n> ${client.emotes.lighting} API \`${bahzin.createdTimestamp - interaction.createdTimestamp}ms\`\n> ${client.emotes.firebase} Firebase \`${ping}ms\``)
+            .setDescription(`> ${client.emotes.signal} Gateaway \`${Math.round(client.ws.ping)}ms\`\n> ${client.emotes.lighting} API \`${bahzin.createdTimestamp - interaction.createdTimestamp}ms\`\n> ${client.emotes.firebase} Firebase \`${ping}ms\``)
             .setColor(client.pallete.noBG)
             .setFooter({ text: 'Solicitado' })
             .setTimestamp()
