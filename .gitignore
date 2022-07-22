@@ -4,3 +4,4 @@ testing/
 test.js
 package-lock.json
 src/commands/mod/warn.js
+src/commands/developers/shell.js
