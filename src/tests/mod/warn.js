@@ -1,5 +1,4 @@
-import { inlineCode } from '@discordjs/builders';
-import { MessageEmbed, MessageActionRow, MessageButton } from 'discord.js';
+import { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, inlineCode } from 'discord.js';
 
 export default {
     name: "warn",
@@ -24,7 +23,7 @@ export default {
         const motivoWarn = interaction.options.getString("motivo")
         const usuarioWarn = interaction.options.getUser("usuário")
 
-        let embedWarn = new MessageEmbed()
+        let embedWarn = new EmbedBuilder()
             .setTitle('Aviso')
             .setDescription(`Motivo: ${motivoWarn}\nUsuário: ${usuarioWarn.tag}`)
             .setColor(`${client.pallete.noBG}`)
