@@ -12,7 +12,7 @@ export default {
     view: false,
     devsOnly: true,
     run: async (client, interaction) => {
-        interaction.deferReply('🔔 Notify');
+        interaction.followUp('🔔 Notify');
         let register = new EmbedBuilder()
             .setThumbnail(client.user.displayAvatarURL({ format: 'png', size: 4096 }))
             .setAuthor({ iconURL: `${client.user.displayAvatarURL({ size: 4096, format: 'png' })}`, name: `${client.user.tag}` })
