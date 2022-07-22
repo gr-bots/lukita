@@ -38,8 +38,8 @@ export default async (client) => {
     console.log('[ / Slash Commands ] Criação e atualização de comandos globais concluída!');
     console.log('[ / Slash Commands ] Criação e atualização de comandos do suporte iniciada...');
 
-    console.log(`[ / ListCommands ] Comandos do suporte encontrados: \n| ${client.commands.map(a => a.name).join(', ')} |`);
-    console.log(`[ / ListCommands ] Quantidade de comandos do suporte encontrados: ${arrayOfCommands.length}`);
+    console.log(`[ / ListCommands ] Comandos do suporte encontrados: \n| ${client.supportCommands.map(a => a.name).join(', ')} |`);
+    console.log(`[ / ListCommands ] Quantidade de comandos do suporte encontrados: ${arrayOfCommandsSC.length}`);
 
     await rest.put(
       Routes.applicationGuildCommands(client.user.id, '995769279733583944'),
@@ -49,8 +49,8 @@ export default async (client) => {
     console.log('[ / Slash Commands ] Criação e atualização de comandos do suporte concluída!');
     console.log('[ / Slash Commands ] Criação e atualização de comandos em teste iniciada...');
 
-    console.log(`[ / ListCommands ] Comandos em teste encontrados: \n| ${client.commands.map(a => a.name).join(', ')} |`);
-    console.log(`[ / ListCommands ] Quantidade de comandos em teste encontrados: ${arrayOfCommands.length}`);
+    console.log(`[ / ListCommands ] Comandos em teste encontrados: \n| ${client.tests.map(a => a.name).join(', ')} |`);
+    console.log(`[ / ListCommands ] Quantidade de comandos em teste encontrados: ${arrayOfCommandsTest.length}`);
 
     await rest.put(
       Routes.applicationGuildCommands(client.user.id, '979532798073376778'),
