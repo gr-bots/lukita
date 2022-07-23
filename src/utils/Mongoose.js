@@ -1,7 +1,7 @@
 import pkg from 'mongoose';
 const { connect, model, Schema } = pkg;
 
-const Guild = new model('Guild', new Schema({
+const Guild = model('Guild', new Schema({
   _id: { type: String, default: null },
   actives: {
     forms: { default: null },
@@ -11,8 +11,8 @@ const Guild = new model('Guild', new Schema({
   }
 }))
 
-const User = new model('User', new Schema({
-    _id: { type: String, default: null }
+const User = model('User', new Schema({
+  _id: { type: String, default: null }
 }))
 
 export { Guild, User, connect }
