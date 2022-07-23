@@ -6,7 +6,8 @@ class Database {
         this.guild = Guild
     }
 }
+const db = new Database();
 
 export default (client) => {
-    client.db = new Database();
-  }
+    client.db = db;
+}
