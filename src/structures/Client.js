@@ -2,7 +2,6 @@
 import { Client, Options, Collection, GatewayIntentBits } from 'discord.js';
 import firebase from './Firebase.js';
 import database from './Database.js';
-import pingDB from './pingMongo.js';
 import { emojis } from '../utils/Config.js';
 import events from '../handlers/Events.js';
 import commands from '../handlers/Commands.js';
@@ -66,7 +65,6 @@ export default class LukitaClient extends Client {
     await database(this);
     await connect(process.env.DATABASE_URL).then(() => { console.log(`[ ${success('Mongo')} ] ${getTime(new Date())} > ${bold(Mongoose)} iniciada!`) }).catch(() => {});
     await super.login(process.env.TOKEN);
-    await new pingDB(this);
     await deploy(this);
 
     console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`);
