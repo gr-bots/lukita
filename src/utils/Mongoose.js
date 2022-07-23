@@ -4,10 +4,10 @@ const { connect, model, Schema } = pkg;
 const Guild = model('Guild', new Schema({
   _id: { type: String, default: null },
   actives: {
-    forms: { default: null },
-    logs: { default: null },
-    modlogs: { default: null },
-    welcome: { default: null }
+    forms: { type: Array, default: null },
+    logs: { type: Array, default: null },
+    modlogs: { type: Array, default: null },
+    welcome: { type: Array, default: null }
   }
 }))
 
