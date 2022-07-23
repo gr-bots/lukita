@@ -14,4 +14,6 @@ class Database {
     }
 }
 
-export { Database }
+export default async { 
+    client.db = new Database() 
+}

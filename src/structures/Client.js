@@ -56,7 +56,6 @@ export default class LukitaClient extends Client {
     this.tools = new Tools(this);
     this.games = new Games();
     this.pallete = new Pallete();
-    this.db = new Database();
     this.once('ready', () => {
       this.status = new Status(this);
     })
@@ -71,6 +70,7 @@ export default class LukitaClient extends Client {
     await connect(process.env.DATABASE_URL).then(() => { console.log(`[ ${success('Mongo')} ] ${getTime(new Date())} > ${bold(Mongoose)} iniciada!`) }).catch(() => {});
     await super.login(process.env.TOKEN);
     await deploy(this);
+    await database(this);
 
     console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`);
   }
