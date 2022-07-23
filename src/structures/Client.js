@@ -1,6 +1,8 @@
 
 import { Client, Options, Collection, GatewayIntentBits } from 'discord.js';
 import firebase from './Firebase.js';
+import database from './Database.js';
+import pingDB from './pingMongo.js';
 import { emojis } from '../utils/Config.js';
 import events from '../handlers/Events.js';
 import commands from '../handlers/Commands.js';
@@ -10,8 +12,6 @@ import deploy from './Deploy.js';
 import { connect } from '../utils/Schemas.js';
 import { success, error, getTime, bold } from '../utils/Logger.js';
 import { Tools, Status, Games, Pallete } from '../utils/Functions.js';
-import { Database } from './Database.js';
-import pingDB from './Database.js';
 export default class LukitaClient extends Client {
   constructor() {
     super({
