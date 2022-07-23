@@ -58,6 +58,13 @@ export default class LukitaClient extends Client {
     this.db = {
       user: User,
       guild: Guild,
+      ping: async function ping() {
+        const pingStart = process.hrtime();
+        await this.db.guild.findOne({ _id: interaction.guild.id });
+        const pingStop = process.hrtime(pingStart);
+        const pingDb = Math.round(((pingStop[0] * 1e9) + pingStop[1]) / 1e6);
+        return pingDb;
+      }
     }
     this.once('ready', () => {
       this.status = new Status(this);
@@ -72,12 +79,6 @@ export default class LukitaClient extends Client {
     await firebase(this);
     await connect(process.env.DATABASE_URL).then(() => { console.log(`[ ${success('Mongo')} ] ${getTime(new Date())} > ${bold(Mongoose)} iniciada!`) }).catch(() => {});
     await super.login(process.env.TOKEN);
-    this.db.ping = async function ping() {
-      const pingStart = process.hrtime();
-      await this.db.guild.findOne({ _id: interaction.guild.id });
-      const pingStop = process.hrtime(pingStart);
-      const pingDb = Math.round(((pingStop[0] * 1e9) + pingStop[1]) / 1e6);
-    }
     await deploy(this);
 
     console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`);
