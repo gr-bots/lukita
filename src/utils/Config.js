@@ -16,7 +16,7 @@ const emojis = {
   noCheck: "<:lk_noCheck:979539483525537852>",
   user: "<:lk_user:979540126701084722>",
   hie: "<:lk_hie:979548268591743006>",
-  firebase: "<:lk_Firebase:983540007304319037>",
+  firebase: "<:lk_Firebase:1000546873058267177>",
   mongodb: "<:lk_MongoDB:1000544459672518727>",
   signal: "<:lk_signal:983540956374634496>",
   alert: "<:lk_alert:983764506121502780>",
