@@ -10,7 +10,7 @@ import deploy from './Deploy.js';
 import { connect } from '../utils/Schemas.js';
 import { success, error, getTime, bold } from '../utils/Logger.js';
 import { Tools, Status, Games, Pallete } from '../utils/Functions.js';
-import { Database } from './Database.js';
+import database from './Database.js';
 async function ping() {
   const pingStart = process.hrtime();
   await this.db.guild.findOne({ _id: interaction.guild.id });
