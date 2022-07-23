@@ -7,6 +7,7 @@ import commands from '../handlers/Commands.js';
 import supportCommands from '../handlers/SupportCMDS.js';
 import tests from '../handlers/TestCommands.js';
 import deploy from './Deploy.js';
+import { connect } from '../utils/Schemas.js';
 import { success, error, getTime, bold } from '../utils/Logger.js';
 import { Tools, Status, Games, Pallete } from '../utils/Functions.js';
 import { Database } from './Database.js';

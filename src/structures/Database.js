@@ -1,3 +1,5 @@
+import { User, Guild } from '../utils/Schemas.js';
+
 class Database {
     constructor(client) {
         this.user = User,
