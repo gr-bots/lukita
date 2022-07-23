@@ -7,12 +7,10 @@ export default class extends Event {
    })
 }
 
-async run (interaction) {
-    this.client.fb.set('guilds', `${interaction.guild.id}/actives/forms`, false)
-    this.client.fb.set('guilds', `${interaction.guild.id}/actives/logs`, false)
-    this.client.fb.set('guilds', `${interaction.guild.id}/actives/modlogs`, false)
-    this.client.fb.set('guilds', `${interaction.guild.id}/actives/welcome`, false)
+async run (guild) {
+    let Guild = await this.db.guild.findOne({ _id: guild.id });
+    if(!Guild) await this.db.guild.create({ _id: guild.id });
 
-    this.client.channels.cache.get("998201539929845760").send({content: `Nova guild: ${interaction.guild.name} - ${interaction.guild.id}`})
-}
+    this.client.channels.cache.get("998201539929845760").send({content: `Nova guild: ${guild.name} - ${guild.id}`})
+  }
 }

@@ -1,14 +1,15 @@
 
 import { Client, Options, Collection, GatewayIntentBits } from 'discord.js';
-import firebase from './Firebase.js'
-import { emojis } from "../utils/Config.js";
-import events from '../handlers/Events.js'
-import commands from '../handlers/Commands.js'
-import supportCommands from '../handlers/SupportCMDS.js'
-import tests from '../handlers/TestCommands.js'
-import deploy from './Deploy.js'
-import { success, getTime, bold } from '../utils/Logger.js'
-import { Tools, Status, Games, Pallete } from '../utils/Functions.js'
+import firebase from './Firebase.js';
+import { emojis } from '../utils/Config.js';
+import events from '../handlers/Events.js';
+import commands from '../handlers/Commands.js';
+import supportCommands from '../handlers/SupportCMDS.js';
+import tests from '../handlers/TestCommands.js';
+import deploy from './Deploy.js';
+import { success, error, getTime, bold } from '../utils/Logger.js';
+import { Tools, Status, Games, Pallete } from '../utils/Functions.js';
+import { User, Guild, connect } from '../utils/Mongoose.js';
 
 export default class LukitaClient extends Client {
   constructor() {
@@ -45,25 +46,30 @@ export default class LukitaClient extends Client {
     this.supportCommands = new Collection();
     this.tests = new Collection();
     this.developers = ['424931675009712128', '889991365092581386', '431768491759239211', '485101049548636160'];
-    this.emotes = emojis
-    this.tools = new Tools(this)
-    this.games = new Games()
-    this.pallete = new Pallete()
+    this.emotes = emojis;
+    this.tools = new Tools(this);
+    this.games = new Games();
+    this.pallete = new Pallete();
+    this.db = {
+      user: User,
+      guild: Guild
+    }
 
     this.once('ready', () => {
-      this.status = new Status(this)
+      this.status = new Status(this);
     })
   }
 
   async init() {
-    await events(this)
-    await commands(this)
-    await supportCommands(this)
-    await tests(this)
-    await firebase(this)
-    await super.login(process.env.TOKEN)
-    await deploy(this)
+    await events(this);
+    await commands(this);
+    await supportCommands(this);
+    await tests(this);
+    await firebase(this);
+    await connect(process.env.DATABASE_URL).then(() => { console.log(`[ ${success('Mongo')} ] ${getTime(new Date())} > ${bold(Mongoose)} iniciada!`) }).catch(() => {});
+    await super.login(process.env.TOKEN);
+    await deploy(this);
 
-    console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`)
+    console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`);
   }
 };
