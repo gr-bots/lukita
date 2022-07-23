@@ -50,7 +50,6 @@ export default class LukitaClient extends Client {
     this.tools = new Tools(this);
     this.games = new Games();
     this.pallete = new Pallete();
-    this.db = new Database();
     this.once('ready', () => {
       this.status = new Status(this);
     })
