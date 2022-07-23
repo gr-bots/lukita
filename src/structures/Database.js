@@ -1,13 +1,12 @@
 import { User, Guild } from '../utils/Schemas.js';
 
-class Database {
-    constructor() {
-        this.user = User,
-        this.guild = Guild
-    }
-}
-
 export default () => {
+    class Database {
+        constructor() {
+            this.user = User,
+            this.guild = Guild
+        }
+    }
     client.db.ping = async function ping() {
         const pingStart = process.hrtime();
         await client.db.guild.findOne({ _id: interaction.guild.id });
