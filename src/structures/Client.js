@@ -58,7 +58,6 @@ export default class LukitaClient extends Client {
     this.db = {
       user: User,
       guild: Guild,
-      ping: ping
     }
     this.once('ready', () => {
       this.status = new Status(this);
