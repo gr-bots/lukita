@@ -8,10 +8,10 @@ export default class extends Event {
 }
 
 async run (interaction) {
-    this.client.db.set('guilds', `${interaction.guild.id}/actives/forms`, false)
-    this.client.db.set('guilds', `${interaction.guild.id}/actives/logs`, false)
-    this.client.db.set('guilds', `${interaction.guild.id}/actives/modlogs`, false)
-    this.client.db.set('guilds', `${interaction.guild.id}/actives/welcome`, false)
+    this.client.fb.set('guilds', `${interaction.guild.id}/actives/forms`, false)
+    this.client.fb.set('guilds', `${interaction.guild.id}/actives/logs`, false)
+    this.client.fb.set('guilds', `${interaction.guild.id}/actives/modlogs`, false)
+    this.client.fb.set('guilds', `${interaction.guild.id}/actives/welcome`, false)
 
     this.client.channels.cache.get("998201539929845760").send({content: `Nova guild: ${interaction.guild.name} - ${interaction.guild.id}`})
 }
