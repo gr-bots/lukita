@@ -10,7 +10,12 @@ import deploy from './Deploy.js';
 import { success, error, getTime, bold } from '../utils/Logger.js';
 import { Tools, Status, Games, Pallete } from '../utils/Functions.js';
 import { User, Guild, connect } from '../utils/Mongoose.js';
-
+async function ping() {
+  const pingStart = process.hrtime();
+  await this.db.guild.findOne({ _id: interaction.guild.id });
+  const pingStop = process.hrtime(pingStart);
+  const pingDb = Math.round(((pingStop[0] * 1e9) + pingStop[1]) / 1e6);
+}
 export default class LukitaClient extends Client {
   constructor() {
     super({
@@ -52,9 +57,9 @@ export default class LukitaClient extends Client {
     this.pallete = new Pallete();
     this.db = {
       user: User,
-      guild: Guild
+      guild: Guild,
+      ping: ping
     }
-
     this.once('ready', () => {
       this.status = new Status(this);
     })
