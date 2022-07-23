@@ -1,6 +1,6 @@
 import { User, Guild } from '../utils/Schemas.js';
 
-export default () => {
+export default (client) => {
     class MongoDB {
         constructor() {
             this.user = User,
