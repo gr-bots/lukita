@@ -10,13 +10,8 @@ import deploy from './Deploy.js';
 import { connect } from '../utils/Schemas.js';
 import { success, error, getTime, bold } from '../utils/Logger.js';
 import { Tools, Status, Games, Pallete } from '../utils/Functions.js';
-import database from './Database.js';
-async function ping() {
-  const pingStart = process.hrtime();
-  await this.db.guild.findOne({ _id: interaction.guild.id });
-  const pingStop = process.hrtime(pingStart);
-  const pingDb = Math.round(((pingStop[0] * 1e9) + pingStop[1]) / 1e6);
-}
+import { Database } from './Database.js';
+import pingDB from './Database.js';
 export default class LukitaClient extends Client {
   constructor() {
     super({
@@ -56,6 +51,7 @@ export default class LukitaClient extends Client {
     this.tools = new Tools(this);
     this.games = new Games();
     this.pallete = new Pallete();
+    this.db = new Database();
     this.once('ready', () => {
       this.status = new Status(this);
     })
@@ -67,10 +63,11 @@ export default class LukitaClient extends Client {
     await supportCommands(this);
     await tests(this);
     await firebase(this);
+    await database(this);
     await connect(process.env.DATABASE_URL).then(() => { console.log(`[ ${success('Mongo')} ] ${getTime(new Date())} > ${bold(Mongoose)} iniciada!`) }).catch(() => {});
     await super.login(process.env.TOKEN);
+    await new pingDB(this);
     await deploy(this);
-    await database(this);
 
     console.log(`[ ${success('Bot')} ] ${getTime(new Date())} > ${bold(this.user.tag)} está online!`);
   }
