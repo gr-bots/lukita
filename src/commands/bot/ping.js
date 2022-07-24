@@ -31,7 +31,7 @@ export default {
 
         const authorAvatarURL = interaction.member.displayAvatarURL({ dynamic: true })
         
-        let bahzin = await interaction.reply({ 
+        let bahzin = await interaction.followUp({ 
             content: `${client.emotes.loading}`, 
             fetchReply: true 
         })
