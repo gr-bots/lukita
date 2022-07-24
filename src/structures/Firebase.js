@@ -6,8 +6,8 @@ export default (client) => {
   const app = initializeApp(fbConfig)
   const db = getDatabase(app);
   class Firebase {
-    constructor() {
-      this.ref = ref(db);
+    constructor(dir) {
+      this.ref = ref(db, dir);
       this.onValue = onValue(this.ref);
     }
     async set(path, value) {
