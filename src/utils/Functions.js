@@ -75,6 +75,26 @@ class Tools {
               let resultado = moment.duration(client.uptime).format('d[d], h[h], m[m], s[s]')
               return resultado
           })
+    
+          this.getUser = async function getUser(args, interaction) {
+if (!args || !interaction) return;
+    let user;
+
+    if(/<@!?\d{17,18}>/.test(args)) {
+
+      user = await interaction.client.users.fetch(args.match(/\d{17,18}/)?.[0]);
+    } else {
+
+      user = await interaction.guild.members.search({ query: args, limit: 1 }).then((x) => x.first()?.user);
+      if(!user) user = await interaction.client.users.fetch(args).catch(() => {}); 
+    }
+
+    if(user) {
+      return user;
+    } else {
+      return null;
+    }
+}
       }
   }
 
