@@ -4,7 +4,7 @@ import { getDatabase, ref, set, onValue } from 'firebase/database'
 
 export default (client) => {
   const app = initializeApp(fbConfig)
-  db = getDatabase(app);
+  const db = getDatabase(app);
   class Firebase {
     constructor() {
       this.ref = ref(db);
