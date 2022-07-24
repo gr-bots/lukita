@@ -39,4 +39,4 @@ const emojis = {
   }
 }
 
-export { aoifb, emojis }
+export { fbConfig, emojis }
