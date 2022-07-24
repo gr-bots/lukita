@@ -1,7 +1,8 @@
 import { fbConfig as Firebase } from '../utils/Config.js';
-import fb from 'firebase'
+import { initializeApp } from 'firebase/app'
+import { getDatabase } from 'firebase/database'
 
 export default (client) => {
-  fb.initializeApp(fbConfig)
-  client.fb = fb.database();
+  const app = initializeApp(fbConfig)
+  client.fb = getDatabase(app);
 }
