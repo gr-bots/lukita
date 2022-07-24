@@ -7,28 +7,21 @@ class Tools {
   
     constructor(client) {
             
-          this.msToTime = (function (number) {
-              let seconds = ms / 1000;
-    const days = parseInt(seconds / 86400);
-    seconds = seconds % 86400;
-    const hours = parseInt(seconds / 3600);
-    seconds = seconds % 3600;
-    const minutes = parseInt(seconds / 60);
-    seconds = parseInt(seconds % 60);
-  
-    if (days) {
-      return `${days}d, ${hours}h, ${minutes}m, ${seconds}s`;
-    }
-    else if (hours) {
-      return `${hours}h, ${minutes}m, ${seconds}s`;
-    }
-    else if (minutes) {
-      return `${minutes}m, ${seconds}s`;
-    }
-    return `${seconds}s`;
+          this.msToTime = (function (ms) {
+              const seconds = ~~(ms / 1000);
+    const minutes = ~~(seconds / 60);
+    const hours = ~~(minutes / 60);
+    const days = ~~(hours / 24);
+
+    return {
+      days,
+      hours: hours % 24,
+      minutes: minutes % 60,
+      seconds: seconds % 60,
+    };
           }),
             
-          this.timeToMs = (function (number) {
+          this.timeToMs = (function (time) {
               const timeUnits = time
       .replace(/[\d\s]/g, () => '')
       .toLowerCase()
