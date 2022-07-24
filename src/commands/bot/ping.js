@@ -30,7 +30,6 @@ export default {
         }
 
         const authorAvatarURL = interaction.member.displayAvatarURL({ dynamic: true })
-        const ping = await client.fb.ping()
         
         let bahzin = await interaction.reply({ 
             content: `${client.emotes.loading}`, 
