@@ -100,7 +100,7 @@ export default class extends Event {
 
                 })
             } else {
-                interaction.reply({
+                interaction.followUp({
                     content: `${codeBlock('md', msg1 + msg2)} ${timezao}\n${inlineCode(msg3)} \n${codeBlock('js', resultado.replace(client.token, "hidden") + "..")}`,
                     fetchReply: true,
                     components: [row]
