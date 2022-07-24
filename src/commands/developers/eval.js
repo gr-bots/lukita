@@ -13,7 +13,7 @@ export default {
     devsOnly: true,
     run: async (client, interaction) => {
         const first = new ActionRowBuilder().addComponents([new TextInputBuilder().setCustomId('eval-code').setLabel('Digite o código abaixo').setStyle(TextInputStyle.Paragraph).setPlaceholder('😅 Códiguin...').setRequired(true)]);
-        const modal = new ModalBuilder().setCustomId('evalModal').setTitle(`${client.emotes.nothing}${client.emotes.nothing} ・Evaluate the Code・ ${client.emotes.nothing}${client.emotes.nothing}`).addComponents([first]);
+        const modal = new ModalBuilder().setCustomId('evalModal').setTitle(` ・Evaluate the Code・ `).addComponents([first]);
         await interaction.showModal(modal);
     }
 }
