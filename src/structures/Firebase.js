@@ -1,8 +1,18 @@
 import { fbConfig } from '../utils/Config.js';
 import { initializeApp } from 'firebase/app'
-import { getDatabase, re, set, onValue } from 'firebase/database'
+import { getDatabase, ref, set, onValue } from 'firebase/database'
 
 export default (client) => {
   const app = initializeApp(fbConfig)
-  client.fb = getDatabase(app);
+  db = getDatabase(app);
+  class Firebase {
+    constructor() {
+      this.ref = ref(db);
+      this.onValue = onValue(this.ref);
+    }
+    async set(path, value) {
+      return set(this.ref, path, value);
+    }
+  }
+  client.fb = new Firebase();
 }
