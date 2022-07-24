@@ -1,4 +1,4 @@
-import { fbConfig as Firebase } from '../utils/Config.js';
+import { fbConfig } from '../utils/Config.js';
 import { initializeApp } from 'firebase/app'
 import { getDatabase } from 'firebase/database'
 
