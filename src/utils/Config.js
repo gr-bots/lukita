@@ -1,4 +1,4 @@
-const aoifb = {
+const fbConfig = {
   apiKey: process.env.apiKey,
   authDomain: process.env.authDomain,
   databaseURL: process.env.databaseURL,

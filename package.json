@@ -9,7 +9,7 @@
   "type": "module",
   "dependencies": {
     "@discordjs/rest": "^0.4.1",
-    "aoi.fb": "^5.7.0",
+    "firebase": "9.9.1",
     "axios": "0.24.0",
     "chalk": "4.1.2",
     "discord-api-types": "^0.36.1",

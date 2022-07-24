@@ -21,7 +21,7 @@ export default class extends Event {
                 interaction.channel.send({ embeds: [embedTestColor] })
             };
             // --- Task Manager
-            function add(managerTasks) {
+            /* function add(managerTasks) {
                 client.fb.update('devs', 'tasks', managerTasks)
                 return 'sucess'
             };
@@ -38,7 +38,7 @@ export default class extends Event {
                     }
                 }
             }
-            const tasks = new Tasks()
+            const tasks = new Tasks() */
             // Eval code
             let code = interaction.fields.getTextInputValue('eval-code');
 

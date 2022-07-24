@@ -1,8 +1,7 @@
-import { aoifb as Firebase } from '../utils/Config.js';
-import pkg from 'aoi.fb'
-const { Create } = pkg
-const aoifb = Create(Firebase)
+import { fbConfig as Firebase } from '../utils/Config.js';
+import fb from 'firebase'
+fb.initializeApp(fbConfig)
 
 export default (client) => {
-  client.fb = aoifb
+  client.fb = fb.database();
 }
