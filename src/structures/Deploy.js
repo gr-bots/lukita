@@ -1,5 +1,5 @@
 import { REST } from '@discordjs/rest';
-import { Routes } from 'discord-api-types/v9';
+import { Routes } from 'discord-api-types/v10';
 
 export default async (client) => {
   let arrayOfCommands = Array()
@@ -22,7 +22,7 @@ export default async (client) => {
     if (commandTest) arrayOfCommandsTest.push(commandTest)
   }
 
-  const rest = new REST({ version: '9' }).setToken(process.env.TOKEN)
+  const rest = new REST({ version: '10' }).setToken(process.env.TOKEN)
 
   try {
     console.log('[ / Slash Commands ] Criação e atualização de comandos globais iniciada...');
