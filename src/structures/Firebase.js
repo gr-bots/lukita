@@ -1,7 +1,6 @@
 import { fbConfig } from '../utils/Config.js';
-import pkg from 'firebase-util.js';
-const { FirebaseUtil } = pkg;
-const db = FirebaseUtil(fbConfig);
+import FirebaseUtil from 'firebase-util.js';
+const db = new FirebaseUtil(fbConfig);
 
 export default (client) => {
   client.fb = db
