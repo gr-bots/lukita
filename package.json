@@ -15,7 +15,7 @@
     "discord-api-types": "^0.36.3",
     "discord.js": "^14.0.3",
     "dotenv": "^16.0.1",
-    "firebase-utils.js": "4.2.1",
+    "firebase-util.js": "4.2.1",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
     "mongoose": "^6.4.6",
