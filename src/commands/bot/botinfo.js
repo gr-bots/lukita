@@ -32,7 +32,7 @@ export default {
           inline: true
         }, {
           name: `━・Criadores「${client.emotes.dev}」`,
-          value: `> › ${inlineCode(await client.users.fetch(client.developers[0]).then(a => a.tag))}\n> › ${inlineCode(await client.users.fetch(client.developers[1]).then(a => a.tag))}\n> › ${inlineCode(await client.users.fetch(client.developers[2]).then(a => a.tag))}\n> › ${inlineCode(await client.users.fetch(client.developers[3]).then(a => a.tag))}`,
+          value: `> › ${inlineCode(await client.users.fetch(client.developers[0]).then(a => a.tag))}\n> › ${inlineCode(await client.users.fetch(client.developers[1]).then(a => a.tag))}\n> › ${inlineCode(await client.users.fetch(client.developers[2]).then(a => a.tag))}`,
           inline: true
         }, {
           name: `━・Adicionais「${client.emotes.info}」`,

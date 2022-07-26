@@ -45,7 +45,7 @@ export default class LukitaClient extends Client {
     this.commands = new Collection();
     this.supportCommands = new Collection();
     this.tests = new Collection();
-    this.developers = ['424931675009712128', '889991365092581386', '431768491759239211', '485101049548636160'];
+    this.developers = ['424931675009712128', '889991365092581386', '431768491759239211'];
     this.emotes = emojis;
     this.tools = new Tools(this);
     this.games = new Games();
