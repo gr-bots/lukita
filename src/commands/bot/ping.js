@@ -21,7 +21,7 @@ export default {
             return pingDb;
         }
         
-        const pingFB = client.fb.ping()
+        const pingFB = await client.fb.ping()
         const authorAvatarURL = interaction.member.displayAvatarURL({ dynamic: true })
         
         let bahzin = await interaction.reply({ 
