@@ -30,7 +30,7 @@ export default {
 			);
 
       let embedBotinfo = new EmbedBuilder()
-        .setTitle(`${client.emotes.nothing}${client.emotes.nothing}${client.emotes.nothing}${client.emotes.nothing} ・Minhas informações principais・ ${client.emotes.nothing}${client.emotes.nothing}${client.emotes.nothing}`)
+        .setTitle(`${client.emotes.nothing}${client.emotes.nothing}${client.emotes.nothing}${client.emotes.nothing} ・Minhas informações principais・ ${client.emotes.nothing}${client.emotes.nothing}`)
         .setDescription(`> ${client.emotes.hello} __Olá__, __sou__ ${client.user.tag}, __seu bot de moderação para o Discord__, completo e simples para seu servidor e feito em ${client.emotes.slash} SlashCommands`)
         .addFields({
           name: `━・Dados「${client.emotes.analytics}」`,
