@@ -38,7 +38,7 @@ export default {
         .setDescription(`> ${client.emotes.hello} __Olá__, __sou__ ${client.user.tag}, __seu bot de moderação para o Discord__, completo e simples para seu servidor e feito em ${client.emotes.slash} SlashCommands`)
         .addFields({
           name: `━・Dados「${client.emotes.analytics}」`,
-          value: `> › Servidores: ${inlineCode(client.status.guilds)}\n> › RAM: ${inlineCode(ram)}\n> › Uptime: ${inlineCode(client.tools.uptime())}\n> › Versão: ${version}`,
+          value: `> › Servidores: ${inlineCode(client.status.guilds)}\n> › RAM: ${inlineCode(ram)}\n> › Uptime: ${inlineCode(client.tools.uptime())}\n> › Versão: ${inlineCode(version)}`,
           inline: true
         }, {
           name: `━・Criadores「${client.emotes.dev}」`,
