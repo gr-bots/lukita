@@ -1,7 +1,7 @@
 {
   "name": "lukita-bot",
   "main": "index.js",
-  "version": "0.0.4",
+  "version": "0.0.4-beta",
   "author": "gr_dev",
   "scripts": {
     "dev": "node test.js",
