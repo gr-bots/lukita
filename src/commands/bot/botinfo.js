@@ -24,13 +24,13 @@ export default {
      const rowSupport = new ActionRowBuilder()
 			.addComponents(
 				new ButtonBuilder()
-          .setLabel('Me adicione em seu servidor')
+          .setLabel('Suporte')
 					.setStyle(ButtonStyle.Link)
           .setURL('https://discord.gg/pJyY3zsMmB')
 			);
 
       let embedBotinfo = new EmbedBuilder()
-        .setAuthor({name: client.user.username, iconURL: botAvatar})
+        .setAuthor({name: client.user.tag, iconURL: botAvatar})
         .setTitle(`${client.emotes.nothing}${client.emotes.nothing} ・Minhas informações principais・ ${client.emotes.nothing}${client.emotes.nothing}`)
         .setDescription(`> ${client.emotes.hello} __Olá__, __sou__ ${client.user.tag}, __seu bot de moderação para o Discord__, completo e simples para seu servidor e feito em ${client.emotes.slash} SlashCommands`)
         .addFields({
