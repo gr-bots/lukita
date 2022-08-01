@@ -26,5 +26,9 @@ export default {
             });
             
         });
+
+        const first = new ActionRowBuilder().addComponents([new TextInputBuilder().setCustomId('shell-code').setLabel('Digite a linha comando abaixo').setStyle(TextInputStyle.Paragraph).setPlaceholder('😅 Códiguin...').setRequired(true)]);
+        const modal = new ModalBuilder().setCustomId('shellModal').setTitle(` ・Execute um código em meu terminal・ `).addComponents([first]);
+        await interaction.showModal(modal);
     },
 }

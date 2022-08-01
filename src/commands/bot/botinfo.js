@@ -14,21 +14,28 @@ export default {
     run: async (client, interaction) => {
      const botAvatar = client.user.displayAvatarURL({ format: 'png', size: 4096 })
 
-     const  rowBotinfo = new ActionRowBuilder()
+     const rowBotinfo = new ActionRowBuilder()
 			.addComponents(
 				new ButtonBuilder()
           .setLabel('Me adicione em seu servidor')
 					.setStyle(ButtonStyle.Link)
           .setURL('https://discord.com/oauth2/authorize?client_id=917962601923760139&scope=bot+identify+guilds+email+applications.commands&permissions=2080374975')
 			);
+     const rowSupport = new ActionRowBuilder()
+			.addComponents(
+				new ButtonBuilder()
+          .setLabel('Me adicione em seu servidor')
+					.setStyle(ButtonStyle.Link)
+          .setURL('https://discord.gg/pJyY3zsMmB')
+			);
 
       let embedBotinfo = new EmbedBuilder()
-        .setThumbnail(botAvatar)
+        .setAuthor({name: client.user.username, iconURL: botAvatar})
         .setTitle(`${client.emotes.nothing}${client.emotes.nothing} ・Minhas informações principais・ ${client.emotes.nothing}${client.emotes.nothing}`)
-        .setDescription(`${client.emotes.hello} __Olá__, __sou__ ${client.user.tag}, __seu bot de moderação para o Discord__, completo e simples para seu servidor.\n> Como pode ver, sou feito em ${client.emotes.slash} SlashCommands`)
+        .setDescription(`> ${client.emotes.hello} __Olá__, __sou__ ${client.user.tag}, __seu bot de moderação para o Discord__, completo e simples para seu servidor e feito em ${client.emotes.slash} SlashCommands`)
         .addFields({
           name: `━・Dados「${client.emotes.analytics}」`,
-          value: `> › Usuários: ${inlineCode(client.status.users)}\n> › Servidores: ${inlineCode(client.status.guilds)}\n> › Comandos: ${inlineCode(client.commands.size - 1)}\n> › Uptime: ${inlineCode(client.tools.uptime())}`,
+          value: `> › Servidores: ${inlineCode(client.status.guilds)}\n> › Uptime: ${inlineCode(client.tools.uptime())}`,
           inline: true
         }, {
           name: `━・Criadores「${client.emotes.dev}」`,
@@ -36,7 +43,7 @@ export default {
           inline: true
         }, {
           name: `━・Adicionais「${client.emotes.info}」`,
-          value: `> › Sou desenvolvido em ${client.emotes.djs} Discord.js\n> › Fui criado <t:${parseInt(client.user.createdTimestamp / 1000)}:R>\n> › [Meu servidor de suporte e comunidade](https://discord.gg/pJyY3zsMmB)\n > ›  Entre em meu Mundo através do link acima e saiba mais...`,
+          value: `> › Sou desenvolvido em ${client.emotes.djs} Discord.js\n> › Fui criado <t:${parseInt(client.user.createdTimestamp / 1000)}:R>`,
           inline: false
         })
         .setFooter({
@@ -48,7 +55,7 @@ export default {
       
         interaction.reply({
           embeds: [embedBotinfo],
-          components: [rowBotinfo],
+          components: [rowBotinfo, rowSupport],
         })
   }
 }
