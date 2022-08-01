@@ -16,6 +16,8 @@
     "discord.js": "^14.0.3",
     "dotenv": "^16.0.1",
     "firebase-util.js": "4.2.1",
+    "moment": "^2.29.1",
+    "moment-duration-format": "^2.3.2",
     "mongoose": "^6.4.6",
     "ms": "^2.1.3",
     "quiz-api": "1.1.0"
