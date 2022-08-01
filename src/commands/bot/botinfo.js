@@ -23,9 +23,8 @@ export default {
           .setLabel('Me adicione')
 					.setStyle(ButtonStyle.Link)
           .setURL('https://discord.com/oauth2/authorize?client_id=917962601923760139&scope=bot+identify+guilds+email+applications.commands&permissions=2080374975')
-			);
-     const rowSupport = new ActionRowBuilder()
-			.addComponents(
+			)
+      .addComponents(
 				new ButtonBuilder()
           .setLabel('Suporte')
 					.setStyle(ButtonStyle.Link)
@@ -58,7 +57,7 @@ export default {
       
         interaction.reply({
           embeds: [embedBotinfo],
-          components: [rowBotinfo, rowSupport],
+          components: [rowBotinfo],
         })
   }
 }
