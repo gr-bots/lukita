@@ -14,7 +14,7 @@ export default {
     run: async (client, interaction) => {
      const botAvatar = client.user.displayAvatarURL({ format: 'png', size: 4096 })
 
-     let version = "v" + import(`${process.cwd()}/package.json`, { assert: {type: "json"}}).then(x => x.default.version)
+     let version = "v" + await import(`${process.cwd()}/package.json`, { assert: {type: "json"}}).then(x => x.default.version)
      let ram = Math.round(process.memoryUsage().rss / 1024 / 1024) + "MB"
 
      const rowBotinfo = new ActionRowBuilder()
@@ -38,7 +38,7 @@ export default {
         .setDescription(`> ${client.emotes.hello} __Olá__, __sou__ ${client.user.tag}, __seu bot de moderação para o Discord__, completo e simples para seu servidor e feito em ${client.emotes.slash} SlashCommands`)
         .addFields({
           name: `━・Dados「${client.emotes.analytics}」`,
-          value: `> › Servidores: ${inlineCode(client.status.guilds)}\n> › RAM: ${inlineCode(ram)}\n> › Uptime: ${inlineCode(client.tools.uptime())}\n> › Versão: ${await version}`,
+          value: `> › Servidores: ${inlineCode(client.status.guilds)}\n> › RAM: ${inlineCode(ram)}\n> › Uptime: ${inlineCode(client.tools.uptime())}\n> › Versão: ${version}`,
           inline: true
         }, {
           name: `━・Criadores「${client.emotes.dev}」`,
