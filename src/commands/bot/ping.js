@@ -20,6 +20,8 @@ export default {
             const pingDb = Math.round(((pingStop[0] * 1e9) + pingStop[1]) / 1e6);
             return pingDb;
         }
+        
+        const pingFB = await client.fb.ping()
         const authorAvatarURL = interaction.member.displayAvatarURL({ dynamic: true })
         
         let bahzin = await interaction.reply({ 
@@ -29,7 +31,7 @@ export default {
         
         let embed = new EmbedBuilder()
             .setAuthor({ iconURL: `${authorAvatarURL}`, name: `${interaction.member.user.tag}` })
-            .setDescription(`> ${client.emotes.signal} Gateaway \`${Math.round(client.ws.ping)}ms\`\n> ${client.emotes.lighting} API \`${bahzin.createdTimestamp - interaction.createdTimestamp}ms\`\n> ${client.emotes.mongodb} MongoDB \`${await pingMongo()}ms\``)
+            .setDescription(`> ${client.emotes.signal} Gateaway \`${Math.round(client.ws.ping)}ms\`\n> ${client.emotes.lighting} API \`${bahzin.createdTimestamp - interaction.createdTimestamp}ms\`\n> ${client.emotes.mongodb} MongoDB \`${await pingMongo()}ms\`\n> ${client.emotes.firebase} Firebase \`${pingFB}ms\``)
             .setColor(client.pallete.noBG)
             .setFooter({ text: 'Solicitado' })
             .setTimestamp()
