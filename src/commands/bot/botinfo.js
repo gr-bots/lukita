@@ -40,10 +40,6 @@ export default {
           name: `━・Criadores「${client.emotes.dev}」`,
           value: `> › ${inlineCode(await client.users.fetch(client.developers[0]).then(a => a.tag))}\n> › ${inlineCode(await client.users.fetch(client.developers[1]).then(a => a.tag))}`,
           inline: true
-        }, {
-          name: `━・Adicionais「${client.emotes.info}」`,
-          value: `> › Sou desenvolvido em ${client.emotes.djs} Discord.js\n> › Fui criado <t:${parseInt(client.user.createdTimestamp / 1000)}:R>`,
-          inline: false
         })
         .setFooter({
           text: `Solicitado por ${interaction.member.user.tag}`,
