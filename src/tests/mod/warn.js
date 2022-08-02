@@ -20,12 +20,12 @@ export default {
     view: true,
     devsOnly: false,
     run: async (client, interaction) => {
-        const motivoWarn = interaction.options.getString("motivo")
+        const motivoWarn = interaction.options
         const usuarioWarn = interaction.options.getUser("usuário")
 
         let embedWarn = new EmbedBuilder()
             .setTitle('Aviso')
-            .setDescription(`Motivo: ${motivoWarn}\nUsuário: ${usuarioWarn.tag}`)
+            .setDescription(`Motivo: ${motivoWarn}`)
             .setColor(`${client.pallete.noBG}`)
 
         interaction.reply({ embeds: [embedWarn] });
