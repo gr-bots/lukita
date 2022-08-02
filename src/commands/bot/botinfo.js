@@ -49,7 +49,7 @@ export default {
           text: `Solicitado por ${interaction.member.user.tag}`,
           iconURL: `${interaction.member.user.displayAvatarURL({display: true, size: 4096})}`
         })
-        .setColor(`${client.pallete.primary}`)
+        .setColor(`${client.pallete.blueBaby}`)
         .setTimestamp()
       
         interaction.reply({
