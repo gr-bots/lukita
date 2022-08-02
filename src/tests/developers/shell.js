@@ -14,7 +14,7 @@ export default {
     devsOnly: true,
     run: async (interaction, args) => {
      
-        let codeTerminal = args.join(' ');
+        /* let codeTerminal = args.join(' ');
         if(!codeTerminal) return;
 
         exec(codeTerminal, (err, res) => {
@@ -29,6 +29,6 @@ export default {
 
         const first = new ActionRowBuilder().addComponents([new TextInputBuilder().setCustomId('shell-code').setLabel('Digite a linha comando abaixo').setStyle(TextInputStyle.Paragraph).setPlaceholder('😅 Códiguin...').setRequired(true)]);
         const modal = new ModalBuilder().setCustomId('shellModal').setTitle(` ・Execute um código em meu terminal・ `).addComponents([first]);
-        await interaction.showModal(modal);
+        await interaction.showModal(modal); */
     },
 }
