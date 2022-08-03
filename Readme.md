@@ -21,8 +21,6 @@
 
 ## ❗ Regras de Contribuição :
 
-   * **Você pode adicionar programas em qualquer linguagem de programação, mas seu programa deve ser diferente ou exclusivo.**
-   * **Contribua com qualquer algoritmo, implementação de estrutura de dados ou seu projeto favorito.**
    * **Os pull requests devem conter commits feitos por você.**
    * **Códigos repetidos não serão mesclados.**
 
