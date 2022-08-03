@@ -33,10 +33,10 @@
 <table align="center">
 	<tr>
 		<td>
-            <a align="left" href="https://discord.com/users/424931675009712128">
+            <a align="left" width="50%" href="https://discord.com/users/424931675009712128">
               <img src="https://lanyard.cnrad.dev/api/424931675009712128" />
             </a>
-            <a align="right" href="https://discord.com/users/431768491759239211">
+            <a align="right" width="50%" href="https://discord.com/users/431768491759239211">
               <img src="https://lanyard.cnrad.dev/api/431768491759239211" />
             </a>
         </td>
