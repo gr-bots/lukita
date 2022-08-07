@@ -80,7 +80,7 @@ export default class extends Event {
                 interaction.followUp({
                     content: `${codeBlock('md', msg1 + msg2)} ${timezao}\n${inlineCode(msg3)}`,
                     files: [
-                        new AttachmentBuilder(a, 'code.js')
+                        new AttachmentBuilder({name: 'code.js', file: a, attachment: 'code.js'})
                     ],
                     fetchReply: true,
                     components: [row]
