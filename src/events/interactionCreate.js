@@ -1,6 +1,6 @@
 import Event from '../structures/Event.js';
 import { inspect } from 'util';
-import { EmbedBuilder, InteractionType, ActionRowBuilder, ButtonBuilder, ButtonStyle, codeBlock, inlineCode } from 'discord.js';
+import { EmbedBuilder, AttachmentBuilder, InteractionType, ActionRowBuilder, ButtonBuilder, ButtonStyle, codeBlock, inlineCode } from 'discord.js';
 export default class extends Event {
     constructor(client) {
         super(client, {
@@ -80,7 +80,7 @@ export default class extends Event {
                 interaction.followUp({
                     content: `${codeBlock('md', msg1 + msg2)} ${timezao}\n${inlineCode(msg3)}`,
                     files: [
-                        new MessageAttachment(a, 'code.js')
+                        new AttachmentBuilder(a, 'code.js')
                     ],
                     fetchReply: true,
                     components: [row]
