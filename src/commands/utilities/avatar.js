@@ -8,6 +8,8 @@ export default {
         type: 1,
         options: [{
             name: "usuário",
+            description: "O usuário que você deseja exibir o avatar",
+            type: 6
         }]
     },
     category: 'Utilities',
