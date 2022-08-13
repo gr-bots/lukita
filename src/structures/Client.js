@@ -5,7 +5,6 @@ import database from './Database.js';
 import { emojis } from '../utils/Config.js';
 import events from '../handlers/Events.js';
 import commands from '../handlers/Commands.js';
-import supportCommands from '../handlers/SupportCMDS.js';
 import tests from '../handlers/TestCommands.js';
 import deploy from './Deploy.js';
 import { connect } from '../utils/Schemas.js';
@@ -57,7 +56,6 @@ export default class LukitaClient extends Client {
   async init() {
     await events(this);
     await commands(this);
-    await supportCommands(this);
     await tests(this);
     await firebase(this);
     await database(this);

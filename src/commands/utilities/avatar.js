@@ -8,7 +8,6 @@ export default {
         type: 1,
         options: [{
             name: "usuário",
-            
         }]
     },
     category: 'Utilities',
