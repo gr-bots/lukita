@@ -9,12 +9,6 @@ export default async (client) => {
     if (command) arrayOfCommands.push(command)
   }
 
-  let arrayOfCommandsSC = Array()
-  let mapSC = Array.from(client.supportCommands)
-  for (let commandSC of Object(mapSC)) {
-    commandSC = commandSC[1].data
-    if (commandSC) arrayOfCommandsSC.push(commandSC)
-  }
   let arrayOfCommandsTest = Array()
   let mapTest = Array.from(client.tests)
   for (let commandTest of Object(mapTest)) {
@@ -36,17 +30,6 @@ export default async (client) => {
     );
     
     console.log('[ / Slash Commands ] Criação e atualização de comandos globais concluída!');
-    console.log('[ / Slash Commands ] Criação e atualização de comandos do suporte iniciada...');
-
-    console.log(`[ / ListCommands ] Comandos do suporte encontrados: \n| ${client.supportCommands.map(a => a.name).join(', ')} |`);
-    console.log(`[ / ListCommands ] Quantidade de comandos do suporte encontrados: ${arrayOfCommandsSC.length}`);
-
-    await rest.put(
-      Routes.applicationGuildCommands(client.user.id, '995769279733583944'),
-      { body: arrayOfCommandsSC },
-    );
-    
-    console.log('[ / Slash Commands ] Criação e atualização de comandos do suporte concluída!');
     console.log('[ / Slash Commands ] Criação e atualização de comandos em teste iniciada...');
 
     console.log(`[ / ListCommands ] Comandos em teste encontrados: \n| ${client.tests.map(a => a.name).join(', ')} |`);
