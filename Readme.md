@@ -1,6 +1,6 @@
 # <p align="center"> Lukita 💙</p> 
 
-### <div align="center"><code> Seu bot de moderação para o Discord, completo e simples para seu servidor </code></div>
+### <div align="center"><code> Seu bot multifuncional para o Discord, completo e simples para seu servidor </code></div>
  
 
 -------------------------------------------------------------------------------------------------------------------------------------------

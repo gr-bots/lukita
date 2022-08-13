@@ -1,6 +1,7 @@
 node_modules/
 testing/
 .env/
+.vscode/
 test.js
 package-lock.json
 src/commands/mod/warn.js
