@@ -13,7 +13,7 @@ export default class InteractionCreate extends Event {
 
     command?.execute({ interaction });
     try {
-        if (command.devsOnly === true && interaction.member.id != client.dev.includes(interaction.member.id)) {
+        if (command.devsOnly === true && !client.dev.includes(interaction.member.id)) {
                 return interaction.reply({ content: `⚠️・<@${interaction.member.id}>, Você não é um dos meus desenvolvedores.`, fetchReply: true, ephemeral: true })
                 }
         } catch (error) {
