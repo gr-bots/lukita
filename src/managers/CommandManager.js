@@ -20,7 +20,7 @@ export class CommandManager {
         this.manager.set(commandWithoutExtension, cmd);
       }
 
-      this.client.logger.info(`Loaded ${commands.length} commands successfully!`, { tags: ['Command'] });
+      this.client.logger.info(`${commands.length} comandos foram carregados com sucesso!`, { tags: ['Command'] });
     }
   }
 
@@ -32,7 +32,7 @@ export class CommandManager {
     const mappedCommands = this.client.commands.manager.map(x => x.options);
 
     await this.client.application?.commands.set(mappedCommands);
-    this.client.logger.info(`Posted ${mappedCommands.length} commands to Discord!`, {
+    this.client.logger.info(`Foram registrados ${mappedCommands.length} comandos no Discord!`, {
       tags: ['Commands'],
     });
   }

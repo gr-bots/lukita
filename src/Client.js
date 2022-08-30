@@ -1,5 +1,5 @@
 import {
-  Client as DiscordClient, GatewayIntentBits, Partials, ActivityType,
+  Client as DiscordClient, GatewayIntentBits, Options, Partials, ActivityType,
 } from 'discord.js';
 import { EventManager } from './managers/EventManager.js';
 import { CommandManager } from './managers/CommandManager.js';
@@ -10,6 +10,24 @@ import { connect } from './utils/Schemas.js';
 export class Lukita extends DiscordClient {
   constructor() {
     super({
+      makeCache: Options.cacheWithLimits({
+        GuildManager: Infinity,
+        GuildMemberManager: Infinity,
+        ApplicationCommandManager: 0,
+        BaseGuildEmojiManager: 0,
+        GuildBanManager: 0,
+        GuildInviteManager: 0,
+        GuildStickerManager: 0,
+        GuildScheduledEventManager: 0,
+        MessageManager: 0,
+        PresenceManager: 0,
+        ReactionManager: 0,
+        ReactionUserManager: 0,
+        StageInstanceManager: 0,
+        ThreadManager: 0,
+        ThreadMemberManager: 0,
+        UserManager: 0,
+      }),
       intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMembers,
@@ -46,6 +64,6 @@ export class Lukita extends DiscordClient {
     await this.events.loadEvents();
     await super.login(process.env.BOT_TOKEN);
     await database(this);
-    await connect(process.env.DATABASE_URL).then(() => { console.log(`[ Mongo ] ${new Date()} > Mongoose iniciada!`); }).catch(() => {});
+    await connect(process.env.DATABASE_URL).then(() => { this.logger.info(`O banco de dados em MongoDB foi conectado!`, { tags: ['Database'] }); }).catch(() => {});
   }
 }

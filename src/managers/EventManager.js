@@ -13,6 +13,6 @@ export class EventManager {
       this.client.on(evt.eventName, (...args) => evt.execute(this.client, ...args));
     }
 
-    this.client.logger.info(`Loaded ${events.length} events successfully!`, { tags: ['Events'] });
+    this.client.logger.info(`${events.length} eventos foram carregados com sucesso!`, { tags: ['Events'] });
   }
 }
