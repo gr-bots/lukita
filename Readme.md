@@ -30,16 +30,9 @@
 
 <table align="center">
 	<tr>
-		<td align="left">
-            <a align="left" href="https://discord.com/users/424931675009712128">
-              <img src="https://lanyard.cnrad.dev/api/424931675009712128" />
-            </a>
-        </td>
-        <td align="right">
-            <a align="right" href="https://discord.com/users/431768491759239211">
-              <img src="https://lanyard.cnrad.dev/api/431768491759239211" />
-            </a>
-        </td>
+		<td align="center">
+      <a align="center" href="https://discord.com/users/424931675009712128"><img src="https://lanyard.cnrad.dev/api/424931675009712128" /></a>
+    </td>
 	</tr>
 </table>
 
@@ -48,8 +41,8 @@
 <table align="center">
 	<tr>
 		<td>
-            <a href="https://github.com/flowingGR/Lukita/graphs/contributors">
-              <img src="https://contrib.rocks/image?repo=flowingGR/Lukita" />
+            <a href="https://github.com/GR-sh/Lukita/graphs/contributors">
+              <img src="https://contrib.rocks/image?repo=GR-sh/Lukita" />
             </a>
         </td>
 	</tr>
