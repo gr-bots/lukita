@@ -31,7 +31,6 @@ export class Lukita extends DiscordClient {
         }],
       },
     });
-
     this.commands = new CommandManager(this);
     this.events = new EventManager(this);
     this.dev = ['424931675009712128', '431768491759239211'];
