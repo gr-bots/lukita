@@ -49,7 +49,7 @@ export class Lukita extends DiscordClient {
     );
     await this.commands.loadCommands(this);
     await this.events.loadEvents();
-    await super.login('OTk2MjIwMTUxMDY0MTc4NzYx.GWGBtu.C6oD3ryf7aiTSZSHqcf_c3bL8_xtUvJbtAKuB8');
+    await super.login(process.env.BOT_TOKEN);
     await database(this);
     await connect(process.env.DATABASE_URL).then(() => { console.log(`[ Mongo ] ${new Date()} > Mongoose iniciada!`); }).catch(() => {});
   }
