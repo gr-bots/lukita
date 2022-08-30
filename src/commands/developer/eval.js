@@ -19,6 +19,9 @@ export default class EvalCommand extends Command {
   }
 
   async execute({ interaction }) {
+    const client = this.client
+    const guild = interaction.guild
+    
     try {
       const code = await eval(interaction.options.getString('code'));
       const codeLeave = typeof code !== 'string' ? inspect(code, { depth: 0 }).replaceAll(this.client.token, 'hidden') : code.replaceAll(this.client.token, 'hidden');
