@@ -8,6 +8,7 @@ export default class BotinfoCommand extends Command {
       description: '「💙 Bot」・Saiba mais sobre mim e minhas informações detalhadas',
       type: ApplicationCommandType.ChatInput,
     });
+    this.devOnly = false
   }
 
   async execute({ interaction }) {

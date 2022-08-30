@@ -8,6 +8,7 @@ export default class PingCommand extends Command {
       description: '「💙 Bot」・Acesse minha lista completa de comandos',      
       type: ApplicationCommandType.ChatInput,
     });
+    this.devOnly = false
   }
 
   async execute({ interaction }) {
