@@ -28,10 +28,10 @@ export default class EvalCommand extends Command {
     try {
       const code = await eval(interaction.options.getString('code'));
       const codeLeave = typeof code !== 'string' ? inspect(code, { depth: 0 }).replaceAll(this.client.token, 'hidden') : code.replaceAll(this.client.token, 'hidden');
-      return interaction.reply({ content: `**${this.client.emj.yesCheck}・Output**\n\`\`\`js\n${codeLeave.slice(0, 1900)}\`\`\``, ephemeral: true });
+      return interaction.reply({ content: `**${this.client.emj.yesCheck}・Output:**\n\`\`\`js\n${codeLeave.slice(0, 1900)}\`\`\``, ephemeral: true });
     } catch (err) {
       if (err instanceof Error) {
-        return interaction.reply({ content: `**${this.client.emj.noCheck}・Erro**\n\`\`\`js\n${err.stack}\`\`\``, ephemeral: true });
+        return interaction.reply({ content: `**${this.client.emj.noCheck}・Error:**\n\`\`\`js\n${err.stack}\`\`\``, ephemeral: true });
       }
     }
   }
