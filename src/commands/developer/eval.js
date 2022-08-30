@@ -1,7 +1,7 @@
 import { ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder } from 'discord.js';
 import { inspect } from 'util';
 import { Command } from '../../structures/Command.js';
-import { emjs } from './utils/Config.js';
+import { emjs } from '../../utils/Config.js';
 
 export default class EvalCommand extends Command {
   constructor(client) {
