@@ -1,6 +1,6 @@
 import { ApplicationCommandType } from 'discord.js';
 import { Command } from '../../structures/Command.js';
-import { emjs } from './utils/Config.js';
+import { emjs } from '../../utils/Config.js';
 
 async function pingMongo(client, interaction) {
   const pingStart = process.hrtime();
