@@ -6,7 +6,7 @@ export default class InteractionCreate extends Event {
     this.eventName = 'interactionCreate';
   }
 
-  execute(client, interaction) {
+  async execute(client, interaction) {
     if (!interaction.isChatInputCommand()) return;
 
     const command = client.commands.getCommand(interaction.commandName);
