@@ -2,7 +2,7 @@ import { ApplicationCommandType, EmbedBuilder } from 'discord.js';
 import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Config.js';
 import { Pallete } from '../../utils/Functions.js'
-const clr = Pallete
+const clr = new Pallete()
 
 export default class HelpCommand extends Command {
   constructor(client) {

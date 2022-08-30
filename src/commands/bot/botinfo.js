@@ -1,7 +1,7 @@
 import { ActionRowBuilder, ApplicationCommandType, ButtonBuilder, ButtonStyle, EmbedBuilder, inlineCode } from 'discord.js';
 import { Command } from '../../structures/Command.js';
 import { Pallete } from '../../utils/Functions.js'
-const clr = Pallete
+const clr = new Pallete()
 
 export default class BotinfoCommand extends Command {
   constructor(client) {
