@@ -20,7 +20,7 @@ export default class EvalCommand extends Command {
 
   async execute({ interaction }) {
     try {
-      const code = await eval(interaction.args.join(' '));
+      const code = await eval(interaction.options.getString('code'));
       const codeLeave = typeof code !== 'string' ? inspect(code, { depth: 0 }).replaceAll(this.client.token, 'hidden') : code.replaceAll(this.client.token, 'hidden');
       return interaction.reply({ content: `\`\`\`js\n${codeLeave.slice(0, 1900)}\`\`\``, ephemeral: true });
     } catch (err) {
