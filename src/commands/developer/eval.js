@@ -1,6 +1,7 @@
 import { ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder } from 'discord.js';
 import { inspect } from 'util';
 import { Command } from '../../structures/Command.js';
+import { emjs } from './utils/Config.js';
 
 export default class EvalCommand extends Command {
   constructor(client) {
@@ -28,10 +29,10 @@ export default class EvalCommand extends Command {
     try {
       const code = await eval(interaction.options.getString('code'));
       const codeLeave = typeof code !== 'string' ? inspect(code, { depth: 0 }).replaceAll(this.client.token, 'hidden') : code.replaceAll(this.client.token, 'hidden');
-      return interaction.reply({ content: `**${this.client.emj.yesCheck}・Output:**\n\`\`\`js\n${codeLeave.slice(0, 1900)}\`\`\``, ephemeral: true });
+      return interaction.reply({ content: `**${emjs.yesCheck}・Output:**\n\`\`\`js\n${codeLeave.slice(0, 1900)}\`\`\``, ephemeral: true });
     } catch (err) {
       if (err instanceof Error) {
-        return interaction.reply({ content: `**${this.client.emj.noCheck}・Error:**\n\`\`\`js\n${err.stack}\`\`\``, ephemeral: true });
+        return interaction.reply({ content: `**${emjs.noCheck}・Error:**\n\`\`\`js\n${err.stack}\`\`\``, ephemeral: true });
       }
     }
   }

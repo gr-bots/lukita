@@ -69,4 +69,4 @@ class Pallete {
   }
 }
 
-export { Pallete, Tools };
+export { Tools, Pallete };

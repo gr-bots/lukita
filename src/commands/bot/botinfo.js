@@ -1,5 +1,6 @@
 import { ActionRowBuilder, ApplicationCommandType, ButtonBuilder, ButtonStyle, EmbedBuilder, inlineCode } from 'discord.js';
 import { Command } from '../../structures/Command.js';
+import { Pallete } from '../../utils/Functions.js'
 
 export default class BotinfoCommand extends Command {
   constructor(client) {
@@ -24,7 +25,7 @@ export default class BotinfoCommand extends Command {
         .setDescription(`> Use </help:998743092612055060> para ver meus comandos`)
         .addFields({ name: `━・Dados「:satellite:」`, value: `> › Servidores: ${inlineCode(this.client.guilds.cache.size)}\n> › Memória RAM: ${inlineCode(ram)}\n> › Tempo ativo: <t:${~~((Date.now() / 1000) - (this.client.uptime / 1000))}:R>\n> › Versão: ${inlineCode(version)}`, inline: true })
         .setFooter({ text: `Criado por ${await this.client.users.fetch(this.client.dev[0]).then(a => a.tag)}` })
-        .setColor(`${this.client.clr.blueBaby}`)
+        .setColor(`${Pallete.blueBaby}`)
       
         interaction.reply({ embeds: [embedBotinfo], components: [rowBotinfo] })
   }

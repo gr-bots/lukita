@@ -1,5 +1,6 @@
 import { ApplicationCommandType } from 'discord.js';
 import { Command } from '../../structures/Command.js';
+import { emjs } from './utils/Config.js';
 
 async function pingMongo(client, interaction) {
   const pingStart = process.hrtime();
@@ -20,10 +21,10 @@ export default class PingCommand extends Command {
   }
 
   async execute({ interaction }) {
-    const bahzin = await interaction.reply({ content: `${this.client.emj.loading}`, fetchReply: true });
+    const bahzin = await interaction.reply({ content: `${emjs.loading}`, fetchReply: true });
     const wsPing = Math.round(this.client.ws.ping);
 
-    let pingContent = `> :satellite: Gateaway \`${wsPing}ms\`\n> :zap: API \`${bahzin.createdTimestamp - interaction.createdTimestamp}ms\`\n> ${this.client.emj.mongodb} Database \`${await pingMongo(this.client, interaction)}ms\``;
+    let pingContent = `> :satellite: Gateaway \`${wsPing}ms\`\n> :zap: API \`${bahzin.createdTimestamp - interaction.createdTimestamp}ms\`\n> ${emjs.mongodb} Database \`${await pingMongo(this.client, interaction)}ms\``;
 
     setTimeout(() => { interaction.editReply({ content: `${pingContent}` }); }, 1000);
   }
