@@ -1,4 +1,4 @@
-const emja = {
+const emjs = {
   loading: '<a:lk_loading:979536758817570866>',
   nothing: '<:lk_nothing:979537390114844702>',
   yesCheck: '<:lk_yesCheck:979539564844679218>',
