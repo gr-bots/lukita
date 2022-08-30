@@ -1,7 +1,11 @@
 class Event {
-  constructor(client, options) {
-    this.client = client
-    this.name = options.name
+  constructor() {
+    this.eventName = '';
+  }
+
+  execute(client, ...args) {
+    return { client, args };
   }
 }
-export default Event
+
+export { Event };

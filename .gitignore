@@ -1,9 +1,12 @@
-node_modules/
-testing/
-.env/
-.vscode/
-test.js
+# Files
+*-lock.json
+yarn.lock
 package-lock.json
-src/commands/mod/warn.js
-src/commands/mod/forms.js
-src/commands/developers/shell.js
+
+# Folders
+.vscode/
+node_modules/
+src/logs/
+
+# Dot files
+.env
