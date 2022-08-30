@@ -28,12 +28,7 @@ export class Lukita extends DiscordClient {
         ThreadMemberManager: 0,
         UserManager: 0,
       }),
-      intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMembers,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent,
-      ],
+      intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits, GuildMessages, GatewayIntentBits.MessageContent, GuildVoiceStates],
       partials: [Partials.Channel, Partials.User, Partials.GuildMember, Partials.Message],
       failIfNotExists: false,
       allowedMentions: {
