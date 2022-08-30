@@ -14,10 +14,10 @@ export default class InteractionCreate extends Event {
     command?.execute({ interaction });
     try {
         if (command.devsOnly === true && !client.dev.includes(interaction.member.id)) {
-                return interaction.reply({ content: `⚠️・<@${interaction.member.id}>, Você não é um dos meus desenvolvedores.`, fetchReply: true, ephemeral: true })
+                return interaction.reply({ content: `⚠️・<@${interaction.member.id}>, Você não é meu desenvolvedor.`, fetchReply: true, ephemeral: true })
                 }
         } catch (error) {
-            await interaction.reply({ content: `> ⚠️・<@${interaction.member.id}>, Ocorreu um erro ao executar o comando! Já avisei os meus desenvolvedores.`, ephemeral: true });
+            await interaction.reply({ content: `> ⚠️・<@${interaction.member.id}>, Ocorreu um erro ao executar o comando! Já avisei meu desenvolvedor.`, ephemeral: true });
         }
   }
 }

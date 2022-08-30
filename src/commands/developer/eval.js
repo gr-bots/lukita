@@ -14,8 +14,9 @@ export default class EvalCommand extends Command {
         type: ApplicationCommandOptionType.String, 
         required: true
       }],
+      devOnly: true,
     });
-    this.devOnly = true
+    
   }
 
   async execute({ interaction }) {
