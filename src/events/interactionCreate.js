@@ -13,11 +13,11 @@ export default class InteractionCreate extends Event {
 
     command?.execute({ interaction });
     try {
-        if (command.devsOnly === true && !client.dev.some((id) => id === interaction.user.id)) {
-                return interaction.reply({ content: `⚠️・<@${interaction.member.id}>, Você não é meu desenvolvedor.`, fetchReply: true, ephemeral: true })
+        if (command.devOnly === true && !client.dev.some((id) => id === interaction.user.id)) {
+        return interaction.reply({ content: `⚠️・<@${interaction.member.id}>, Você não é meu desenvolvedor.`, fetchReply: true, ephemeral: true })
                 }
         } catch (error) {
             await interaction.reply({ content: `> ⚠️・<@${interaction.member.id}>, Ocorreu um erro ao executar o comando! Já avisei meu desenvolvedor.`, ephemeral: true });
         }
-  }
+    }
 }
