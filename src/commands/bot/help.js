@@ -1,14 +1,14 @@
 import { ApplicationCommandType, EmbedBuilder } from 'discord.js';
 import { Command } from '../../structures/Command.js';
 
-export default class PingCommand extends Command {
+export default class HelpCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'help',
       description: '「💙 Bot」・Acesse minha lista completa de comandos',      
       type: ApplicationCommandType.ChatInput,
+      devOnly: false,
     });
-    this.devOnly = false
   }
 
   async execute({ interaction }) {

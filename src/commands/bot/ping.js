@@ -15,6 +15,7 @@ export default class PingCommand extends Command {
       name: 'ping',
       description: '「💙 Bot」・Veja minha latência atual',
       type: ApplicationCommandType.ChatInput,
+      devOnly: false,
     });
   }
 

@@ -22,6 +22,8 @@ export default class EvalCommand extends Command {
   async execute({ interaction }) {
     const client = this.client
     const guild = interaction.guild
+    const user = interaction.user
+    const member = interaction.member
     
     try {
       const code = await eval(interaction.options.getString('code'));
