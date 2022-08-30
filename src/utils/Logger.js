@@ -5,7 +5,7 @@ import { inspect } from 'node:util';
 const { createLogger, format } = _pkg;
 const { Console } = pkg;
 
-function loadWinstonLogger(logger, shardId = 'Gerenciamento') {
+function loadWinstonLogger(logger, shardId = 'Manager') {
   logger
     .add(
       new Console({
@@ -15,7 +15,7 @@ function loadWinstonLogger(logger, shardId = 'Gerenciamento') {
           format.colorize(),
           format.printf((info) => {
             const tags = info.tags?.map((t) => `\x1B[36m${t}\x1B[39m`).join(', ') ?? '';
-            const shardPrefix = ` --- [\x1B[36mFragmento ${shardId}\x1B[39m, ${tags}]:`;
+            const shardPrefix = ` --- [\x1B[36mShard ${shardId}\x1B[39m, ${tags}]:`;
             return `${info.timestamp} ${shardPrefix} ${info.message instanceof Error ? inspect(info.message, { depth: 0 }) : info.message}`;
           }),
         ),
@@ -29,7 +29,7 @@ function createWinstonLogger(options, client) {
     handleRejections: options?.handleRejections ?? true,
     exitOnError: false,
   });
-  loadWinstonLogger(logger, client?.shard?.ids[0] ?? 'Gerenciamento');
+  loadWinstonLogger(logger, client?.shard?.ids[0] ?? 'Manager');
 
   return logger;
 }
