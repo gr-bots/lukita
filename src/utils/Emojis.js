@@ -8,7 +8,8 @@ const emjs = {
   slash: '<:lk_slash:985985065760739339>',
   info: '<:lk_info:987500949771780116>',
   dev: '<:developer:1013931632706728047>',
-  djs: '<:lk_djs:987560966797533204>',
+  discordjs: '<:lk_djs:987560966797533204>',
+  javascript: '<:javascript:1014562192605061241>',
   categBot: '<:categBot:1014001821645295648>',
   eco: {
     waffles: '<:lk_waffles:996411857244000326>',
