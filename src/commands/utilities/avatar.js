@@ -23,6 +23,6 @@ export default class AvatarCommand extends Command {
       .setTitle(`Avatar de ${user.tag}`)
       .setImage({url: user.displayAvatarURL({ dynamic: true, size: 4096 }) });
 
-    interaction.reply({ embeds: [embedAvatar] });
+    interaction.reply({ embeds: [embedAvatar], fetchReply: true });
   }
 }
