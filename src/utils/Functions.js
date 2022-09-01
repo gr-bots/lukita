@@ -3,6 +3,10 @@ import('moment-duration-format');
 
 class Tools {
   constructor(client) {
+    this.getMember = (function (username, interaction) {
+      interaction.guild.members.search({ query: username, limit: 1 }).then(x => x.first())
+    }),
+    
     this.msToTime = (function (ms) {
       const seconds = ~~(ms / 1000);
       const minutes = ~~(seconds / 60);
