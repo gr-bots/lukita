@@ -18,7 +18,7 @@ export default class AvatarCommand extends Command {
   }
 
   async execute({ interaction }) {
-    const user = interaction.options.getUser('usuário') || interaction.user;
+    const user = interaction.options[0].getUser('usuário') || interaction.user;
     const embedAvatar = new EmbedBuilder()
       .setTitle(`Avatar de ${user.tag}`)
       .setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }));
