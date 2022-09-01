@@ -1,4 +1,4 @@
-import { ApplicationCommandType, ApplicationCommandOptionType } from 'discord.js';
+import { ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder } from 'discord.js';
 import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
 
@@ -21,8 +21,8 @@ export default class AvatarCommand extends Command {
     const user = interaction.options.getUser('usuário') || interaction.user;
     const embedAvatar = new EmbedBuilder()
       .setTitle(`Avatar de ${user.tag}`)
-      .setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }));
+      .setImage({url: user.displayAvatarURL({ dynamic: true, size: 4096 }) });
 
-    interaction.reply({ embeds: [embed] });
+    interaction.reply({ embeds: [embedAvatar] });
   }
 }
