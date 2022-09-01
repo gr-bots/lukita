@@ -19,10 +19,14 @@ export default class AvatarCommand extends Command {
 
   async execute({ interaction }) {
     const user = await interaction.options.getUser('usuário') || interaction.user;
-    const embedAvatar = new EmbedBuilder()
-      .setTitle(`Avatar de ${user.tag}`)
-      .setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }));
+    if (!interaction.member.avatar || !interaction.guild.members.cache.get(user.id).avatar) {
+      interaction.reply({content: 'bah'})
+    } else {
+      const embedAvatar = new EmbedBuilder()
+        .setTitle(`Avatar de ${user.tag}`)
+        .setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }));
 
-    interaction.reply({ embeds: [embedAvatar], fetchReply: true });
+      interaction.reply({ embeds: [embedAvatar], fetchReply: true });
+    }
   }
 }
