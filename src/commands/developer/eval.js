@@ -3,7 +3,7 @@ import { inspect } from 'util';
 import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
 import { Tools } from '../../utils/Functions.js'
-const tools = new Tools()
+
 
 export default class EvalCommand extends Command {
   constructor(client) {
@@ -27,6 +27,7 @@ export default class EvalCommand extends Command {
     const guild = interaction.guild
     const user = interaction.user
     const member = interaction.member
+    const tools = new Tools(this)
     
     try {
       const code = await eval(interaction.options.getString('code'));
