@@ -4,7 +4,6 @@ import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
 import { Tools } from '../../utils/Functions.js'
 
-
 export default class EvalCommand extends Command {
   constructor(client) {
     super(client, {
