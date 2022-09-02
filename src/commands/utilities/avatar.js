@@ -19,7 +19,7 @@ export default class AvatarCommand extends Command {
 
   async execute({ interaction }) {
     let user = await interaction.options.getUser('usuário') || interaction.user;
-    if (interaction.member.avatar === null|| interaction.guild.members.cache.get(user.id).avatar === null) {
+    if (interaction.member.avatar === null|| interaction.guild.members.fetch(user.id).then(x => x.avatar) === null) {
       interaction.reply({content: 'bah'})
     } else {
       const embedAvatar = new EmbedBuilder()
