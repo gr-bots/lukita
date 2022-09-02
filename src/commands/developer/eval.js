@@ -26,7 +26,7 @@ export default class EvalCommand extends Command {
     const guild = interaction.guild
     const user = interaction.user
     const member = interaction.member
-    const tools = new Tools(client, interaction)
+    const tools = new Tools(client, interaction, guild)
     
     try {
       const code = await eval(interaction.options.getString('code'));
