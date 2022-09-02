@@ -2,9 +2,9 @@ import moment from 'moment';
 import('moment-duration-format');
 
 class Tools {
-  constructor(client) {
-    this.getMember = (function (username, guild) {
-      guild.members.search({ query: username, limit: 1 }).then(x => x.first())
+  constructor(client, interaction) {
+    this.getMember = (function (username) {
+      interaction.guild.members.search({ query: username, limit: 1 }).then(x => x.first())
     }),
     
     this.msToTime = (function (ms) {
