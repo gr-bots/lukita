@@ -4,7 +4,7 @@ import('moment-duration-format');
 class Tools {
   constructor(client, interaction) {
     this.getMember = (function (username) {
-      interaction.guild.members.search({ query: username, limit: 1 }).then(x => x.first())
+      interaction.guild.members.search({ query: username, limit: 1 }).then(x => x.first().user)
     }),
     
     this.msToTime = (function (ms) {
