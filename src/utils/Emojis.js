@@ -11,6 +11,7 @@ const emjs = {
   discordjs: '<:lk_djs:987560966797533204>',
   javascript: '<:javascript:1014562192605061241>',
   categBot: '<:categBot:1014001821645295648>',
+  categUtil: '<:categUtil:1015783145364262933>',
   eco: {
     waffles: '<:lk_waffles:996411857244000326>',
     cafeteria: '<:lk_cafeteria:996413963665412207>',

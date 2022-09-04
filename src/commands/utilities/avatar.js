@@ -1,4 +1,4 @@
-import { ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder } from 'discord.js';
+import { ActionRowBuilder, ApplicationCommandType, ButtonBuilder, ButtonStyle, EmbedBuilder } from 'discord.js';
 import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
 
@@ -26,7 +26,7 @@ export default class AvatarCommand extends Command {
     const embedAvatar = new EmbedBuilder()
       .setTitle(`:camera: ${user.tag}`)
       .setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }))
-      .setFooter({text: 'Bonito ou não é um avatar..'})
+      .setFooter({ text: 'Bonito ou não é um avatar..' })
     interaction.reply({ embeds: [embedAvatar], components: [rowAvatar], fetchReply: true });
   }
 }
