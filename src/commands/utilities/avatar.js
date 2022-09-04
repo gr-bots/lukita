@@ -18,15 +18,15 @@ export default class AvatarCommand extends Command {
   }
 
   async execute({ interaction }) {
-    let user = await interaction.options.getUser('usuário') || interaction.user;
-    if (interaction.member.avatar != null|| interaction.guild.members.fetch(user.id).then(x => x.avatar) != null) {
-      interaction.reply({content: 'bah'})
-    } else {
-      const embedAvatar = new EmbedBuilder()
-        .setTitle(`Avatar de ${user.tag}`)
-        .setImage(user.avatarURL({ dynamic: true, size: 4096 }));
+    let user = await interaction.options.getUser('usuário') || interaction.member;
 
-      interaction.reply({ embeds: [embedAvatar], fetchReply: true });
-    }
+    const rowAvatar = new ActionRowBuilder()
+		  .addComponents(new ButtonBuilder().setLabel('Abra o avatar na web').setStyle(ButtonStyle.Link).setURL(user.displayAvatarURL({ dynamic: true, size: 4096 })))
+
+    const embedAvatar = new EmbedBuilder()
+      .setTitle(`:camera: ${user.tag}`)
+      .setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }))
+      .setFooter({text: 'Bonito ou não é um avatar..'})
+    interaction.reply({ embeds: [embedAvatar], components: [rowAvatar], fetchReply: true });
   }
 }
