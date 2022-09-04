@@ -1,6 +1,7 @@
 import { ActionRowBuilder, ApplicationCommandType, ApplicationCommandOptionType, ButtonBuilder, ButtonStyle, EmbedBuilder } from 'discord.js';
 import { Command } from '../../structures/Command.js';
-import { emjs } from '../../utils/Emojis.js';
+import { Pallete } from '../../utils/Functions.js'
+const clr = new Pallete()
 
 export default class AvatarCommand extends Command {
   constructor(client) {
