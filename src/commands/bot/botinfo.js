@@ -20,8 +20,8 @@ export default class BotinfoCommand extends Command {
     let ram = String(parseInt(x)).slice(0, 2) + '%'
 
     const rowBotinfo = new ActionRowBuilder()
-		  .addComponents(new ButtonBuilder().setLabel('Me adicione').setStyle(ButtonStyle.Link).setURL('https://discord.com/oauth2/authorize? client_id=917962601923760139&scope=bot+identify+guilds+email+applications.commands&permissions=2080374975'))
-      .addComponents(new ButtonBuilder().setLabel('Suporte').setStyle(ButtonStyle.Link).setURL('https://discord.gg/pJyY3zsMmB'))
+      .addComponents(new ButtonBuilder().setLabel('Me adicione').setStyle(ButtonStyle.Link).setURL('https://discord.com/oauth2/authorize?client_id=917962601923760139&scope=bot+identify+guilds+email+applications.commands&permissions=2080374975'))
+      .addComponents(new ButtonBuilder().setLabel('Suporte').setStyle(ButtonStyle.Link).setURL('https://discord.gg/pJyY3zsMmB'));
 
     let embedBotinfo = new EmbedBuilder()
       .setAuthor({ name: `${this.client.user.username}・Informações`, iconURL: `${this.client.user.displayAvatarURL({display: true, size: 4096})}` })
