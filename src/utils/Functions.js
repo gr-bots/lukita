@@ -62,10 +62,13 @@ class Tools {
 class Pallete {
   constructor() {
     this.noBG = '#303136',
-    this.primary = '#042b7b',
-    this.secondary = '#200d11',
     this.blueBaby = '#5d97e2',
-    this.alert = '#e8b835';
+    this.blue = '#7289da',
+    this.green = '#43b581',
+    this.yellow = '#faa61a',
+    this.red = '#f04747',
+    this.purple = '#b366ff',
+    this.alert = '#e8b835',
     this.economy = {
       soft: '#e8b07d',
       green: '#599271',
