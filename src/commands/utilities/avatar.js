@@ -1,7 +1,6 @@
 import { ActionRowBuilder, ApplicationCommandType, ApplicationCommandOptionType, ButtonBuilder, ButtonStyle, EmbedBuilder } from 'discord.js';
 import { Command } from '../../structures/Command.js';
-import { Pallete } from '../../utils/Functions.js'
-const clr = new Pallete()
+import { Tools } from '../../utils/Functions.js'
 
 export default class AvatarCommand extends Command {
   constructor(client) {
@@ -19,6 +18,8 @@ export default class AvatarCommand extends Command {
   }
 
   async execute({ interaction }) {
+    const tools = new Tools(client, interaction)
+
     let user = await interaction.options.getUser('usuário') || interaction.user;
 
     const rowAvatar = new ActionRowBuilder()
@@ -27,7 +28,7 @@ export default class AvatarCommand extends Command {
     const embedAvatar = new EmbedBuilder()
       .setTitle(`:camera: ${user.tag}`)
       .setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }))
-      .setColor(`${clr.green}`)
+      .setColor(`${tools.randomHex()}`)
       .setFooter({ text: 'Bonito ou não é um avatar..' })
     interaction.reply({ embeds: [embedAvatar], components: [rowAvatar], fetchReply: true });
   }

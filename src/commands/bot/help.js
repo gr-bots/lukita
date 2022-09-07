@@ -1,8 +1,7 @@
 import { ApplicationCommandType, EmbedBuilder } from 'discord.js';
 import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
-import { Pallete } from '../../utils/Functions.js'
-const clr = new Pallete()
+import { Tools } from '../../utils/Functions.js'
 
 export default class HelpCommand extends Command {
   constructor(client) {
@@ -15,11 +14,13 @@ export default class HelpCommand extends Command {
   }
 
   async execute({ interaction }) {
+    const tools = new Tools(client, interaction)
+
     let embedHelp = new EmbedBuilder()
       .setAuthor({ name: `${this.client.user.username}・Help`, iconURL: `${interaction.guild.iconURL({dynamic: true, size: 4096})}` })
       .setTitle('Lista de comandos')
       .setDescription(`:wink: **${interaction.member.user.tag}** seja bem vindo a minha central de ajuda e help dos meus comandos. \n\n${emjs.categBot} › __Informações (Bot)__ \`[ ${await this.client.application.commands.fetch().then(r => r.filter(categ => categ.description.includes('💙')).size)} ]\` \n${await this.client.application.commands.fetch().then(r => r.filter(categ => categ.description.includes('💙')).map(cmd => `</${cmd.name}:${cmd.id}>`).join(' - '))}\n\n${emjs.categUtil} › __Utilidades (Util)__ \`[ ${await this.client.application.commands.fetch().then(r => r.filter(categ => categ.description.includes('🔧')).size)} ]\` \n${await this.client.application.commands.fetch().then(r => r.filter(categ => categ.description.includes('🔧')).map(cmd => `</${cmd.name}:${cmd.id}>`).join(' - '))}`)
-      .setColor(`${clr.blueBaby}`)
+      .setColor(`${tools.randomHex()}`)
       .setFooter({ text: `Sou um jovem disposto a deixar seu servidor melhor e mais divertido sendo multifuncional. ` })
     interaction.reply({ embeds: [embedHelp], iconURL: `${this.client.user.displayAvatarURL({ format: 'png', size: 4096 })}` })
   }
