@@ -32,6 +32,6 @@ export default class BotinfoCommand extends Command {
       .setFooter({ text: `Criado por ${await this.client.users.fetch(this.client.dev[0]).then(a => a.tag)}` })
       .setColor(`${tools.randomHex()}`)
       
-    interaction.reply({ embeds: [embedBotinfo], components: [rowBotinfo], fetchReply: true })
+    interaction.reply({ embeds: [embedBotinfo], components: [rowBotinfo] })
   }
 }

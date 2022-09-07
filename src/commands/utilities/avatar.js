@@ -31,6 +31,6 @@ export default class AvatarCommand extends Command {
       .setImage(user.displayAvatarURL({ dynamic: true, size: 4096 }))
       .setColor(`${tools.randomHex()}`)
       .setFooter({ text: 'Bonito ou não é um avatar..' })
-    interaction.reply({ embeds: [embedAvatar], components: [rowAvatar], fetchReply: true });
+    interaction.reply({ embeds: [embedAvatar], components: [rowAvatar] });
   }
 }
