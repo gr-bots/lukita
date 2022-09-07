@@ -39,7 +39,7 @@ class Tools {
       const hex = [new Pallete().background, new Pallete().baby, new Pallete().clean, new Pallete().blue, new Pallete().sky, new Pallete().green, new Pallete().yellow, new Pallete().orange, new Pallete().red, new Pallete().pink, new Pallete().purple];
 
       const random = Math.floor(Math.random() * hex.length);
-      return String(hex[random]);
+      return hex[random];
     }),
 
     this.msToTime = (function (ms) {
