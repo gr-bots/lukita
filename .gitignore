@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Files
 *-lock.json
 yarn.lock
@@ -10,3 +11,17 @@ src/logs/
 
 # Dot files
 .env
+=======
+# Files
+*-lock.json
+yarn.lock
+package-lock.json
+
+# Folders
+.vscode/
+node_modules/
+src/logs/
+
+# Dot files
+.env
+>>>>>>> 5b65be8990c38b8fa199d926b6a35515d7241e97
