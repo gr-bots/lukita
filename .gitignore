@@ -1,0 +1,12 @@
+# Files
+*-lock.json
+yarn.lock
+package-lock.json
+
+# Folders
+.vscode/
+node_modules/
+src/logs/
+
+# Dot files
+.env
