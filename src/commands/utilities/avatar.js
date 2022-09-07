@@ -18,6 +18,7 @@ export default class AvatarCommand extends Command {
   }
 
   async execute({ interaction }) {
+    const { client, guild, member } = interaction
     const tools = new Tools(client, interaction)
 
     let user = await interaction.options.getUser('usuário') || interaction.user;

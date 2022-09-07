@@ -14,6 +14,7 @@ export default class HelpCommand extends Command {
   }
 
   async execute({ interaction }) {
+    const { client, guild, user, member } = interaction
     const tools = new Tools(client, interaction)
 
     let embedHelp = new EmbedBuilder()
