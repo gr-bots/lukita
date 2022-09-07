@@ -18,6 +18,6 @@ export default class PingCommand extends Command {
 
     let pingContent = `> :satellite: Gateaway \`${wsPing}ms\`\n> :zap: API \`${bahzin.createdTimestamp - interaction.createdTimestamp}ms\`\n> ${emjs.mongodb} Database \`${await this.client.db.ping()}ms\``;
 
-    setTimeout(() => { interaction.editReply({ content: `${pingContent}` }); }, 1000);
+    setTimeout(() => { interaction.editReply({ content: `${pingContent}`, fetchReply: true }); }, 1000);
   }
 }
