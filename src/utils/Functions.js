@@ -1,12 +1,47 @@
 import moment from 'moment';
 import('moment-duration-format');
 
+// -- Connect QuizApi firebase official and create functions for set
+/* class Quiz {
+  constructor() {
+    
+  }
+} */
+
+class Pallete {
+  constructor() {
+    this.background = '#303136',
+    this.baby = '#5d97e2',
+    this.clean = '#7289da',
+    this.blue = '#8aadf4',
+    this.sky = '#91d7e3',
+    this.green = '#a6da95',
+    this.yellow = '#eed49f',
+    this.orange = '#f5a97f',
+    this.red = '#ed8796',
+    this.pink = '#f5bde6',
+    this.purple = '#c6a0f6',
+    this.alert = '#e8b835',
+    this.economy = {
+      soft: '#e8b07d',
+      green: '#599271',
+    };
+  }
+}
+
 class Tools {
   constructor(client, interaction) {
     this.getMember = (function (username) {
       interaction.guild.members.search({ query: username, limit: 1 }).then(x => x.first().user)
     }),
-    
+
+    this.randomHex = (function () {
+      const hex = [new Pallete().background, new Pallete().baby, new Pallete().clean, new Pallete().blue, new Pallete().sky, new Pallete().green, new Pallete().yellow, new Pallete().orange, new Pallete().red, new Pallete().pink, new Pallete().purple];
+
+      const random = Math.floor(Math.random() * months.length);
+      console.log(hex[random]);
+    }),
+
     this.msToTime = (function (ms) {
       const seconds = ~~(ms / 1000);
       const minutes = ~~(seconds / 60);
@@ -50,33 +85,6 @@ class Tools {
       const resultado = moment.duration(client.uptime).format('d[d], h[h], m[m], s[s]');
       return resultado;
     });
-  }
-}
-// -- Connect QuizApi firebase official and create functions for set
-/* class Quiz {
-  constructor() {
-    
-  }
-} */
-
-class Pallete {
-  constructor() {
-    this.background = '#303136',
-    this.baby = '#5d97e2',
-    this.clean = '#7289da',
-    this.blue = '#8aadf4',
-    this.sky = '#91d7e3',
-    this.green = '#a6da95',
-    this.yellow = '#eed49f',
-    this.orange = '#f5a97f',
-    this.red = '#ed8796',
-    this.pink = '#f5bde6',
-    this.purple = '#c6a0f6',
-    this.alert = '#e8b835',
-    this.economy = {
-      soft: '#e8b07d',
-      green: '#599271',
-    };
   }
 }
 
