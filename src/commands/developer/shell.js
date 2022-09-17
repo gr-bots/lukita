@@ -1,5 +1,5 @@
 import { ApplicationCommandType, ApplicationCommandOptionType } from 'discord.js';
-import { exec } from 'node:child_process';
+import { exec } from 'child_process';
 import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
 const REGEX = /[\u001b\u009b][[()#;?](?:[0-9]{1,4}(?:;[0-9]{0,4}))?[0-9A-ORZcf-nqry=><]/g;
