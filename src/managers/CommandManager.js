@@ -8,14 +8,14 @@ export class CommandManager {
   }
 
   async loadCommands(client) {
-    const categories = await readdir(`${process.cwd()}/commands/`);
+    const categories = await readdir(`${process.cwd()}/src/commands/`);
     for await (const category of categories) {
-      const commands = await readdir(`${process.cwd()}/commands/${category}`);
+      const commands = await readdir(`${process.cwd()}/src/commands/${category}`);
 
       for await (const command of commands) {
         if (!command.endsWith('.js')) continue;
         const commandWithoutExtension = command.replace('.js', '');
-        const { default: CommandClass } = await import(`${process.cwd()}/commands/${category}/${command}`);
+        const { default: CommandClass } = await import(`${process.cwd()}/src/commands/${category}/${command}`);
         const cmd = new CommandClass(client);
         this.manager.set(commandWithoutExtension, cmd);
       }
