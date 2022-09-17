@@ -19,7 +19,6 @@ export default class EvalCommand extends Command {
       }],
       devOnly: true,
     });
-    
   }
 
   async execute({ interaction }) {
