@@ -10,7 +10,7 @@ export class CommandManager {
   async loadCommands(client) {
     const categories = await readdir(`${process.cwd()}/src/commands/`);
     for await (const category of categories) {
-      const commands = await readdir(`${process.cwd()}/src/commands/${category}`);
+      const commands = await readdir(`${process.cwd()}/commands/${category}`);
 
       for await (const command of commands) {
         if (!command.endsWith('.js')) continue;
