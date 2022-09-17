@@ -32,7 +32,7 @@ export default class EvalCommand extends Command {
       return interaction.reply({ content: `**${emjs.yesCheck}・Output:**\n\`\`\`js\n${codeLeave.slice(0, 1900)}\`\`\``, ephemeral: true, fetchReply: true });
     } catch (err) {
       if (err instanceof Error) {
-        return interaction.reply({ content: `**${emjs.noCheck}・Error:**\n\`\`\`js\n${err.stack}\`\`\``, ephemeral: true, fetchReply: true });
+        return interaction.reply({ content: `**${emjs.noCheck}・Error:**\n\`\`\`sh\n${err.stack}\`\`\``, ephemeral: true, fetchReply: true });
       }
     }
   }
