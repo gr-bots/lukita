@@ -17,7 +17,6 @@ export default class ShellCommand extends Command {
       }],
       devOnly: true,
     });
-    
   }
 
   async execute({ interaction }) {
