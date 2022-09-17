@@ -1,5 +1,5 @@
 import { ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder } from 'discord.js';
-import { inspect } from 'node:util';
+import { inspect } from 'util';
 import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
 import { Tools, Pallete } from '../../utils/Functions.js'
