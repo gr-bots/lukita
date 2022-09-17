@@ -18,19 +18,20 @@ export default class AvatarCommand extends Command {
   }
 
   async execute({ interaction }) {
-    const { client, guild, member } = interaction
+    const { client, guild, member, channel } = interaction
     const tools = new Tools(client, interaction)
 
     let user = await interaction.options.getUser('usuário') || interaction.user;
 
-    const rowAvatar = new ActionRowBuilder()
-		  .addComponents(new ButtonBuilder().setLabel('Abra o avatar na web').setStyle(ButtonStyle.Link).setURL(user.displayAvatarURL({ dynamic: true, size: 2048 })))
-
-    const embedAvatar = new EmbedBuilder()
+    interaction.reply({ embeds: [
+      new EmbedBuilder()
       .setTitle(`:camera: ${user.tag}`)
       .setImage(user.displayAvatarURL({ dynamic: true, size: 2048 }))
       .setColor(`${tools.randomHex()}`)
       .setFooter({ text: 'Bonito ou não é um avatar..' })
-    interaction.reply({ embeds: [embedAvatar], components: [rowAvatar] });
+    ], components: [
+      new ActionRowBuilder()
+		  .addComponents(new ButtonBuilder().setLabel('Abra o avatar na web').setStyle(ButtonStyle.Link).setURL(user.displayAvatarURL({ dynamic: true, size: 2048 })))
+    ] });
   }
 }

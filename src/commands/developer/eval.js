@@ -23,7 +23,7 @@ export default class EvalCommand extends Command {
   }
 
   async execute({ interaction }) {
-    const { client, guild, user, member } = interaction
+    const { client, guild, user, member, channel } = interaction
     const tools = new Tools(client, interaction)
     
     try {
