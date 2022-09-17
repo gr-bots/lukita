@@ -20,7 +20,7 @@ export class CommandManager {
         this.manager.set(commandWithoutExtension, cmd);
       }
 
-      this.client.logger.info(`${commands.length} comandos foram carregados com sucesso!`, { tags: ['Command'] });
+      this.client.logger.info(`${commands.length} comandos foram carregados com sucesso!`, { tags: [`Category: ${category.slice(0, 1).toLocaleUpperCase()}`] });
     }
   }
 
