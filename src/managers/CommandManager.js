@@ -15,7 +15,7 @@ export class CommandManager {
       for await (const command of commands) {
         if (!command.endsWith('.js')) continue;
         const commandWithoutExtension = command.replace('.js', '');
-        const { default: CommandClass } = await import(`${process.cwd()}/commands/${category}/${command}`);
+        const { default: CommandClass } = await import(`${process.cwd()}/src/commands/${category}/${command}`);
         const cmd = new CommandClass(client);
         this.manager.set(commandWithoutExtension, cmd);
       }

@@ -8,7 +8,7 @@ export class EventManager {
   async loadEvents() {
     const events = (await readdir(`${process.cwd()}/events/`)).filter(file => file.endsWith('.js'));
     for await (const event of events) {
-      const { default: EventClass } = await import(`${process.cwd()}/events/${event}`);
+      const { default: EventClass } = await import(`${process.cwd()}/src/events/${event}`);
       const evt = new EventClass();
       this.client.on(evt.eventName, (...args) => evt.execute(this.client, ...args));
     }
