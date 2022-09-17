@@ -2,6 +2,7 @@ import { ApplicationCommandType, ApplicationCommandOptionType } from 'discord.js
 import { exec } from 'node:child_process';
 import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
+const REGEX = /[\u001b\u009b][[()#;?](?:[0-9]{1,4}(?:;[0-9]{0,4}))?[0-9A-ORZcf-nqry=><]/g;
 
 export default class ShellCommand extends Command {
   constructor(client) {
@@ -20,7 +21,6 @@ export default class ShellCommand extends Command {
   }
 
   async execute({ interaction }) {
-    const REGEX = /[\u001b\u009b][[()#;?](?:[0-9]{1,4}(?:;[0-9]{0,4}))?[0-9A-ORZcf-nqry=><]/g;
     const comando = interaction.options.getString('comando');
     
     exec(comando , (err, res) => {
