@@ -22,9 +22,9 @@ export default class ShellCommand extends Command {
   async execute({ interaction }) {
     const comando = interaction.options.getString('comando');
 
-    exec(comando, (err, res) => {
+    exec(comando, (res) => {
       try {
-       return interaction.reply({ content: `**${emjs.yesCheck}・Output:**\n\`\`\`sh\n${res.replace(RGX, '').slice(0, 1900)}\`\`\``, ephemeral: true });
+       return interaction.reply({ content: `**${emjs.yesCheck}・Output:**\n\`\`\`bash\n${res.replace(RGX, '').slice(0, 1900)}\`\`\``, ephemeral: true });
       } catch (err) {
         if (err instanceof Error) {
           return interaction.reply({ content: `**${emjs.noCheck}・Error:**\n\`\`\`cmd\n${err.stack}\`\`\``, ephemeral: true, fetchReply: true });
