@@ -24,7 +24,7 @@ export default class ShellCommand extends Command {
 
     exec(comando, (err, res) => {
       if (err) {
-        return interaction.reply({ content: `**${emjs.noCheck}・Error:**\n\`\`\`sh\n${err}\`\`\``, ephemeral: true });
+        return interaction.reply({ content: `**${emjs.noCheck}・Error:**\n\`\`\`sh\n${err}\`\`\``, ephemeral: true, fetchReply: true });
       } else {
         return interaction.reply({ content: `**${emjs.yesCheck}・Output:**\n\`\`\`sh\n${res.replace(RGX, '').slice(0, 1900)}\`\`\``, ephemeral: true });
       }
