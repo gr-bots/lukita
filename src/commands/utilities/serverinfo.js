@@ -28,7 +28,7 @@ export default class ServerinfoCommand extends Command {
         new EmbedBuilder()
         .setThumbnail(guild.iconURL({ dynamic: true, size: 2048 }))
         .setAuthor({ name: `${guild.name}`, iconURL: guild.iconURL({ dynamic: true, size: 2048 }) })
-        .setDescription(`${codeBlock(guild.description)}\n**Principais**\n• Dono: <@${guild.ownerId} | ${inlineCode(client.users.fetch(guild.ownerId).then(x => x.tag))}\n• Id: ${inlineCode(guild.id)}`)
+        .setDescription(`${codeBlock(guild.description)}\n**Principais**\n• Dono: <@${guild.ownerId}> | ${inlineCode(await client.users.fetch(guild.ownerId).then(x => x.tag))}\n• Id: ${inlineCode(guild.id)}`)
         .setColor(`${tools.randomHex()}`)
       ] });
     } else {
@@ -37,7 +37,7 @@ export default class ServerinfoCommand extends Command {
         new EmbedBuilder()
         .setThumbnail(optionGuild.iconURL({ dynamic: true, size: 2048 }))
         .setAuthor({ name: `${optionGuild.name}`, iconURL: optionGuild.iconURL({ dynamic: true, size: 2048 }) })
-        .setDescription(`${codeBlock(optionGuild.description)}\n**Principais**\n• Dono: <@${optionGuild.ownerId} | ${inlineCode(client.users.fetch(optionGuild.ownerId).then(x => x.tag))}\n• Id: ${inlineCode(optionGuild.id)}`)
+        .setDescription(`${codeBlock(optionGuild.description)}\n**Principais**\n• Dono: <@${optionGuild.ownerId}> | ${inlineCode(await client.users.fetch(optionGuild.ownerId).then(x => x.tag))}\n• Id: ${inlineCode(optionGuild.id)}`)
         .setColor(`${tools.randomHex()}`)
       ] });
     }
