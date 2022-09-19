@@ -30,9 +30,6 @@ export default class ServerinfoCommand extends Command {
         .setAuthor({ name: `${guild.name}`, iconURL: guild.iconURL({ dynamic: true, size: 2048 }) })
         .setDescription(`${codeBlock(guild.description)}\n**Principais**\n• Dono: <@${guild.ownerId}> | ${inlineCode(await client.users.fetch(guild.ownerId).then(x => x.tag))}\n• Id: ${inlineCode(guild.id)}\n• Região: **${guild.preferredLocale.replace('da', 'Dansk').replace('de', 'Alemanha').replace('en-GB', 'Inglaterra').replace('en-US', 'Estados Unidos').replace('es-ES', 'Espanha').replace('fr', 'França').replace('hr', 'Croácia').replace('pt-BR', 'Brasil')}**`)
         .setColor(`${tools.randomHex()}`)
-      ], components: [
-        new ActionRowBuilder()
-        .addComponents(new ButtonBuilder().setLabel('Convite do Servidor').setStyle(ButtonStyle.Link).setURL(`https://discord.gg/${guild.channels.cache.filter(x => x.type === 0).map(x => x)[0].createInvite().code}`))
       ] });
     } else {
       let optionGuild = await client.guilds.cache.get(server)
@@ -42,9 +39,6 @@ export default class ServerinfoCommand extends Command {
         .setAuthor({ name: `${optionGuild.name}`, iconURL: optionGuild.iconURL({ dynamic: true, size: 2048 }) })
         .setDescription(`${codeBlock(optionGuild.description)}\n**Principais**\n• Dono: <@${optionGuild.ownerId}> | ${inlineCode(await client.users.fetch(optionGuild.ownerId).then(x => x.tag))}\n• Id: ${inlineCode(optionGuild.id)}\n• Região: **${optionGuild.preferredLocale.replace('da', 'Dansk').replace('de', 'Alemanha').replace('en-GB', 'Inglaterra').replace('en-US', 'Estados Unidos').replace('es-ES', 'Espanha').replace('fr', 'França').replace('hr', 'Croácia').replace('pt-BR', 'Brasil')}**`)
         .setColor(`${tools.randomHex()}`)
-      ], components: [
-        new ActionRowBuilder()
-        .addComponents(new ButtonBuilder().setLabel('Convite do Servidor').setStyle(ButtonStyle.Link).setURL(`https://discord.gg/${optionGuild.channels.cache.filter(x => x.type === 0).map(x => x)[0].createInvite().code}`))
       ] });
     }
   }
