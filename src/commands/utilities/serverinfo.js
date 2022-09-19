@@ -32,7 +32,7 @@ export default class ServerinfoCommand extends Command {
         .setColor(`${tools.randomHex()}`)
       ], components: [
         new ActionRowBuilder()
-        .addComponents(new ButtonBuilder().setLabel('Convite do Servidor').setStyle(ButtonStyle.Link).setURL(`https://discord.gg/${guild.channels.cache.filter(x => x.type === 0).map(x => x)[0].createInvite()}`))
+        .addComponents(new ButtonBuilder().setLabel('Convite do Servidor').setStyle(ButtonStyle.Link).setURL(`https://discord.gg/${guild.channels.cache.filter(x => x.type === 0).map(x => x)[0].createInvite().code}`))
       ] });
     } else {
       let optionGuild = await client.guilds.cache.get(server)
@@ -44,7 +44,7 @@ export default class ServerinfoCommand extends Command {
         .setColor(`${tools.randomHex()}`)
       ], components: [
         new ActionRowBuilder()
-        .addComponents(new ButtonBuilder().setLabel('Convite do Servidor').setStyle(ButtonStyle.Link).setURL(`https://discord.gg/${optionGuild.channels.cache.filter(x => x.type === 0).map(x => x)[0].createInvite()}`))
+        .addComponents(new ButtonBuilder().setLabel('Convite do Servidor').setStyle(ButtonStyle.Link).setURL(`https://discord.gg/${optionGuild.channels.cache.filter(x => x.type === 0).map(x => x)[0].createInvite().code}`))
       ] });
     }
   }
