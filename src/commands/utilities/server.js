@@ -35,7 +35,7 @@ export default class ServerinfoCommand extends Command {
     const { client, guild, member, channel } = interaction
     const tools = new Tools(client, interaction)
 
-    if (await interaction.options[0].getString('info') === 'info') {
+    if (await interaction.options[0].getSubcommand() === 'info') {
       let server = await interaction.options[0].getString('id')
       
       try {
@@ -61,7 +61,7 @@ export default class ServerinfoCommand extends Command {
         console.log(`・Erro no Serverinfo: ${error.stack}`)
         return interaction.reply({ content: `> ⚠️・<@${interaction.user.id}>, Ocorreu um erro ao executar o comando! Já avisei meu desenvolvedor.`, ephemeral: true, fetchReply: true });
       }
-    } if (await interaction.options[1].getString('icon') === 'icon') {
+    } if (await interaction.options[1].getSubcommand() === 'icon') {
       let server = await interaction.options[1].getString('id')
       
       try {
