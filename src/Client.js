@@ -66,7 +66,6 @@ export class Lukita extends DiscordClient {
       await this.events.loadEvents();
       await super.login(process.env.BOT_TOKEN);
       await database(this);
-      await userUpdate(this);
     await connect(process.env.DATABASE_URL).then(() => { this.logger.info(`O banco de dados em MongoDB foi conectado!`, { tags: ['Database'] }); }).catch(() => {});
   }
 }
