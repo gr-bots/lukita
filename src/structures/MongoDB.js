@@ -1,4 +1,4 @@
-import { User, Guild } from '../utils/Schemas.js';
+import { User, Guild } from '../utils/Models.js';
 
 export default (client) => {
   class Database {

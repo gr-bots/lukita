@@ -5,7 +5,8 @@ import { EventManager } from './managers/EventManager.js';
 import { CommandManager } from './managers/CommandManager.js';
 import { createWinstonLogger } from './utils/Logger.js';
 import database from './structures/MongoDB.js';
-import { connect } from './utils/Schemas.js';
+import userUpdate from './utils/UserInfos.js';
+import { connect } from './utils/Models.js';
 
 export class Lukita extends DiscordClient {
   constructor() {
@@ -60,11 +61,12 @@ export class Lukita extends DiscordClient {
         handleRejections: true,
       },
       this,
-    );
-    await this.commands.loadCommands(this);
-    await this.events.loadEvents();
-    await super.login(process.env.BOT_TOKEN);
-    await database(this);
+      );
+      await this.commands.loadCommands(this);
+      await this.events.loadEvents();
+      await super.login(process.env.BOT_TOKEN);
+      await database(this);
+      await userUpdate(this);
     await connect(process.env.DATABASE_URL).then(() => { this.logger.info(`O banco de dados em MongoDB foi conectado!`, { tags: ['Database'] }); }).catch(() => {});
   }
 }
