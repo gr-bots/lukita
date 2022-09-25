@@ -14,6 +14,7 @@ const Guild = model('Guild', new Schema({
 
 const User = model('User', new Schema({
   _id: { type: String, default: null },
+  bl: { type: Boolean, default: false },
 }));
 
 export { Guild, User, connect };
