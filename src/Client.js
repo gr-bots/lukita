@@ -5,7 +5,6 @@ import { EventManager } from './managers/EventManager.js';
 import { CommandManager } from './managers/CommandManager.js';
 import { createWinstonLogger } from './utils/Logger.js';
 import database from './structures/MongoDB.js';
-import userUpdate from './utils/UserInfos.js';
 import { connect } from './utils/Models.js';
 
 export class Lukita extends DiscordClient {
@@ -51,7 +50,7 @@ export class Lukita extends DiscordClient {
     });
     this.commands = new CommandManager(this);
     this.events = new EventManager(this);
-    this.dev = ['424931675009712128'];
+    this.dev = ['424931675009712128', '417067105897414667'];
   }
 
   async start() {
