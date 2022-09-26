@@ -22,7 +22,7 @@ const User = model('User', new Schema({
     caixinhas: { type: Number, default: 0 },
     sobremim: { type: String, default: 'Não definido' },
     reps: { type: Number, default: 0 },
-    casamento: { casado: { type: Boolean, default: 'Não casado'}, user: { type: String, default: null } },
+    casamento: { type: Boolean, default: 'Não casado', user: { type: String, default: null } },
   },
 }));
 
