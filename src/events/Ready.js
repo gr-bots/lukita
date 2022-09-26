@@ -10,10 +10,15 @@ export default class Ready extends Event {
     client.logger.info('Lukita iniciado com sucesso!.', { tags: ['Bot'] });
 
     client.on('error', (err) => client.logger.error(err, { tags: ['Bot'] }));
-    process.on('unhandledRejection', (err) => console.log(err?.rawError));
-    process.on('uncaughtException', (err) => console.log(err?.rawError));
-    /* process.on('unhandledRejection', (err) => client.logger.error(err, { tags: ['Process'] }));
-    process.on('uncaughtException', (err) => client.logger.error(err, { tags: ['Process'] })); */
+    process.on('unhandledRejection', (err) => {
+      if(err?.rawError?.message === "Unknown interaction") return;
+      client.logger.error(err, { tags: ['Process'] })
+    });
+      
+    process.on('uncaughtException', (err) => {
+      if(err?.rawError?.message === "Unknown interaction") return;
+      client.logger.error(err, { tags: ['Process'] })
+    });
 
     await client.commands.registerCommands();
   }
