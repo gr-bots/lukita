@@ -15,7 +15,7 @@ export default class InteractionCreate extends Event {
         if (!User) await client.db.user.create({ _id: interaction.user.id });
 
         try {
-            if (command.options.devOnly == true && !client.dev.some((id) => id === interaction.user.id)) return interaction.reply({ content: `⚠️・<@${interaction.user.id}>, Você não é meu desenvolvedor.`, fetchReply: true, ephemeral: true });
+            if (command.options.devOnly == true && !client.dev.includes((id) => id === interaction.user.id)) return interaction.reply({ content: `⚠️・<@${interaction.user.id}>, Você não é meu desenvolvedor.`, fetchReply: true, ephemeral: true });
 
             await command?.execute({ client, interaction });
         } catch (error) {
