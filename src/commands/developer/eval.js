@@ -28,7 +28,7 @@ export default class EvalCommand extends Command {
     try {
       const code = await eval(interaction.options.getString('code'));
       const codeLeave = typeof code !== 'string' ? inspect(code, { depth: 0 }).replaceAll(this.client.token, 'hidden') : code.replaceAll(this.client.token, 'hidden');
-      return interaction.reply({ content: `**${emjs.yesCheck}・Output:**\n\`\`\`js\n${codeLeave.slice(0, 1900)}\`\`\``, fetchReply: true });
+      return interaction.reply({ content: `**${emjs.yesCheck}・Output:**\n\`\`\`js\n${codeLeave.slice(0, 1900)}\`\`\`` });
     } catch (err) {
       if (err instanceof Error) {
         return interaction.reply({ content: `**${emjs.noCheck}・Error:**\n\`\`\`sh\n${err.stack}\`\`\``, fetchReply: true });
