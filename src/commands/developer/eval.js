@@ -34,23 +34,5 @@ export default class EvalCommand extends Command {
         return interaction.reply({ content: `**${emjs.noCheck}・Error:**\n\`\`\`sh\n${err.stack}\`\`\``, fetchReply: true });
       }
     }
-    const collector = await interaction.createComponentCollector({
-      componentType: 2,
-    });
-  
-    collector.on('collect', async (interaction) => {
-      if (interaction.user.id !== context.user.id) {
-        interaction.deferUpdate();
-        return;
-      }
-      
-      if (interaction.customId === 'button:eval:delete') {
-        interaction.editReply({ content: `${emjs.check}・**${interaction.user.username}**, eval deletado.`, components: [] });
-        if(interaction.type === 1) interaction.deleteReply();
-        setTimeout(() => {
-          interaction.deleteReply();
-        }, 750);
-      }
-    });
   }
 }
