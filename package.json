@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "start": "node --no-warnings --max_old_space_size=512 --optimize_for_size --expose-gc --gc-interval=1 src/Launcher.js",
-    "console": "ssh -i console.pem ubuntu@ec2-34-234-85-119.compute-1.amazonaws.com",
     "upgithub": "git add . && git commit -m \"small changes\" && git push origin main"
   },
   "author": "GR",
