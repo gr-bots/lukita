@@ -10,12 +10,10 @@ export default class MessageCreate extends Event {
   async execute(client, message) {
     if(message.author.bot) return;
     if(!message.guild) return;
-    if(message.guild === '724823792794337301') {
-      if(message.channel === '1053448395655741550') {
-        if(message.content === '.' {
-          message.member.setNickname(`${await message.user.username} 🎅`)
-          message.delete()
-        }
+    if(message.channel.id === '1053448395655741550') {
+      if(message.content === '.' {
+        message.member.setNickname(`${await message.user.username} 🎅`)
+        message.delete()
       }
     }
       
