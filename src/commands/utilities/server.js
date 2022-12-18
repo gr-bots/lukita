@@ -3,7 +3,7 @@ import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
 import { Tools } from '../../utils/Functions.js'
 
-export default class ServerinfoCommand extends Command {
+export default class ServerCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'server',

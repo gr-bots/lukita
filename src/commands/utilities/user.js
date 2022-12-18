@@ -6,11 +6,11 @@ export default class UserCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'user',
-      description: '「🔧 Utilities」・Sub categoria para o usuário',
+      description: '「🎈 Utilities」・Sub categoria para o usuário',
       type: ApplicationCommandType.ChatInput,
       options: [{
         name: 'info',
-        description: '「🔧 Info」・Veja suas informações ou de outro usuário',
+        description: '「🔧 Utilities」・Veja suas informações ou de outro usuário',
         type: ApplicationCommandOptionType.SubCommand,
         options: [{
           name: 'usuário',
@@ -19,7 +19,7 @@ export default class UserCommand extends Command {
         }]
       },{
         name: 'avatar',
-        description: '「🔧 Avatar」・Veja o avatar seu ou de outro usuário',
+        description: '「🔧 Utilities」・Veja o avatar seu ou de outro usuário',
         type: ApplicationCommandOptionType.SubCommand,
         options: [{ 
           name: 'usuário',
