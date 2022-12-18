@@ -40,7 +40,8 @@ class Tools {
     })
 
     this.toDec = (function(hex) {
-      return parseInt(hex, 16);
+      let hexadecimal = String(hex)
+      return parseInt(hexadecimal, 16);
     })
 
     this.randomHex = (function () {
