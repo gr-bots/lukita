@@ -40,7 +40,7 @@ class Tools {
     })
 
     this.toDec = (function(hex) {
-      let hexadecimal = toString(hex)
+      let hexadecimal = `'${hex}'`
       return parseInt(hexadecimal, 16);
     })
 
