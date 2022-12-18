@@ -36,8 +36,21 @@ class Tools {
     }),
     
     this.toHex = (function(d) {
-      return  ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
-    })
+      if (s.substr(0,2).toLowerCase() == "0x") {
+        return s;
+      }
+      var l = "0123456789ABCDEF";
+      var o = "";
+  
+      if (typeof s != "string") {
+          s = s.toString();
+      }
+      for (var i=0; i<s.length; i++) {
+        var c = s.charCodeAt(i);
+        o = o + l.substr((c>>4),1) + l.substr((c & 0x0f),1);
+      }
+      return "0x" + o;
+  })
 
     this.randomHex = (function () {
       const hex = [new Pallete().background, new Pallete().baby, new Pallete().clean, new Pallete().blue, new Pallete().sky, new Pallete().green, new Pallete().yellow, new Pallete().orange, new Pallete().red, new Pallete().pink, new Pallete().purple];
