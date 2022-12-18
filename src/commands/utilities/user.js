@@ -36,8 +36,6 @@ export default class UserCommand extends Command {
     const tools = new Tools(client, interaction)
 
     if (interaction.options.getSubcommand() === 'info') {
-      let user = await interaction.options.getUser('usuário') || interaction.user;
-
       interaction.reply({content: '> Em desenvolvimento...', ephemeral: true})
     }
 
