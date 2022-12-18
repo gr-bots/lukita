@@ -11,7 +11,7 @@ export default class UserCommand extends Command {
       options: [{
         name: 'info',
         description: '「🔧 Info」・Veja suas informações ou de outro usuário',
-        type: ApplicationCommandType.SubCommand,
+        type: ApplicationCommandOptionType.SubCommand,
         options: [{
           name: 'usuário',
           description: '「🌆 Id」・Informe o usuário',
@@ -20,7 +20,7 @@ export default class UserCommand extends Command {
       },{
         name: 'avatar',
         description: '「🔧 Avatar」・Veja o avatar seu ou de outro usuário',
-        type: ApplicationCommandType.SubCommand,
+        type: ApplicationCommandOptionType.SubCommand,
         options: [{ 
           name: 'usuário',
           description: '「🌆 User」・Informe o usuário',
