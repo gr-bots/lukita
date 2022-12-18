@@ -35,14 +35,9 @@ class Tools {
       return await interaction.guild.members.search({ query: username, limit: 1 }).then(x => x.first().user)
     }),
     
-    this.decimalToHexString = function decimalToHexString(number) {
-      if (number < 0)
-      {
-        number = 0xFFFFFFFF + number + 1;
-      }
-    
-      return number.toString(16).toUpperCase();
-    }
+    this.toHex = (function(d) {
+      return  ("0"+(Number(d).toString(16))).slice(-2).toUpperCase()
+    })
 
     this.randomHex = (function () {
       const hex = [new Pallete().background, new Pallete().baby, new Pallete().clean, new Pallete().blue, new Pallete().sky, new Pallete().green, new Pallete().yellow, new Pallete().orange, new Pallete().red, new Pallete().pink, new Pallete().purple];
