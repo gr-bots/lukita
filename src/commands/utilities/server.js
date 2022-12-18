@@ -86,6 +86,7 @@ export default class ServerinfoCommand extends Command {
           let anOpGuild = await optionGuild.channels.fetch().then(x => x.filter(z => z?.type === 5).size)
           let foOpGuild = await optionGuild.channels.fetch().then(x => x.filter(z => z === null).size)
           let stOpGuild = await optionGuild.channels.fetch().then(x => x.filter(z => z?.type === 13).size)
+          let categOpGuild = await guild.channels.fetch().then(x => x.filter(z => z?.type === 4).size)
 
           interaction.reply({ embeds: [
             new EmbedBuilder()
@@ -94,7 +95,7 @@ export default class ServerinfoCommand extends Command {
             .setDescription(`${codeBlock(optionGuild.description || '  ')}\n**Principais**\n• Dono: <@${optionGuild.ownerId}> | ${inlineCode(await client.users.fetch(optionGuild.ownerId).then(x => x.tag))}\n• Id: ${inlineCode(optionGuild.id)}\n• Região: **${optionGuild.preferredLocale.replace('da', 'Dansk').replace('de', 'Alemanha').replace('en-GB', 'Inglaterra').replace('en-US', 'Estados Unidos').replace('es-ES', 'Espanha').replace('fr', 'França').replace('hr', 'Croácia').replace('pt-BR', 'Brasil')}**`)
             .addFields({
                 name: 'Canais',
-                value: `${emjs.chText}・Texto: ${inlineCode(txtOpGuild)}\n${emjs.chVoice}・Voz: ${inlineCode(vcOpGuild)}\n${emjs.chAnnouncement}・Anúncio: ${inlineCode(anOpGuild)}\n${emjs.chForum}・Fórum: ${inlineCode(foOpGuild)}\n${emjs.chStage}・Estágio: ${inlineCode(stOpGuild)}\n\n**・Categorias:** ${inlineCode(categGuild)}`,
+                value: `${emjs.chText}・Texto: ${inlineCode(txtOpGuild)}\n${emjs.chVoice}・Voz: ${inlineCode(vcOpGuild)}\n${emjs.chAnnouncement}・Anúncio: ${inlineCode(anOpGuild)}\n${emjs.chForum}・Fórum: ${inlineCode(foOpGuild)}\n${emjs.chStage}・Estágio: ${inlineCode(stOpGuild)}\n\n**・Categorias:** ${inlineCode(categOpGuild)}`,
                 inline: true
               }, {
                 name: 'Membros', 
