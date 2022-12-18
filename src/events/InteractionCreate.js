@@ -19,6 +19,7 @@ export default class InteractionCreate extends Event {
 
             await command?.execute({ client, interaction });
         } catch (error) {
+            console.log(error.stack)
             await interaction.reply({ content: `> ⚠️・<@${interaction.user.id}>, Ocorreu um erro ao executar o comando! Já avisei meu desenvolvedor.`, ephemeral: true, fetchReply: true });
         }
     }

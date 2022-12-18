@@ -31,6 +31,7 @@ export class Lukita extends DiscordClient {
       intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildPresences,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.GuildVoiceStates,
         GatewayIntentBits.MessageContent,
@@ -38,7 +39,7 @@ export class Lukita extends DiscordClient {
       partials: [Partials.Channel, Partials.User, Partials.GuildMember, Partials.Message],
       failIfNotExists: false,
       allowedMentions: {
-        parse: ['users'],
+        parse: ['users', 'roles'],
         repliedUser: false,
       },
       presence: {

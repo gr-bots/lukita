@@ -12,6 +12,11 @@ const emjs = {
   javascript: '<:javascript:1014562192605061241>',
   categBot: '<:categBot:1014001821645295648>',
   categUtil: '<:categUtil:1015783145364262933>',
+  chText: '<:text:1053318819537498182>',
+  chVoice: '<:voice:1053319177869467758>',
+  chForum: '<:forum:1053318768685764719>',
+  chStage: '<:stage:1053320532524793896>',
+  chAnnouncement: '<:announcement:1053320245714100304>',
   eco: {
     waffles: '<:lk_waffles:996411857244000326>',
     cafeteria: '<:lk_cafeteria:996413963665412207>',
