@@ -6,7 +6,7 @@ export default class UserCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'user',
-      description: '「🙋‍♂️ Utilities」・Sub categoria para o usuário',
+      description: '「🔧 Utilities」・Sub categoria para o usuário',
       type: ApplicationCommandType.ChatInput,
       options: [{
         name: 'info',
