@@ -36,7 +36,9 @@ export default class UserCommand extends Command {
     const tools = new Tools(client, interaction)
 
     if (interaction.options.getSubcommand() === 'info') {
+
       interaction.reply({content: '> Em desenvolvimento...', ephemeral: true})
+      
     }
 
     if (interaction.options.getSubcommand() === 'avatar') {
