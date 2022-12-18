@@ -6,7 +6,7 @@ export default class UserCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'user',
-      description: '「🙋‍♂️ Utilities」・Sub categoria para o servidor',
+      description: '「🙋‍♂️ Utilities」・Sub categoria para o usuário',
       type: ApplicationCommandType.ChatInput,
       options: [{
         name: 'info',
@@ -15,6 +15,7 @@ export default class UserCommand extends Command {
         options: [{
           name: 'usuário',
           description: '「🌆 Id」・Informe o usuário',
+          type: ApplicationCommandOptionType.User
         }]
       },{
         name: 'avatar',
