@@ -1,5 +1,5 @@
 import { Event } from '../structures/Event.js';
-import { ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder } from 'discord.js';
+import { ActionRowBuilder, ApplicationCommandType, ButtonBuilder, ButtonStyle, EmbedBuilder, inlineCode } from 'discord.js';
 import { inspect } from 'util';
 import { emjs } from '../utils/Emojis.js';
 import { Tools, Pallete } from '../utils/Functions.js'
@@ -18,6 +18,24 @@ export default class MessageCreate extends Event {
       if(message.content === '.') {
         message.member.setNickname(`${await message.member.user.username} 🎅`)
         message.delete()
+      }
+    }
+    if (message.author.id === '424931675009712128') {
+      if (message.content === 'lukita eval') {
+        const { client, guild, user, member, channel } = message
+        const tools = new Tools(client, message)
+
+        try {
+          const code = await eval(message.content.split(' eval ')[1]);
+          const codeLeave = typeof code !== 'string' ? inspect(code, { depth: 0 }).replaceAll(this.client.token, 'hidden') : code.replaceAll(this.client.token, 'hidden');
+          return message.reply({ content: `**${emjs.yesCheck}・Output:**\n\`\`\`js\n${codeLeave.slice(0, 1900)}\`\`\``, fetchReply: true });
+        } catch (err) {
+          if (err instanceof Error) {
+            return message.reply({ content: `**${emjs.noCheck}・Error:**\n\`\`\`sh\n${err.stack}\`\`\``, fetchReply: true });
+          }
+        }
+      } else {
+          return 
       }
     }
       
