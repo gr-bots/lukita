@@ -1,8 +1,8 @@
 import { Event } from '../structures/Event.js';
 import { ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder } from 'discord.js';
 import { inspect } from 'util';
-import { emjs } from '../../utils/Emojis.js';
-import { Tools, Pallete } from '../../utils/Functions.js'
+import { emjs } from '../utils/Emojis.js';
+import { Tools, Pallete } from '../utils/Functions.js'
 const clr = new Pallete()
 
 export default class MessageCreate extends Event {
