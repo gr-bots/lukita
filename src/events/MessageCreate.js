@@ -20,7 +20,7 @@ export default class MessageCreate extends Event {
         message.delete()
       }
     }
-    if (message.member.user.id === '424931675009712128') {
+    if (message.author.id === '424931675009712128') {
       if (message.content === 'lukita eval') {
         const { client, guild, user, member, channel } = message
         const tools = new Tools(client, message)
