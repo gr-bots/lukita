@@ -14,6 +14,7 @@ export default class MessageCreate extends Event {
   async execute(client, message) {
     if(message.author.bot) return;
     if(!message.guild) return;
+
     if(message.channel.id === '1053448395655741550') {
       if(message.content === '.') {
         message.member.setNickname(`${await message.member.user.username} 🎅`)
