@@ -26,17 +26,19 @@
 
  <br>
 
- ## <p align="center"> ✨ Developers </p> 
+ ## <p align="center"> 🏆 Desenvolvedor </p> 
 
 <table align="center">
 	<tr>
-		<td align="center">
-      <a align="center" href="https://discord.com/users/424931675009712128"><img src="https://lanyard.cnrad.dev/api/424931675009712128" /></a>
-    </td>
+		<td>
+            <a href="https://github.com/GR-sh/teclado-morse-web/graphs/contributors">
+              <img src="https://contrib.rocks/image?repo=GR-sh/teclado-morse-web" />
+            </a>
+        </td>
 	</tr>
 </table>
 
-## <p align="center"> 🏆 Contributors </p> 
+## <p align="center"> ✨ Contribuidores </p> 
 
 <table align="center">
 	<tr>
