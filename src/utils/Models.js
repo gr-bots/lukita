@@ -1,6 +1,6 @@
 import pkg from 'mongoose';
 
-const { connect, model, Schema } = pkg;
+const { connect, set, model, Schema } = pkg;
 
 const Guild = model('Guild', new Schema({
   _id: { type: String, default: null },

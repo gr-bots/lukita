@@ -6,6 +6,7 @@ import { CommandManager } from './managers/CommandManager.js';
 import { createWinstonLogger } from './utils/Logger.js';
 import database from './structures/MongoDB.js';
 import { connect } from './utils/Models.js';
+import { set } from 'mongoose';
 
 export class Lukita extends DiscordClient {
   constructor() {
@@ -66,6 +67,7 @@ export class Lukita extends DiscordClient {
       await this.events.loadEvents();
       await super.login(process.env.BOT_TOKEN);
       await database(this);
+    await set("strictQuery", true);
     await connect(process.env.DATABASE_URL).then(() => { this.logger.info(`O banco de dados em MongoDB foi conectado!`, { tags: ['Database'] }); }).catch(() => {});
   }
 }

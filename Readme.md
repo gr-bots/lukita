@@ -31,8 +31,8 @@
 <table align="center">
 	<tr>
 		<td>
-            <a href="https://github.com/GR-sh/teclado-morse-web/graphs/contributors">
-              <img src="https://contrib.rocks/image?repo=GR-sh/teclado-morse-web" />
+            <a href="https://github.com/gr-bots/lukita/graphs/contributors">
+              <img src="https://contrib.rocks/image?repo=gr-bots/lukita" />
             </a>
         </td>
 	</tr>

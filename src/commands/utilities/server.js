@@ -1,4 +1,5 @@
-import { ActionRowBuilder, ApplicationCommandType, ApplicationCommandOptionType, ButtonBuilder, ButtonStyle, EmbedBuilder, codeBlock, inlineCode } from 'discord.js';
+import pkg from 'discord.js';
+const { ActionRowBuilder, ApplicationCommandType, ApplicationCommandOptionType, ButtonBuilder, ButtonStyle, EmbedBuilder, codeBlock, inlineCode } = pkg;
 import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
 import { Tools } from '../../utils/Functions.js'
