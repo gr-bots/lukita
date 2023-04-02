@@ -32,7 +32,7 @@
 	<tr>
 		<td>
             <a href="https://github.com/gr-bots/lukita/graphs/contributors">
-              <img src="https://contrib.rocks/image?repo=gr-bots/lukita" />
+              <img src="https://contrib.rocks/image?repo=guidsribeiro/aboutgr" />
             </a>
         </td>
 	</tr>
