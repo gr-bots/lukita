@@ -19,6 +19,12 @@
 
  <br>
 
+## 🙋‍♂️ Suporte:
+
+   - Acesse o nosso servidor no Discord clicando [aqui](https://discord.gg/pJyY3zsMmB).
+
+ <br>
+
 ## ❗ Regras de Contribuição :
 
    * **Os pull requests devem conter commits feitos por você.**
