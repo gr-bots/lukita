@@ -46,7 +46,7 @@ export default class ServerCommand extends Command {
           let txtGuild = await guild.channels.fetch().then(x => x.filter(z => z?.type === 0).size)
           let vcGuild = await guild.channels.fetch().then(x => x.filter(z => z?.type === 2).size)
           let anGuild = await guild.channels.fetch().then(x => x.filter(z => z?.type === 5).size)
-          let foGuild = await guild.channels.fetch().then(x => x.filter(z => z === null).size)
+          let foGuild = await guild.channels.fetch().then(x => x.filter(z => z?.type === 13).size)
           let stGuild = await guild.channels.fetch().then(x => x.filter(z => z?.type === 13).size)
           let categGuild = await guild.channels.fetch().then(x => x.filter(z => z?.type === 4).size)
 
@@ -85,7 +85,7 @@ export default class ServerCommand extends Command {
           let txtOpGuild = await optionGuild.channels.fetch().then(x => x.filter(z => z?.type === 0).size)
           let vcOpGuild = await optionGuild.channels.fetch().then(x => x.filter(z => z?.type === 2).size)
           let anOpGuild = await optionGuild.channels.fetch().then(x => x.filter(z => z?.type === 5).size)
-          let foOpGuild = await optionGuild.channels.fetch().then(x => x.filter(z => z === null).size)
+          let foOpGuild = await optionGuild.channels.fetch().then(x => x.filter(z => z?.type === 13).size)
           let stOpGuild = await optionGuild.channels.fetch().then(x => x.filter(z => z?.type === 13).size)
           let categOpGuild = await guild.channels.fetch().then(x => x.filter(z => z?.type === 4).size)
 
