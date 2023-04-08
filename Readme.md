@@ -49,8 +49,8 @@
 <table align="center">
 	<tr>
 		<td>
-            <a href="https://github.com/onlygr/Lukita/graphs/contributors">
-              <img src="https://contrib.rocks/image?repo=onlygr/Lukita" />
+            <a href="https://github.com/gr-bots/lukita/graphs/contributors">
+              <img src="https://contrib.rocks/image?repo=gr-bots/lukita" />
             </a>
         </td>
 	</tr>
