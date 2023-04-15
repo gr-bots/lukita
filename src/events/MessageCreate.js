@@ -12,15 +12,12 @@ export default class MessageCreate extends Event {
   }
 
   async execute(client, message) {
-    if(message.author.bot) return;
-    if(!message.guild) return;
-
-    if(message.channel.id === '1053448395655741550') {
-      if(message.content === '.') {
-        message.member.setNickname(`${await message.member.user.username} 🎅`)
-        message.delete()
+    if (message.author.id !== '297153970613387264' || !message.guild || !message.author.bot) return; 
+      if (message?.embeds[0]?.title?.includes('Que tal experimentar Slash Commands?')) { 
+        message.delete(); 
+      } else if (message?.embeds[0]?.title?.includes('Why not try out the new Slash Commands?')) { 
+        message.delete(); 
       }
-    }
       
     if(message.content == `<!@${client.user.id}>` || message.content == `<@${client.user.id}>`) {
       const rowMention = new ActionRowBuilder().addComponents(new ButtonBuilder().setLabel('Me adicione em seu servidor').setStyle(ButtonStyle.Link).setURL('https://discord.com/oauth2/authorize?client_id=917962601923760139&scope=bot+identify+guilds+email+applications.commands&permissions=2080374975'));

@@ -7,6 +7,7 @@ export default class InteractionCreate extends Event {
 
     async execute(client, interaction) {
         if (!interaction.isChatInputCommand()) return;
+        if (!interaction.isStringSelectMenu()) return;
         if (!interaction.guild) return;
 
         const command = client.commands.getCommand(interaction.commandName);
