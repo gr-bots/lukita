@@ -12,7 +12,7 @@ export default class MessageCreate extends Event {
   }
 
   async execute(client, message) {
-    if (!message.guild || !message.author.bot) return;
+    if (message.guild || message.author.bot) return;
 
     if (message.guild.id === '995769279733583944') {
       if (message.author.id !== '297153970613387264') {
