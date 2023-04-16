@@ -22,6 +22,7 @@ export default class BotinfoCommand extends Command {
     let x = String(parseInt(process.memoryUsage().rss / 1024 / 1024) / 512).split('.')[1].slice(0, 4)
     let ram = String(parseInt(x)).slice(0, 2) + '%'
 
+    if (client.db.user.findOne({_id: user.id}).then(x => x.bl) == true) return interaction.reply({ content: `> ⚠️・<@${user.id}>, Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
     interaction.reply({ embeds: [
       new EmbedBuilder()
       .setAuthor({ name: `${this.client.user.username}・Informações`, iconURL: `${this.client.user.displayAvatarURL({display: true, size: 4096})}` })

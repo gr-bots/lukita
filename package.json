@@ -5,7 +5,7 @@
   "main": "./src/Launcher.js",
   "type": "module",
   "scripts": {
-    "start": "node --max_old_space_size=512 --optimize_for_size --expose-gc --gc-interval=1 src/Launcher.js",
+    "start": "node --trace-warnings --max_old_space_size=512 --optimize_for_size --expose-gc --gc-interval=1 src/Launcher.js",
     "gitpush": "git add . && git commit -m \"small changes\" && git push origin main"
   },
   "author": "GR",
