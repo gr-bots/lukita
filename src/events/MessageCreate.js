@@ -12,10 +12,11 @@ export default class MessageCreate extends Event {
   }
 
   async execute(client, message) {
-    if (message.guild || message.author.bot) return;
+    if (message.guild) return;
+    if (message.author.bot) return;
 
     if (message.guild.id === '995769279733583944') {
-      if (message.author.id !== '297153970613387264') {
+      if (message.author.id === '297153970613387264') {
         if (message?.embeds[0]?.title?.includes('Que tal experimentar Slash Commands?')) { 
           message.delete(); 
         } else if (message?.embeds[0]?.title?.includes('Why not try out the new Slash Commands?')) { 
