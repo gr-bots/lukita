@@ -44,7 +44,7 @@ export class Lukita extends DiscordClient {
         repliedUser: false,
       },
       presence: {
-        status: process.env.NODE_ENV === 'development' ? 'idle' : 'online',
+        status: 'idle',
         activities: [{
           name: '📘› Use {/help}', type: ActivityType.Playing,
         }],

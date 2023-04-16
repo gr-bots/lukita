@@ -23,7 +23,7 @@ export default class BotinfoCommand extends Command {
     let ram = String(parseInt(x)).slice(0, 2) + '%'
 
     if (await client.db.user.findOne({_id: user.id}).then(x => x.bl) == true) {
-      await interaction.reply({ content: `> ⚠️・<@${user.id}>, Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
+      await interaction.reply({ content: `> ⚠️・<@${user.id}>, Err... Parece quem alguém na Blacklist..\n> Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
     } else {
       interaction.reply({ embeds: [
         new EmbedBuilder()
