@@ -11,8 +11,13 @@ export default class InteractionCreate extends Event {
 
         const command = client.commands.getCommand(interaction.commandName);
 
-        const User = await client.db.user.findOne({ _id: interaction.user.id });
-        if (!User) await client.db.user.create({ _id: interaction.user.id });
+        let User = await client.db.user.findOne({ _id: interaction.user.id });
+        if (!User) {
+            await client.db.user.create({ _id: interaction.user.id });
+            User = await client.db.user.findOne({ _id: interaction.user.id });
+        }
+
+        if (User.bl == true) return interaction.reply({ content: `> ⚠️・<@${user.id}>, Err... Parece quem alguém na Blacklist..\n> Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true }); //assim não vai poluir seus comandos
 
         try {
             if (command.options.devOnly == true && !client.dev.some((id) => id === interaction.user.id)) return interaction.reply({ content: `⚠️・<@${interaction.user.id}>, Você não é meu desenvolvedor.`, fetchReply: true, ephemeral: true });
