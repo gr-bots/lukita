@@ -17,7 +17,7 @@ export default class PingCommand extends Command {
     const wsPing = Math.round(this.client.ws.ping);
 
     if (await client.db.user.findOne({_id: user.id}).then(x => x.bl) == true) {
-      await interaction.reply({ content: `> ⚠️・<@${user.id}>, Err... Parece que têm alguém na Blacklist..\n> Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
+      await interaction.reply({ content: `> ⚠️・<@${user.id}>, Err... Parece que têm têm alguém na Blacklist..\n> Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
     } else {
       let pingContent = `> :satellite: Gateaway \`${wsPing}ms\`\n> :zap: API \`${bahzin.createdTimestamp - interaction.createdTimestamp}ms\`\n> ${emjs.mongodb} Database \`${await this.client.db.ping()}ms\``;
   
