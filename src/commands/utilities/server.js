@@ -38,7 +38,7 @@ export default class ServerCommand extends Command {
     const tools = new Tools(client, interaction)
 
     if (await client.db.user.findOne({_id: user.id}).then(x => x.bl) == true) {
-      await interaction.reply({ content: `> ⚠️・<@${user.id}>, Err... Parece quem alguém na Blacklist..\n> Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
+      await interaction.reply({ content: `> ⚠️・<@${user.id}>, Err... Parece que têm alguém na Blacklist..\n> Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
     } else {
       if (interaction.options.getSubcommand() === 'info') {
         let server = await interaction.options.getString('id')
