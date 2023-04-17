@@ -34,12 +34,12 @@ export default class ServerCommand extends Command {
   }
 
   async execute({ interaction }) {
-    const { client, guild, member, channel } = interaction
-    const tools = new Tools(client, interaction)
-
     if (await client.db.user.findOne({_id: user.id}).then(x => x.bl) == true) {
       await interaction.reply({ content: `> ⚠️・<@${user.id}>, Err... Parece que têm alguém na Blacklist..\n> Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
     } else {
+        const { client, guild, member, channel } = interaction
+        const tools = new Tools(client, interaction)
+
       if (interaction.options.getSubcommand() === 'info') {
         let server = await interaction.options.getString('id')
         let joinedInServer = await guild.members.fetch('917962601923760139').then(x => x.joinedTimestamp)
