@@ -34,8 +34,8 @@ export default class ServerCommand extends Command {
   }
 
   async execute({ interaction }) {
-    if (await client.db.user.findOne({_id: user.id}).then(x => x.bl) == true) {
-      await interaction.reply({ content: `> ⚠️・<@${user.id}>, Err... Parece que têm alguém na Blacklist..\n> Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
+    if (await this.client.db.user.findOne({_id: this.user.id}).then(x => x.bl) == true) {
+      await interaction.reply({ content: `> ⚠️・<@${this.user.id}>, Err... Parece que têm alguém na Blacklist..\n> Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
     } else {
         const { client, guild, member, channel } = interaction
         const tools = new Tools(client, interaction)
