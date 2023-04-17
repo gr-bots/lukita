@@ -13,7 +13,7 @@ export default class PingCommand extends Command {
   }
 
   async execute({ interaction }) {
-    if (await client.db.user.findOne({_id: user.id}).then(x => x.bl) == true) {
+    if (await this.client.db.user.findOne({_id: user.id}).then(x => x.bl) == true) {
       await interaction.reply({ content: `> ⚠️・<@${user.id}>, Err... Parece que têm têm alguém na Blacklist..\n> Você está bloqueado de usar meus comandos.`, ephemeral: true, fetchReply: true });
     } else {
       const bahzin = await interaction.reply({ content: `${emjs.loading}`, fetchReply: true });
