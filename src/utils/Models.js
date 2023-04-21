@@ -6,11 +6,11 @@ const Guild = model('Guild', new Schema({
   _id: { type: String, default: null },
   bl: { type: Boolean, default: false , motivo: { type: String, default: 'Motivo não apresentado' }  },
   actives: {
-    forms: { type: Array, default: null },
-    logs: { type: Array, default: null },
-    autorole: { type: Object, default: null },
-    modlogs: { type: Array, default: null },
-    welcome: { type: Object, default: null },
+    forms: { type: Array, default: "undefined" },
+    logs: { type: Array, default: "undefined" },
+    autorole: { type: Object, default: "undefined" },
+    modlogs: { type: Array, default: "undefined" },
+    welcome: { type: Object, default: "undefined" },
   },
 }));
 
@@ -24,7 +24,7 @@ const User = model('User', new Schema({
     caixinhas: { type: Number, default: 0 },
     sobremim: { type: String, default: 'Não definido' },
     reps: { type: Number, default: 0 },
-    casamento: { type: Boolean, default: false , user: { type: String, default: null } },
+    casamento: { type: Boolean, default: false , user: { type: String, default: "undefined" } },
   },
 }));
 
