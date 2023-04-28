@@ -16,7 +16,7 @@ export default class InteractionCreate extends Event {
         if (!User) await client.db.user.create({ _id: interaction.user.id });
 
         const Guild = await client.db.guild.findOne({ _id: interaction.guild.id });
-        if (Guild?.bl) interaction.guild.leave();
+        if (Guild?.bl) return interaction.guild.leave();
 
         try {
             if (command.options.devOnly == true && !client.dev.some((id) => id === interaction.user.id)) return interaction.reply({ content: `⚠️・<@${interaction.user.id}>, Você não é meu desenvolvedor.`, fetchReply: true, ephemeral: true });
