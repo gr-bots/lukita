@@ -1,4 +1,5 @@
 import { Event } from '../structures/Event.js';
+
 export default class InteractionCreate extends Event {
     constructor() {
         super();
@@ -13,6 +14,9 @@ export default class InteractionCreate extends Event {
 
         const User = await client.db.user.findOne({ _id: interaction.user.id });
         if (!User) await client.db.user.create({ _id: interaction.user.id });
+
+        const Guild = await client.db.guild.findOne({ _id: interaction.guild.id });
+        if (Guild?.bl) return;
 
         try {
             if (command.options.devOnly == true && !client.dev.some((id) => id === interaction.user.id)) return interaction.reply({ content: `⚠️・<@${interaction.user.id}>, Você não é meu desenvolvedor.`, fetchReply: true, ephemeral: true });
