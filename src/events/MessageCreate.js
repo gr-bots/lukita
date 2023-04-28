@@ -14,6 +14,9 @@ export default class MessageCreate extends Event {
   async execute(client, message) {
     if (message.author.bot) return;
     if (!message.guild) return;
+    
+    const Guild = await client.db.guild.findOne({ _id: message.guild.id });
+    if(Guild?.bl) return;
 
     if (message.guild.id === '995769279733583944') {
       if (message.author.id === '297153970613387264') {
