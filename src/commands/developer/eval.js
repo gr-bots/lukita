@@ -2,7 +2,8 @@ import { ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder } fr
 import { inspect } from 'util';
 import { Command } from '../../structures/Command.js';
 import { emjs } from '../../utils/Emojis.js';
-import { Tools, Pallete } from '../../utils/Functions.js'
+import { Tools, Pallete } from '../../utils/Functions.js';
+import genius from 'genius.js';
 const clr = new Pallete()
 
 export default class EvalCommand extends Command {
