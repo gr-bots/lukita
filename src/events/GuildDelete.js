@@ -8,7 +8,7 @@ export default class GuildDelete extends Event {
 
   async execute(client, guild) {
     const Guild = await client.db.guild.findOne({ _id: guild.id });
-    if (!Guild) await client.db.guild.create({ _id: guild.id });
+    if (!Guild) await client.db.guild.deleteOne({ _id: guild.id });
 
     if(Guild.bl) guild.leave();
 
