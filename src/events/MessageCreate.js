@@ -15,8 +15,8 @@ export default class MessageCreate extends Event {
     if (message.author.bot) return;
     if (!message.guild) return;
     
-    const Guild = await client.db.guild.findOne({ _id: interaction.guild.id });
-    if (Guild?.bl) return interaction.guild.leave();
+    const Guild = await client.db.guild.findOne({ _id: message.guild.id });
+    if (Guild?.bl) return message.guild.leave();
 
     if (message.guild.id === '995769279733583944') {
       if (message.author.id === '297153970613387264') {
