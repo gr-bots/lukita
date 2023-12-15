@@ -13,7 +13,6 @@
 
 ## 😉 Aprovado nos quesitos : 
 
-   - [X] **Completo em moderação.**
    - [X] **Fácil de usar.**
    - [X] **100% em português.**
 
